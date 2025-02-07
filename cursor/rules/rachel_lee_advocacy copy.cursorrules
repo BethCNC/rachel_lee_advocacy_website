@@ -1,0 +1,129 @@
+# Rachel Lee Patient Advocacy Website Development Rules
+
+## Project Context
+This is a WordPress-based website for Rachel Lee's patient advocacy services. The site focuses on healthcare system navigation and advocacy support, with strong emphasis on accessibility and interactive features.
+
+## Design Requirements
+
+### Brand Guidelines
+- Primary Color: #1B365D (Navy Blue) - Trust/professionalism
+- Secondary Color: #45818E (Teal) - Healing/clarity
+- Accent Color: #D4AF37 (Gold) - Value/quality
+- Typography: System fonts for performance
+- Visual Style: Clean, professional, accessible
+
+### Accessibility Standards
+- WCAG 2.1 AA compliance required
+- Support screen readers
+- Keyboard navigation
+- High contrast mode
+- Multiple content formats (text/audio/visual)
+- ADHD/Autism-friendly design patterns
+
+### Interactive Features
+- Healthcare system navigator
+- Condition pathfinder tool
+- Resource compass
+- Care journey mapping
+- Progress tracking systems
+- Audio integration points
+
+## Development Rules
+
+### WordPress Configuration
+- Use child theme based on Divi
+- Custom post types for:
+  - Conditions
+  - Resources
+  - Success Stories
+  - Services
+- Custom taxonomies for:
+  - Condition Categories
+  - Resource Types
+  - Service Types
+
+### Component Development
+1. Interactive Tools
+   ```php
+   // Use React for complex interactions
+   // Implement as WordPress blocks where possible
+   // Include audio integration points
+   // Maintain state management
+   ```
+
+2. Navigation Elements
+   ```php
+   // Clear visual hierarchy
+   // Breadcrumb integration
+   // Progress indicators
+   // Mobile-first approach
+   ```
+
+3. Content Templates
+   ```php
+   // Consistent layout structure
+   // Clear typography hierarchy
+   // Multiple content format support
+   // Accessibility hooks
+   ```
+
+### Code Standards
+- Follow WordPress coding standards
+- Use BEM methodology for CSS
+- Implement ES6+ JavaScript
+- Document all custom functions
+- Include accessibility attributes
+
+### Performance Requirements
+- Page load < 3 seconds
+- Mobile-first responsive design
+- Optimize media assets
+- Implement caching
+- Minimize HTTP requests
+
+## Content Guidelines
+
+### Page Structure
+1. Home Page
+   - Clear value proposition
+   - Service overview
+   - Interactive navigator
+   - Success stories
+   - Call-to-action
+
+2. Conditions Section
+   - Interactive pathfinder
+   - Category navigation
+   - Resource integration
+   - Support tools
+   - Learning center
+
+3. Services Pages
+   - Clear descriptions
+   - Pricing transparency
+   - Booking integration
+   - Resource links
+   - Success stories
+
+### Writing Style
+- Professional but approachable
+- Focus on empowerment
+- Clear action steps
+- Avoid medical advice
+- Include disclaimers
+
+## Testing Requirements
+- Cross-browser compatibility
+- Mobile responsiveness
+- Accessibility validation
+- Performance benchmarks
+- Security standards
+- Form validation
+- Interactive feature testing
+
+## Additional Rules Files Needed
+1. `.cursorrules` for WordPress configuration
+2. `.cursorrules` for React components
+3. `.cursorrules` for accessibility standards
+4. `.cursorrules` for content guidelines
+5. `.cursorrules` for testing procedures 
