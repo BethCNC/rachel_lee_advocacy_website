@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Figma Component Checklist</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+        
+        body {
+            padding: 2rem;
+            background: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        h1 {
+            color: #1B365D;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #D4AF37;
+        }
+        
+        h2 {
+            color: #45818E;
+            margin: 2rem 0 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid #eee;
+        }
+        
+        h3 {
+            color: #1B365D;
+            margin: 1.5rem 0 1rem;
+        }
+        
+        .section {
+            margin-bottom: 2rem;
+            padding: 1rem;
+            background: #f8f9fa;
+            border-radius: 4px;
+        }
+        
+        .checklist {
+            list-style: none;
+            margin-left: 0;
+        }
+        
+        .checklist li {
+            margin: 0.5rem 0;
+            padding: 0.5rem;
+            background: white;
+            border-radius: 4px;
+            border: 1px solid #eee;
+        }
+        
+        .checklist li:hover {
+            background: #f8f9fa;
+        }
+        
+        .checklist input[type="checkbox"] {
+            margin-right: 0.5rem;
+        }
+        
+        .subsection {
+            margin-left: 2rem;
+            margin-top: 0.5rem;
+            border-left: 2px solid #45818E;
+            padding-left: 1rem;
+        }
+        
+        .note {
+            margin-top: 1rem;
+            padding: 1rem;
+            background: #FFF3CD;
+            border-left: 4px solid #D4AF37;
+            border-radius: 4px;
+        }
+        
+        .component-type {
+            font-weight: bold;
+            color: #1B365D;
+            margin-top: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Figma Component Checklist</h1>
+        
+        <section class="section">
+            <h2>Core Components</h2>
+            
+            <div class="component-type">Navigation Components</div>
+            <ul class="checklist">
+                <li>
+                    <input type="checkbox" id="main-nav">
+                    <label for="main-nav">Main Navigation Bar</label>
+                    <div class="subsection">
+                        <ul class="checklist">
+                            <li><input type="checkbox"> Desktop layout</li>
+                            <li><input type="checkbox"> Mobile layout</li>
+                            <li><input type="checkbox"> Dropdown menus</li>
+                            <li><input type="checkbox"> Active states</li>
+                            <li><input type="checkbox"> Focus states</li>
+                            <li><input type="checkbox"> High contrast variant</li>
+                            <li><input type="checkbox"> Audio integration points</li>
+                        </ul>
+                    </div>
+                </li>
+                
+                <li>
+                    <input type="checkbox" id="breadcrumbs">
+                    <label for="breadcrumbs">Breadcrumbs</label>
+                    <div class="subsection">
+                        <ul class="checklist">
+                            <li><input type="checkbox"> Default state</li>
+                            <li><input type="checkbox"> Interactive states</li>
+                            <li><input type="checkbox"> Mobile adaptation</li>
+                            <li><input type="checkbox"> Screen reader optimization</li>
+                        </ul>
+                    </div>
+                </li>
+                
+                <li>
+                    <input type="checkbox" id="side-nav">
+                    <label for="side-nav">Side Navigation</label>
+                    <div class="subsection">
+                        <ul class="checklist">
+                            <li><input type="checkbox"> Expanded state</li>
+                            <li><input type="checkbox"> Collapsed state</li>
+                            <li><input type="checkbox"> Mobile drawer</li>
+                            <li><input type="checkbox"> Progress indicators</li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+            
+            <div class="component-type">Interactive Tools</div>
+            <ul class="checklist">
+                <li>
+                    <input type="checkbox" id="pathfinder">
+                    <label for="pathfinder">Condition Pathfinder</label>
+                    <div class="subsection">
+                        <ul class="checklist">
+                            <li><input type="checkbox"> Step indicator</li>
+                            <li><input type="checkbox"> Question cards</li>
+                            <li><input type="checkbox"> Option buttons</li>
+                            <li><input type="checkbox"> Progress bar</li>
+                            <li><input type="checkbox"> Results view</li>
+                            <li><input type="checkbox"> Mobile adaptation</li>
+                            <li><input type="checkbox"> Audio controls</li>
+                            <li><input type="checkbox"> High contrast variant</li>
+                            <li><input type="checkbox"> Loading states</li>
+                            <li><input type="checkbox"> Error states</li>
+                        </ul>
+                    </div>
+                </li>
+                
+                <li>
+                    <input type="checkbox" id="resource-compass">
+                    <label for="resource-compass">Resource Compass</label>
+                    <div class="subsection">
+                        <ul class="checklist">
+                            <li><input type="checkbox"> Search interface</li>
+                            <li><input type="checkbox"> Filter controls</li>
+                            <li><input type="checkbox"> Results grid/list</li>
+                            <li><input type="checkbox"> Resource cards</li>
+                            <li><input type="checkbox"> Category chips</li>
+                            <li><input type="checkbox"> Sort controls</li>
+                            <li><input type="checkbox"> Mobile view</li>
+                            <li><input type="checkbox"> Loading states</li>
+                            <li><input type="checkbox"> Empty states</li>
+                        </ul>
+                    </div>
+                </li>
+                
+                <li>
+                    <input type="checkbox" id="journey-map">
+                    <label for="journey-map">Care Journey Map</label>
+                    <div class="subsection">
+                        <ul class="checklist">
+                            <li><input type="checkbox"> Timeline view</li>
+                            <li><input type="checkbox"> Calendar view</li>
+                            <li><input type="checkbox"> Milestone markers</li>
+                            <li><input type="checkbox"> Progress indicators</li>
+                            <li><input type="checkbox"> Add milestone form</li>
+                            <li><input type="checkbox"> Mobile adaptation</li>
+                            <li><input type="checkbox"> Print layout</li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </section>
+        
+        <section class="section">
+            <h2>Design Variants</h2>
+            
+            <div class="component-type">States</div>
+            <ul class="checklist">
+                <li><input type="checkbox"> Default</li>
+                <li><input type="checkbox"> Hover</li>
+                <li><input type="checkbox"> Focus</li>
+                <li><input type="checkbox"> Active</li>
+                <li><input type="checkbox"> Disabled</li>
+                <li><input type="checkbox"> Loading</li>
+                <li><input type="checkbox"> Error</li>
+                <li><input type="checkbox"> Success</li>
+            </ul>
+            
+            <div class="component-type">Accessibility Variants</div>
+            <ul class="checklist">
+                <li><input type="checkbox"> High contrast mode</li>
+                <li><input type="checkbox"> Large text mode</li>
+                <li><input type="checkbox"> Reduced motion</li>
+                <li><input type="checkbox"> Screen reader optimized</li>
+            </ul>
+            
+            <div class="component-type">Responsive Variants</div>
+            <ul class="checklist">
+                <li><input type="checkbox"> Desktop (1200px+)</li>
+                <li><input type="checkbox"> Tablet (768px - 1199px)</li>
+                <li><input type="checkbox"> Mobile (320px - 767px)</li>
+            </ul>
+        </section>
+        
+        <section class="section">
+            <h2>Design System Elements</h2>
+            
+            <div class="component-type">Typography</div>
+            <ul class="checklist">
+                <li><input type="checkbox"> Headings (H1-H6)</li>
+                <li><input type="checkbox"> Body text</li>
+                <li><input type="checkbox"> Links</li>
+                <li><input type="checkbox"> Lists</li>
+                <li><input type="checkbox"> Emphasis text</li>
+                <li><input type="checkbox"> Helper text</li>
+                <li><input type="checkbox"> Error text</li>
+            </ul>
+            
+            <div class="component-type">Colors</div>
+            <ul class="checklist">
+                <li><input type="checkbox"> Primary palette</li>
+                <li><input type="checkbox"> Secondary palette</li>
+                <li><input type="checkbox"> Accent colors</li>
+                <li><input type="checkbox"> Status colors</li>
+                <li><input type="checkbox"> High contrast variants</li>
+                <li><input type="checkbox"> Gradient definitions</li>
+            </ul>
+            
+            <div class="component-type">Spacing</div>
+            <ul class="checklist">
+                <li><input type="checkbox"> Margin scale</li>
+                <li><input type="checkbox"> Padding scale</li>
+                <li><input type="checkbox"> Grid system</li>
+                <li><input type="checkbox"> Component spacing</li>
+            </ul>
+        </section>
+        
+        <section class="section">
+            <h2>Documentation</h2>
+            
+            <div class="component-type">Component Documentation</div>
+            <ul class="checklist">
+                <li><input type="checkbox"> Usage guidelines</li>
+                <li><input type="checkbox"> Prop definitions</li>
+                <li><input type="checkbox"> Accessibility notes</li>
+                <li><input type="checkbox"> Code examples</li>
+                <li><input type="checkbox"> Best practices</li>
+            </ul>
+            
+            <div class="component-type">Style Documentation</div>
+            <ul class="checklist">
+                <li><input type="checkbox"> Color usage</li>
+                <li><input type="checkbox"> Typography system</li>
+                <li><input type="checkbox"> Spacing guidelines</li>
+                <li><input type="checkbox"> Responsive behavior</li>
+                <li><input type="checkbox"> Animation guidelines</li>
+            </ul>
+            
+            <div class="component-type">Accessibility Documentation</div>
+            <ul class="checklist">
+                <li><input type="checkbox"> WCAG compliance notes</li>
+                <li><input type="checkbox"> Screen reader behavior</li>
+                <li><input type="checkbox"> Keyboard navigation</li>
+                <li><input type="checkbox"> Color contrast</li>
+                <li><input type="checkbox"> Focus management</li>
+            </ul>
+        </section>
+        
+        <div class="note">
+            <strong>Note:</strong> This checklist represents the complete component inventory for the Rachel Lee Patient Advocacy website. Each component should be designed with accessibility and responsiveness in mind, following the established design system guidelines.
+        </div>
+    </div>
+</body>
+</html> 
