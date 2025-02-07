@@ -102,15 +102,56 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            perspective: 1000px;
+            transform-style: preserve-3d;
         }
 
         .breathing-circle {
-            width: 200px;
-            height: 200px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: var(--radius-full);
+            width: 300px;
+            height: 300px;
             position: relative;
-            animation: breathe var(--transition-breathing) ease-in-out infinite;
+            transform-style: preserve-3d;
+            animation: float 12s ease-in-out infinite;
+        }
+
+        .circle-layer {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            left: 0;
+            top: 0;
+            transform-style: preserve-3d;
+        }
+
+        .circle-core {
+            background: radial-gradient(
+                circle at center,
+                rgba(255, 255, 255, 0.3),
+                rgba(255, 255, 255, 0.1)
+            );
+            animation: breatheCore 12s ease-in-out infinite;
+            box-shadow: 0 0 50px rgba(255, 255, 255, 0.2);
+        }
+
+        .circle-glow {
+            background: radial-gradient(
+                circle at center,
+                rgba(255, 255, 255, 0.2),
+                transparent
+            );
+            filter: blur(20px);
+            animation: breatheGlow 12s ease-in-out infinite;
+        }
+
+        .circle-pulse {
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            animation: breathePulse 12s ease-in-out infinite;
+        }
+
+        .circle-ripple {
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            animation: breatheRipple 12s ease-in-out infinite;
         }
 
         .breathing-text {
@@ -120,8 +161,21 @@
             color: var(--color-text-inverse);
             font-family: var(--font-family-new-spirit);
             font-size: var(--font-size-3xl);
-            opacity: 0;
-            animation: fadeText var(--transition-breathing) ease-in-out infinite;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+            animation: fadeText 12s ease-in-out infinite;
+        }
+
+        .breathing-instruction {
+            position: absolute;
+            width: 100%;
+            text-align: center;
+            color: var(--color-text-inverse);
+            font-size: var(--font-size-lg);
+            opacity: 0.8;
+            bottom: -60px;
         }
 
         .hero-content {
@@ -145,14 +199,126 @@
             margin-bottom: var(--spacing-8);
         }
 
-        @keyframes breathe {
-            0%, 100% { transform: scale(1); opacity: 0.3; }
-            50% { transform: scale(1.5); opacity: 0.7; }
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotateX(0); }
+            50% { transform: translateY(-30px) rotateX(10deg); }
+        }
+
+        @keyframes breatheCore {
+            0%, 100% { 
+                transform: scale(1);
+                opacity: 0.3;
+            }
+            40% { 
+                transform: scale(1.5);
+                opacity: 0.8;
+            }
+            50% { 
+                transform: scale(1.5);
+                opacity: 0.8;
+            }
+            90% { 
+                transform: scale(1);
+                opacity: 0.3;
+            }
+        }
+
+        @keyframes breatheGlow {
+            0%, 100% { 
+                transform: scale(1.2);
+                opacity: 0.2;
+            }
+            40% { 
+                transform: scale(2);
+                opacity: 0.4;
+            }
+            50% { 
+                transform: scale(2);
+                opacity: 0.4;
+            }
+            90% { 
+                transform: scale(1.2);
+                opacity: 0.2;
+            }
+        }
+
+        @keyframes breathePulse {
+            0%, 100% { 
+                transform: scale(1);
+                opacity: 0.3;
+            }
+            40% { 
+                transform: scale(2.5);
+                opacity: 0;
+            }
+            50% { 
+                transform: scale(2.5);
+                opacity: 0;
+            }
+            90% { 
+                transform: scale(1);
+                opacity: 0.3;
+            }
+        }
+
+        @keyframes breatheRipple {
+            0%, 100% { 
+                transform: scale(1);
+                opacity: 0.2;
+            }
+            40% { 
+                transform: scale(3);
+                opacity: 0;
+            }
+            50% { 
+                transform: scale(3);
+                opacity: 0;
+            }
+            90% { 
+                transform: scale(1);
+                opacity: 0.2;
+            }
         }
 
         @keyframes fadeText {
-            0%, 100% { opacity: 0; transform: scale(0.8); }
-            50% { opacity: 1; transform: scale(1); }
+            0%, 90%, 100% { 
+                opacity: 0;
+                transform: translate(-50%, -50%) scale(0.8);
+            }
+            40%, 50% { 
+                opacity: 1;
+                transform: translate(-50%, -50%) scale(1);
+            }
+        }
+
+        .particles {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+        }
+
+        .particle {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        @keyframes particleFloat {
+            0% {
+                transform: translate(0, 0);
+                opacity: 0;
+            }
+            50% {
+                opacity: 0.5;
+            }
+            100% {
+                transform: translate(var(--tx), var(--ty));
+                opacity: 0;
+            }
         }
     </style>
 </head>
@@ -173,7 +339,12 @@
     <section class="hero">
         <div class="breathing-container">
             <div class="breathing-circle">
-                <div class="breathing-text">Breathe</div>
+                <div class="circle-layer circle-ripple"></div>
+                <div class="circle-layer circle-pulse"></div>
+                <div class="circle-layer circle-glow"></div>
+                <div class="circle-layer circle-core"></div>
+                <div class="breathing-text">Breathe In</div>
+                <div class="breathing-instruction">Inhale 4s · Hold 2s · Exhale 6s</div>
             </div>
         </div>
         <div class="hero-content">
@@ -182,5 +353,42 @@
             <a href="#" class="nav-cta">Learn How We Can Help</a>
         </div>
     </section>
+
+    <script>
+    const createParticle = () => {
+        const particles = document.querySelector('.particles');
+        const particle = document.createElement('div');
+        particle.className = 'particle';
+        
+        // Random size between 2-6px
+        const size = Math.random() * 4 + 2;
+        particle.style.width = `${size}px`;
+        particle.style.height = `${size}px`;
+        
+        // Random starting position around the circle
+        const angle = Math.random() * Math.PI * 2;
+        const radius = 150;
+        const x = Math.cos(angle) * radius + window.innerWidth / 2;
+        const y = Math.sin(angle) * radius + window.innerHeight / 2;
+        
+        particle.style.left = `${x}px`;
+        particle.style.top = `${y}px`;
+        
+        // Random translation
+        const tx = (Math.random() - 0.5) * 200;
+        const ty = (Math.random() - 0.5) * 200;
+        particle.style.setProperty('--tx', `${tx}px`);
+        particle.style.setProperty('--ty', `${ty}px`);
+        
+        // Animation
+        particle.style.animation = `particleFloat ${Math.random() * 2 + 2}s linear forwards`;
+        
+        particles.appendChild(particle);
+        setTimeout(() => particle.remove(), 4000);
+    };
+
+    // Create particles periodically
+    setInterval(createParticle, 100);
+    </script>
 </body>
 </html> 

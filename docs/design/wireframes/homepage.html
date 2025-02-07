@@ -3,57 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Wireframe for Rachel Lee Patient Advocacy Homepage">
     <title>Rachel Lee Patient Advocacy - Homepage Wireframe</title>
     <!-- Adobe Fonts -->
     <link rel="stylesheet" href="https://use.typekit.net/nek5vij.css">
     <!-- Local Satoshi Font -->
     <link rel="stylesheet" href="/font/font_satoshi/css/satoshi.css">
     <style>
+        /* Base styles */
         :root {
             /* Colors */
-            --primary-color: #2D1F3F;      /* Deep Purple - Trust/professionalism */
-            --primary-light: #4A3566;      /* Deep Purple 700 */
-            --primary-dark: #1A1226;       /* Deep Purple 900 */
-            --secondary-color: #f26b49;    /* Burnt Sienna - Warmth/action */
-            --secondary-light: #f7a792;    /* Burnt Sienna 700 */
-            --secondary-dark: #b12d0c;     /* Burnt Sienna 300 */
-            --accent-color: #80263d;       /* Claret - Emphasis */
-            --accent-light: #d0617d;       /* Claret 700 */
-            --accent-dark: #4e1725;        /* Claret 300 */
-            --background-light: #f5e5fc;   /* Pale Purple - Light backgrounds */
-            --background-alt: #d2e7fa;     /* Columbia Blue - Alternative backgrounds */
-            --text-primary: #1A1226;       /* Deep Purple 900 - Primary text */
-            --text-secondary: #4e1725;     /* Claret 300 - Secondary text */
-            --text-light: #ffffff;         /* White text */
+            --primary-color: #2D1F3F;
+            --primary-light: #4A3566;
+            --primary-dark: #1A1226;
+            --text-light: #ffffff;
             
-            /* Tailwind-like spacing */
-            --spacing-0: 0px;
-            --spacing-px: 1px;
-            --spacing-0.5: 0.125rem;
-            --spacing-1: 0.25rem;
-            --spacing-1.5: 0.375rem;
-            --spacing-2: 0.5rem;
-            --spacing-2.5: 0.625rem;
-            --spacing-3: 0.75rem;
-            --spacing-3.5: 0.875rem;
+            /* Spacing */
             --spacing-4: 1rem;
-            --spacing-5: 1.25rem;
-            --spacing-6: 1.5rem;
             --spacing-8: 2rem;
-            --spacing-10: 2.5rem;
-            --spacing-12: 3rem;
-            --spacing-16: 4rem;
-            
-            /* Border Radius */
-            --rounded-none: 0px;
-            --rounded-sm: 0.125rem;
-            --rounded: 0.25rem;
-            --rounded-md: 0.375rem;
-            --rounded-lg: 0.5rem;
-            --rounded-xl: 0.75rem;
-            --rounded-2xl: 1rem;
-            --rounded-3xl: 1.5rem;
-            --rounded-full: 9999px;
         }
 
         * {
@@ -62,116 +29,60 @@
             box-sizing: border-box;
         }
 
-        /* Typography System */
-        h1, h2, h3, h4, h5, h6 {
-            font-family: "new-spirit", serif;
-            font-weight: 600;
-            font-style: normal;
-            line-height: 1.2;
-        }
-
         body {
             font-family: "Satoshi-Variable", sans-serif;
-            font-variation-settings: 'wght' 400;
             line-height: 1.6;
-            color: var(--text-primary);
-            background-color: var(--background-light);
         }
 
-        .wireframe-label {
-            background: var(--background-alt);
-            padding: var(--spacing-2);
-            font-size: var(--spacing-3.5);
-            color: var(--text-primary);
-            border: 1px dashed var(--primary-color);
-            border-radius: var(--rounded);
-            font-family: "Satoshi-Variable", sans-serif;
-            font-variation-settings: 'wght' 500;
-        }
-
-        /* Header */
-        header {
-            background: var(--primary-color);
-            color: var(--text-light);
-            padding: var(--spacing-4);
-        }
-
-        nav {
-            background: var(--secondary-color);
-            padding: var(--spacing-4);
-            margin-bottom: var(--spacing-4);
-            color: var(--text-light);
-            border-radius: var(--rounded-md);
-        }
-
-        /* Hero Section */
-        .hero {
-            background: var(--background-alt);
-            padding: var(--spacing-16);
-            text-align: center;
-            margin-bottom: var(--spacing-8);
-            border-radius: var(--rounded-lg);
-        }
-
-        /* Main Content Sections */
-        .section {
-            padding: var(--spacing-8);
-            margin-bottom: var(--spacing-6);
-            border: 1px dashed var(--primary-color);
-            background: var(--text-light);
-            border-radius: var(--rounded-lg);
-        }
-
-        /* Interactive Features */
-        .interactive-feature {
-            background: var(--background-alt);
-            padding: var(--spacing-8);
-            margin-bottom: var(--spacing-6);
-            border: 2px solid var(--secondary-color);
-            border-radius: var(--rounded-xl);
-        }
-
-        /* Call to Action */
-        .cta {
-            background: var(--accent-color);
-            color: var(--text-light);
-            padding: var(--spacing-8);
-            text-align: center;
-            margin: var(--spacing-8) 0;
-            border-radius: var(--rounded-lg);
-        }
-
-        /* Grid Layout */
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: var(--spacing-4);
-            padding: var(--spacing-4);
-        }
-
-        /* Accessibility Features */
-        .accessibility-controls {
-            background: var(--primary-dark);
-            color: var(--text-light);
-            padding: var(--spacing-4);
-            text-align: right;
-            border-radius: var(--rounded-md);
-        }
-
-        /* Responsive Container */
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 var(--spacing-4);
         }
 
-        /* Footer */
+        .wireframe-label {
+            background: #f0f0f0;
+            padding: var(--spacing-4);
+            margin: var(--spacing-4) 0;
+            border: 1px dashed #666;
+            border-radius: 4px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--spacing-4);
+        }
+
+        /* Component styles */
+        header {
+            background: var(--primary-color);
+            color: var(--text-light);
+            padding: var(--spacing-4);
+        }
+
+        .hero {
+            background: var(--primary-light);
+            padding: var(--spacing-8);
+            color: var(--text-light);
+        }
+
+        .section {
+            padding: var(--spacing-8) 0;
+        }
+
+        .cta {
+            background: var(--primary-dark);
+            color: var(--text-light);
+            padding: var(--spacing-8);
+            text-align: center;
+        }
+
         footer {
             background: var(--primary-color);
             color: var(--text-light);
             padding: var(--spacing-8);
             margin-top: var(--spacing-8);
-            border-radius: var(--rounded-t-lg);
         }
     </style>
 </head>
@@ -223,7 +134,7 @@
         </section>
 
         <!-- Interactive Navigator -->
-        <section class="interactive-feature">
+        <section class="section">
             <div class="wireframe-label">Interactive Healthcare System Navigator</div>
             <div class="wireframe-label">Step-by-Step Guide Interface</div>
         </section>
@@ -242,16 +153,6 @@
         <section class="cta">
             <div class="wireframe-label">Primary Call to Action</div>
             <div class="wireframe-label">Contact/Consultation Button</div>
-        </section>
-
-        <!-- Resource Section -->
-        <section class="section">
-            <div class="wireframe-label">Featured Resources</div>
-            <div class="grid">
-                <div class="wireframe-label">Resource 1</div>
-                <div class="wireframe-label">Resource 2</div>
-                <div class="wireframe-label">Resource 3</div>
-            </div>
         </section>
     </main>
 

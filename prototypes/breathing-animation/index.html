@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Breathing Animation Demo</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            background: #2D1F3F;
+        }
+
+        .hero {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #644670, #452157);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .breathing-container {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            perspective: 1500px;
+            transform-style: preserve-3d;
+        }
+
+        .breathing-circle {
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(
+                circle at center,
+                rgba(255, 255, 255, 0.3),
+                rgba(255, 255, 255, 0.1)
+            );
+            border-radius: 50%;
+            position: relative;
+        }
+
+        .circle-layer {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            left: 0;
+            top: 0;
+            transform-style: preserve-3d;
+            backdrop-filter: blur(5px);
+        }
+
+        .circle-core {
+            background: radial-gradient(
+                circle at center,
+                rgba(255, 255, 255, 0.25),
+                rgba(255, 255, 255, 0.05)
+            );
+            animation: breatheCore 12s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+            box-shadow: 
+                0 0 60px rgba(255, 255, 255, 0.2),
+                inset 0 0 40px rgba(255, 255, 255, 0.1);
+        }
+
+        .circle-glow {
+            background: radial-gradient(
+                circle at center,
+                rgba(255, 255, 255, 0.15),
+                transparent 70%
+            );
+            filter: blur(30px);
+            animation: breatheGlow 12s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+        }
+
+        .circle-pulse {
+            border: 3px solid rgba(255, 255, 255, 0.1);
+            animation: breathePulse 12s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+            filter: blur(1px);
+        }
+
+        .circle-ripple {
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            animation: breatheRipple 12s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotateX(0); }
+            50% { transform: translateY(-20px) rotateX(5deg); }
+        }
+
+        @keyframes breatheCore {
+            0%, 100% { 
+                transform: scale(1); 
+                opacity: 0.3;
+            }
+            33% { 
+                transform: scale(1.4); 
+                opacity: 0.7;
+            }
+            40%, 60% { 
+                transform: scale(1.4); 
+                opacity: 0.7;
+            }
+            90% { 
+                transform: scale(1); 
+                opacity: 0.3;
+            }
+        }
+
+        @keyframes breatheGlow {
+            0%, 100% { 
+                transform: scale(1.2); 
+                opacity: 0.2;
+            }
+            33% { 
+                transform: scale(1.8); 
+                opacity: 0.4;
+            }
+            40%, 60% { 
+                transform: scale(1.8); 
+                opacity: 0.4;
+            }
+            90% { 
+                transform: scale(1.2); 
+                opacity: 0.2;
+            }
+        }
+
+        @keyframes breathePulse {
+            0%, 100% { 
+                transform: scale(1); 
+                opacity: 0.3;
+            }
+            33% { 
+                transform: scale(2); 
+                opacity: 0;
+            }
+            40%, 60% { 
+                transform: scale(2); 
+                opacity: 0;
+            }
+            90% { 
+                transform: scale(1); 
+                opacity: 0.3;
+            }
+        }
+
+        @keyframes breatheRipple {
+            0%, 100% { 
+                transform: scale(1); 
+                opacity: 0.2;
+            }
+            33% { 
+                transform: scale(2.5); 
+                opacity: 0;
+            }
+            40%, 60% { 
+                transform: scale(2.5); 
+                opacity: 0;
+            }
+            90% { 
+                transform: scale(1); 
+                opacity: 0.2;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section class="hero">
+        <div class="breathing-container">
+            <div class="breathing-circle">
+                <div class="circle-layer circle-ripple"></div>
+                <div class="circle-layer circle-pulse"></div>
+                <div class="circle-layer circle-glow"></div>
+                <div class="circle-layer circle-core"></div>
+            </div>
+        </div>
+    </section>
+    
+    <script>
+        gsap.to(".breathing-circle", {
+            scale: 1.5,
+            opacity: 0.8,
+            duration: 4,
+            ease: "power1.inOut",
+            yoyo: true,
+            repeat: -1,
+            repeatDelay: 2
+        });
+    </script>
+</body>
+</html> 
