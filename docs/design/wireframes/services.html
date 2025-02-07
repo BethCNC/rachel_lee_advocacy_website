@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rachel Lee Patient Advocacy - Services</title>
+    <!-- Adobe Fonts -->
+    <link rel="stylesheet" href="https://use.typekit.net/nek5vij.css">
+    <!-- Google Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Mono&display=swap">
+    <!-- Local Satoshi Font -->
+    <link rel="stylesheet" href="/font/font_satoshi/css/satoshi.css">
+    <style>
+        /* Import base styles from homepage */
+        @import url('homepage.html');
+
+        /* Additional styles specific to the Services page */
+        .service-explorer {
+            background: var(--background-alt);
+            padding: var(--spacing-8);
+            border-radius: var(--rounded-xl);
+            margin: var(--spacing-8) 0;
+        }
+
+        .service-categories {
+            display: flex;
+            gap: var(--spacing-4);
+            margin-bottom: var(--spacing-6);
+            padding: var(--spacing-4);
+            background: var(--text-light);
+            border-radius: var(--rounded-lg);
+        }
+
+        .service-details {
+            min-height: 400px;
+            background: var(--text-light);
+            border: 2px solid var(--secondary-color);
+            border-radius: var(--rounded-lg);
+            padding: var(--spacing-6);
+            margin: var(--spacing-6) 0;
+        }
+
+        .process-timeline {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: var(--spacing-6);
+            margin: var(--spacing-8) 0;
+            position: relative;
+        }
+
+        .process-step {
+            background: var(--text-light);
+            padding: var(--spacing-6);
+            border-radius: var(--rounded-lg);
+            border: 1px solid var(--primary-light);
+            position: relative;
+        }
+
+        .process-step::after {
+            content: '';
+            position: absolute;
+            right: -30px;
+            top: 50%;
+            width: 30px;
+            height: 2px;
+            background: var(--primary-light);
+        }
+
+        .process-step:last-child::after {
+            display: none;
+        }
+
+        .pricing-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--spacing-6);
+            margin: var(--spacing-8) 0;
+        }
+
+        .pricing-card {
+            background: var(--text-light);
+            padding: var(--spacing-6);
+            border-radius: var(--rounded-lg);
+            border: 2px solid var(--primary-color);
+        }
+
+        .pricing-card.featured {
+            border-color: var(--accent-color);
+            transform: scale(1.05);
+        }
+
+        .service-calculator {
+            background: var(--text-light);
+            padding: var(--spacing-6);
+            border-radius: var(--rounded-lg);
+            margin-top: var(--spacing-6);
+            border: 2px solid var(--accent-color);
+        }
+    </style>
+</head>
+<body>
+    <!-- Accessibility Controls -->
+    <div class="accessibility-controls">
+        <div class="wireframe-label">Enhanced Accessibility Controls</div>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="wireframe-label">Logo & Main Navigation</div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container">
+        <h1>Our Services</h1>
+        
+        <!-- Service Explorer -->
+        <section class="service-explorer">
+            <div class="wireframe-label">Interactive Service Explorer</div>
+            
+            <!-- Service Categories -->
+            <div class="service-categories">
+                <div class="wireframe-label">Advocacy Services</div>
+                <div class="wireframe-label">Consulting Services</div>
+                <div class="wireframe-label">Educational Services</div>
+            </div>
+
+            <!-- Interactive Service Details -->
+            <div class="service-details">
+                <div class="wireframe-label">Interactive Service Description</div>
+                <div class="wireframe-label">Benefits & Outcomes</div>
+                <div class="wireframe-label">Client Testimonials</div>
+            </div>
+        </section>
+
+        <!-- Process Timeline -->
+        <section class="process-timeline">
+            <div class="process-step">
+                <div class="wireframe-label">Initial Consultation</div>
+            </div>
+            <div class="process-step">
+                <div class="wireframe-label">Assessment</div>
+            </div>
+            <div class="process-step">
+                <div class="wireframe-label">Action Plan</div>
+            </div>
+            <div class="process-step">
+                <div class="wireframe-label">Implementation</div>
+            </div>
+        </section>
+
+        <!-- Pricing Options -->
+        <section class="pricing-options">
+            <div class="pricing-card">
+                <div class="wireframe-label">Basic Package</div>
+            </div>
+            <div class="pricing-card featured">
+                <div class="wireframe-label">Comprehensive Package</div>
+            </div>
+            <div class="pricing-card">
+                <div class="wireframe-label">Premium Package</div>
+            </div>
+        </section>
+
+        <!-- Service Calculator -->
+        <section class="service-calculator">
+            <div class="wireframe-label">Interactive Service Calculator</div>
+            <div class="wireframe-label">Customization Options</div>
+            <div class="wireframe-label">Cost Estimate</div>
+        </section>
+
+        <!-- Call to Action -->
+        <section class="cta">
+            <div class="wireframe-label">Schedule Consultation</div>
+            <div class="wireframe-label">Download Service Guide</div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="grid">
+                <div class="wireframe-label">Quick Links</div>
+                <div class="wireframe-label">Contact Info</div>
+                <div class="wireframe-label">Service Areas</div>
+                <div class="wireframe-label">Newsletter Signup</div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html> 

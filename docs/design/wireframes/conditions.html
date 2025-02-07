@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rachel Lee Patient Advocacy - Conditions & Pathfinder</title>
+    <!-- Adobe Fonts -->
+    <link rel="stylesheet" href="https://use.typekit.net/nek5vij.css">
+    <!-- Google Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Mono&display=swap">
+    <!-- Local Satoshi Font -->
+    <link rel="stylesheet" href="/font/font_satoshi/css/satoshi.css">
+    <style>
+        /* Import base styles from homepage */
+        @import url('homepage.html');
+
+        /* Additional styles specific to the Conditions page */
+        .pathfinder-container {
+            background: var(--background-alt);
+            padding: var(--spacing-8);
+            border-radius: var(--rounded-xl);
+            margin: var(--spacing-8) 0;
+        }
+
+        .pathfinder-steps {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: var(--spacing-6);
+        }
+
+        .step {
+            flex: 1;
+            text-align: center;
+            padding: var(--spacing-4);
+            margin: 0 var(--spacing-2);
+            background: var(--text-light);
+            border-radius: var(--rounded-lg);
+            border: 2px solid var(--primary-color);
+        }
+
+        .step.active {
+            background: var(--primary-light);
+            color: var(--text-light);
+        }
+
+        .condition-categories {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--spacing-6);
+            margin: var(--spacing-8) 0;
+        }
+
+        .category-card {
+            background: var(--text-light);
+            padding: var(--spacing-6);
+            border-radius: var(--rounded-lg);
+            border: 1px solid var(--primary-light);
+        }
+
+        .interactive-tree {
+            min-height: 400px;
+            background: var(--text-light);
+            border: 2px solid var(--secondary-color);
+            border-radius: var(--rounded-lg);
+            padding: var(--spacing-6);
+            margin: var(--spacing-6) 0;
+        }
+
+        .accessibility-toolbar {
+            display: flex;
+            gap: var(--spacing-4);
+            padding: var(--spacing-4);
+            background: var(--primary-dark);
+            border-radius: var(--rounded-md);
+            margin-bottom: var(--spacing-6);
+        }
+
+        .results-panel {
+            background: var(--text-light);
+            padding: var(--spacing-6);
+            border-radius: var(--rounded-lg);
+            margin-top: var(--spacing-6);
+            border: 2px solid var(--accent-color);
+        }
+    </style>
+</head>
+<body>
+    <!-- Accessibility Controls -->
+    <div class="accessibility-controls">
+        <div class="wireframe-label">Enhanced Accessibility Controls</div>
+        <div class="accessibility-toolbar">
+            <div class="wireframe-label">Audio Guide</div>
+            <div class="wireframe-label">Text Size</div>
+            <div class="wireframe-label">Contrast</div>
+            <div class="wireframe-label">Reading Guide</div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="wireframe-label">Logo & Main Navigation</div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container">
+        <h1>Conditions & Healthcare Navigation</h1>
+        
+        <!-- Interactive Pathfinder -->
+        <section class="pathfinder-container">
+            <div class="wireframe-label">Interactive Condition Pathfinder Tool</div>
+            
+            <!-- Progress Steps -->
+            <div class="pathfinder-steps">
+                <div class="step active">
+                    <div class="wireframe-label">Step 1: Initial Assessment</div>
+                </div>
+                <div class="step">
+                    <div class="wireframe-label">Step 2: Condition Explorer</div>
+                </div>
+                <div class="step">
+                    <div class="wireframe-label">Step 3: Resource Matcher</div>
+                </div>
+            </div>
+
+            <!-- Interactive Assessment Area -->
+            <section class="section">
+                <div class="wireframe-label">Dynamic Question Interface</div>
+                <div class="grid">
+                    <div class="wireframe-label">Question Display</div>
+                    <div class="wireframe-label">Answer Options</div>
+                    <div class="wireframe-label">Progress Indicator</div>
+                </div>
+            </section>
+
+            <!-- Visual Navigator -->
+            <section class="interactive-feature">
+                <div class="wireframe-label">Interactive Condition Map</div>
+                <div class="wireframe-label">Visual Relationships Between Conditions</div>
+                <div class="wireframe-label">Click/Tap Navigation Points</div>
+            </section>
+        </section>
+
+        <!-- Condition Categories -->
+        <section class="condition-categories">
+            <div class="category-card">
+                <div class="wireframe-label">Chronic Conditions Overview</div>
+                <div class="wireframe-label">Common Symptoms</div>
+                <div class="wireframe-label">Management Strategies</div>
+            </div>
+            <div class="category-card">
+                <div class="wireframe-label">Acute Conditions Guide</div>
+                <div class="wireframe-label">Warning Signs</div>
+                <div class="wireframe-label">Treatment Options</div>
+            </div>
+            <div class="category-card">
+                <div class="wireframe-label">Preventive Care</div>
+                <div class="wireframe-label">Health Screenings</div>
+                <div class="wireframe-label">Lifestyle Factors</div>
+            </div>
+        </section>
+
+        <!-- Resource Integration -->
+        <section class="section">
+            <div class="wireframe-label">Related Resources</div>
+            <div class="grid">
+                <div class="wireframe-label">Educational Materials</div>
+                <div class="wireframe-label">Support Groups</div>
+                <div class="wireframe-label">Treatment Guides</div>
+            </div>
+        </section>
+
+        <!-- Success Stories -->
+        <section class="section">
+            <div class="wireframe-label">Patient Success Stories</div>
+            <div class="grid">
+                <div class="wireframe-label">Story 1: Diagnosis Journey</div>
+                <div class="wireframe-label">Story 2: Treatment Success</div>
+                <div class="wireframe-label">Story 3: Ongoing Management</div>
+            </div>
+        </section>
+
+        <!-- Call to Action -->
+        <section class="cta">
+            <div class="wireframe-label">Schedule a Consultation</div>
+            <div class="wireframe-label">Download Condition Guide</div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="grid">
+                <div class="wireframe-label">Quick Links</div>
+                <div class="wireframe-label">Contact Info</div>
+                <div class="wireframe-label">Emergency Resources</div>
+                <div class="wireframe-label">Newsletter Signup</div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html> 
