@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Figma to WordPress Development Workflow</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+        
+        body {
+            padding: 2rem;
+            background: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        h1 {
+            color: #1B365D;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #D4AF37;
+        }
+        
+        h2 {
+            color: #45818E;
+            margin: 2rem 0 1rem;
+        }
+        
+        .step {
+            margin-bottom: 2rem;
+            padding: 1rem;
+            background: #f8f9fa;
+            border-radius: 4px;
+        }
+        
+        .code-block {
+            background: #1E1E1E;
+            color: #D4D4D4;
+            padding: 1rem;
+            border-radius: 4px;
+            margin: 1rem 0;
+            font-family: 'Courier New', Courier, monospace;
+            overflow-x: auto;
+        }
+        
+        ul {
+            margin-left: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .note {
+            margin-top: 2rem;
+            padding: 1rem;
+            background: #FFF3CD;
+            border-left: 4px solid #D4AF37;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Figma to WordPress Development Workflow</h1>
+        
+        <div class="step">
+            <h2>1. Figma Design Phase</h2>
+            <ul>
+                <li>Create all components in Figma following our component checklist</li>
+                <li>Design both desktop and mobile versions</li>
+                <li>Include interactive states (hover, click, etc.)</li>
+                <li>Create a complete design system with colors, typography, and spacing</li>
+                <li>Design accessibility features like high contrast versions</li>
+            </ul>
+        </div>
+        
+        <div class="step">
+            <h2>2. Component Development</h2>
+            <p>Take the Figma designs and break them into two types of components:</p>
+            <ul>
+                <li><strong>Divi Components:</strong> For static content and basic layouts</li>
+                <li><strong>Custom React Components:</strong> For interactive features like the Condition Pathfinder</li>
+            </ul>
+        </div>
+        
+        <div class="step">
+            <h2>3. WordPress/Divi Implementation</h2>
+            <ul>
+                <li>Set up WordPress with Divi theme</li>
+                <li>Create a child theme to hold custom code</li>
+                <li>Build page layouts using Divi Builder</li>
+                <li>Add custom CSS for styling</li>
+                <li>Integrate custom React components where needed</li>
+            </ul>
+        </div>
+        
+        <h2>Practical Example</h2>
+        
+        <div class="step">
+            <h2>1. Design in Figma</h2>
+            <ul>
+                <li>Design the Resource Compass component</li>
+                <li>Create all states (default, hover, active)</li>
+                <li>Design mobile version</li>
+                <li>Add accessibility features</li>
+                <li>Export assets (icons, images)</li>
+            </ul>
+        </div>
+        
+        <div class="step">
+            <h2>2. Development</h2>
+            <div class="code-block">
+// Create React component for interactive features
+const ResourceCompass = () => {
+  return (
+    <div className="resource-compass">
+      {/* Interactive features */}
+    </div>
+  );
+};
+
+// Register as WordPress block
+registerBlockType('rachel-lee/resource-compass', {
+  title: 'Resource Compass',
+  // Block configuration
+});
+            </div>
+        </div>
+        
+        <div class="step">
+            <h2>3. Divi Integration</h2>
+            <div class="code-block">
+// In child theme's functions.php
+function enqueue_custom_scripts() {
+    wp_enqueue_script('resource-compass', 'path/to/script.js');
+}
+add_action('wp_enqueue_scripts', 'enqueue_custom_scripts');
+            </div>
+        </div>
+        
+        <div class="step">
+            <h2>4. Page Building</h2>
+            <ul>
+                <li>Use Divi Builder for the page layout</li>
+                <li>Add custom blocks where needed</li>
+                <li>Style using Divi's visual builder</li>
+                <li>Add custom CSS for fine-tuning</li>
+            </ul>
+        </div>
+        
+        <div class="note">
+            <strong>Key Points:</strong>
+            <ol>
+                <li>Design everything in Figma first</li>
+                <li>Decide what can be built with Divi vs. what needs custom code</li>
+                <li>Build custom components in React</li>
+                <li>Integrate everything in WordPress using Divi as the foundation</li>
+            </ol>
+        </div>
+    </div>
+</body>
+</html> 
