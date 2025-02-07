@@ -1,0 +1,16 @@
+/*
+Theme Name: Rachel Lee Patient Advocacy
+Theme URI: https://github.com/BethCNC/rachel_lee_patient_advocacy_website
+Description: A custom child theme for Rachel Lee's Patient Advocacy website, built on Divi
+Author: Beth Cartrette
+Author URI: https://github.com/BethCNC
+Template: Divi
+Version: 1.0.0
+License: Private
+Text Domain: rachel-lee-theme
+*/
+
+/* Import parent theme styles */
+@import url("../Divi/style.css");
+
+/* Custom styles will be added here */ 

@@ -1,0 +1,255 @@
+# Divi-React Integration Workflow Guide
+
+## Development Architecture
+
+### 1. Child Theme Structure
+```typescript
+interface ChildThemeStructure {
+  theme: {
+    name: 'rachel-lee-theme',
+    directories: {
+      assets: {
+        js: 'Compiled React components',
+        css: 'Compiled styles',
+        images: 'Theme images'
+      },
+      includes: 'PHP functionality files',
+      modules: 'Custom Divi modules',
+      templates: 'Custom page templates'
+    },
+    core_files: {
+      style_css: 'Theme identification',
+      functions_php: 'Theme functionality',
+      index_php: 'Theme entry point'
+    }
+  }
+}
+```
+
+### 2. React Component Organization
+```typescript
+interface ReactStructure {
+  src: {
+    components: {
+      interactive: {
+        // Complex interactive features
+        ConditionPathfinder: 'Condition navigation tool',
+        ResourceCompass: 'Resource finder',
+        CareJourneyMap: 'Progress tracking'
+      },
+      accessibility: {
+        // A11y enhancement features
+        AudioGuide: 'Voice navigation',
+        ColorContrast: 'Visual adjustments',
+        KeyboardNav: 'Keyboard controls'
+      },
+      common: {
+        // Shared components
+        LoadingSpinner: 'Loading states',
+        ErrorBoundary: 'Error handling',
+        FormElements: 'Form controls'
+      }
+    },
+    styles: {
+      base: 'Foundation styles',
+      components: 'Component styles',
+      theme: 'Theme variables'
+    },
+    scripts: 'Utility functions'
+  }
+}
+```
+
+## Development Workflow
+
+### 1. Custom Module Creation
+```typescript
+interface ModuleWorkflow {
+  steps: {
+    create_module_directory: string,
+    define_module_class: {
+      extends: 'ET_Builder_Module',
+      properties: {
+        slug: string,
+        name: string,
+        fields: Array<DiviField>,
+        render: () => string
+      }
+    },
+    create_react_component: {
+      location: 'src/components/',
+      structure: {
+        index: 'Main component',
+        types: 'TypeScript definitions',
+        styles: 'SCSS modules',
+        components: 'Sub-components',
+        hooks: 'Custom hooks'
+      }
+    }
+  }
+}
+```
+
+### 2. React-Divi Integration
+```typescript
+interface IntegrationPattern {
+  divi_module: {
+    render(): string,
+    output: {
+      container: 'div',
+      data_attributes: ['title', 'settings', 'content'],
+      mount_point: 'react-root'
+    }
+  },
+  react_component: {
+    initialization: 'DOMContentLoaded',
+    mounting: {
+      select_container: '.module-class',
+      read_attributes: 'data-*',
+      create_root: 'createRoot()',
+      render_component: 'React.StrictMode'
+    }
+  }
+}
+```
+
+### 3. Development Process
+```typescript
+interface DevelopmentProcess {
+  local_development: {
+    watch_mode: 'npm run dev',
+    webpack_compilation: {
+      entry_points: [
+        'interactive-components',
+        'accessibility-features',
+        'common-components'
+      ],
+      output: 'wp-content/themes/rachel-lee-theme/assets/js/'
+    }
+  },
+  testing: {
+    unit_tests: 'Jest + React Testing Library',
+    integration_tests: 'WordPress integration',
+    accessibility_tests: 'WCAG compliance'
+  },
+  deployment: {
+    build: 'npm run build:production',
+    validation: 'type-check && tests',
+    output: 'minified bundles'
+  }
+}
+```
+
+## Client Usage Guidelines
+
+### 1. Divi Builder Interface
+```typescript
+interface ClientWorkflow {
+  visual_builder: {
+    allowed_actions: [
+      'drag_and_drop_modules',
+      'edit_text_content',
+      'configure_basic_settings',
+      'arrange_layouts'
+    ],
+    restricted_areas: [
+      'custom_module_structure',
+      'react_component_logic',
+      'advanced_settings'
+    ]
+  }
+}
+```
+
+### 2. Content Management
+```typescript
+interface ContentManagement {
+  editable_areas: {
+    text: 'Direct editing',
+    images: 'Media library',
+    forms: 'Form fields',
+    settings: 'Module options'
+  },
+  protected_areas: {
+    component_logic: 'React code',
+    integration_points: 'Mount points',
+    custom_functionality: 'Interactive features'
+  }
+}
+```
+
+## Maintenance Workflow
+
+### 1. Updates and Maintenance
+```typescript
+interface MaintenanceProcess {
+  regular_updates: {
+    wordpress_core: 'Core updates',
+    divi_theme: 'Parent theme updates',
+    plugins: 'WordPress plugins',
+    npm_packages: 'Development dependencies'
+  },
+  monitoring: {
+    performance: 'Page speed',
+    accessibility: 'WCAG compliance',
+    error_tracking: 'Console logs',
+    analytics: 'Usage patterns'
+  }
+}
+```
+
+### 2. Version Control
+```typescript
+interface VersionControl {
+  git_workflow: {
+    branches: {
+      main: 'Production code',
+      develop: 'Development work',
+      feature: 'New features',
+      hotfix: 'Emergency fixes'
+    },
+    commit_conventions: {
+      feat: 'New features',
+      fix: 'Bug fixes',
+      style: 'Style updates',
+      refactor: 'Code improvements',
+      docs: 'Documentation'
+    }
+  }
+}
+```
+
+## Best Practices
+
+### 1. Code Organization
+```typescript
+interface CodeStandards {
+  react_components: {
+    naming: 'PascalCase',
+    structure: 'Functional components',
+    types: 'TypeScript interfaces',
+    styles: 'SCSS modules'
+  },
+  divi_modules: {
+    naming: 'RLEE_ModuleName',
+    structure: 'Class-based',
+    integration: 'React mount points'
+  }
+}
+```
+
+### 2. Performance Optimization
+```typescript
+interface OptimizationStrategy {
+  code_splitting: {
+    entry_points: 'Multiple bundles',
+    lazy_loading: 'Dynamic imports',
+    vendor_chunks: 'Third-party code'
+  },
+  caching: {
+    wordpress: 'Page caching',
+    assets: 'Cache busting',
+    api: 'Data caching'
+  }
+}
+``` 
