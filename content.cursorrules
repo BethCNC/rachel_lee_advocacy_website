@@ -1,0 +1,342 @@
+# Content Guidelines for Rachel Lee Advocacy Website
+
+## Voice & Tone
+
+### Brand Voice
+- Professional yet approachable
+- Empowering and supportive
+- Clear and direct
+- Compassionate and understanding
+- Educational without being condescending
+
+### Writing Style
+```markdown
+DO:
+- Use active voice
+- Write in second person ("you")
+- Break complex topics into digestible chunks
+- Include clear calls to action
+- Provide practical examples
+
+DON'T:
+- Use medical jargon without explanation
+- Make medical recommendations
+- Use overly formal language
+- Write long, dense paragraphs
+- Use complex terminology without definitions
+```
+
+## Content Types
+
+### Service Descriptions
+```markdown
+Template:
+# [Service Name]
+
+## What to Expect
+[Clear, concise description of the service]
+
+## How It Works
+1. [Step-by-step process]
+2. [Clear expectations]
+3. [Timeline if applicable]
+
+## Benefits
+- [Specific benefit]
+- [How it helps]
+- [Expected outcome]
+
+## Getting Started
+[Clear call to action with next steps]
+```
+
+### Resource Pages
+```markdown
+Template:
+# [Resource Title]
+
+## Overview
+[Brief introduction to the resource]
+
+## Key Points
+- [Main point 1]
+- [Main point 2]
+- [Main point 3]
+
+## How to Use This Resource
+[Step-by-step instructions]
+
+## Related Resources
+[Links to related content]
+```
+
+### Success Stories
+```markdown
+Template:
+# [Client's Journey]
+
+## The Challenge
+[Brief description of the situation]
+
+## The Approach
+[How Rachel helped]
+
+## The Outcome
+[Positive results]
+
+## Client Quote
+[Personal testimony]
+
+Note: Always get client permission and use pseudonyms
+```
+
+## Healthcare Content Guidelines
+
+### Medical Information
+```markdown
+Required Disclaimer:
+"This information is for educational purposes only and is not medical advice. 
+Please consult with your healthcare provider for medical recommendations."
+
+DO:
+- Focus on navigation and advocacy
+- Explain healthcare processes
+- Provide resource links
+- Share general information
+
+DON'T:
+- Make medical recommendations
+- Suggest treatments
+- Diagnose conditions
+- Provide medical advice
+```
+
+### Condition Information
+```markdown
+Template:
+# [Condition Name]
+
+## Navigation Support
+[How we help navigate care]
+
+## Advocacy Tips
+[Specific advocacy strategies]
+
+## Resource Connections
+[Relevant support services]
+
+## Next Steps
+[Clear action items]
+```
+
+## Accessibility Requirements
+
+### Text Formatting
+```css
+/* Content structure */
+.content-block {
+  max-width: 800px;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+/* Headers */
+h1, h2, h3 {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  clear: both;
+}
+
+/* Lists */
+ul, ol {
+  margin-left: 2rem;
+  margin-bottom: 1rem;
+}
+```
+
+### Content Structure
+```html
+<!-- Progressive disclosure pattern -->
+<article class="content-section">
+  <h2>Main Topic</h2>
+  <p class="summary">Brief overview</p>
+  
+  <details>
+    <summary>Learn More</summary>
+    <div class="detailed-content">
+      [Detailed information]
+    </div>
+  </details>
+</article>
+```
+
+## SEO Requirements
+
+### Page Structure
+```html
+<!-- Required meta -->
+<head>
+  <title>[Primary Keyword] - Rachel Lee Advocacy</title>
+  <meta name="description" content="[150-160 character description]">
+  <meta name="keywords" content="[relevant keywords]">
+</head>
+
+<!-- Content structure -->
+<article>
+  <h1>[Primary Keyword]</h1>
+  <p class="intro">[Engaging introduction]</p>
+  [Body content with proper heading hierarchy]
+</article>
+```
+
+### URL Structure
+```markdown
+Services:
+/services/[service-name]
+
+Resources:
+/resources/[resource-category]/[resource-name]
+
+Conditions:
+/conditions/[condition-category]/[condition-name]
+
+Blog:
+/blog/[category]/[post-name]
+```
+
+## Interactive Content
+
+### Progress Tracking
+```jsx
+// Required elements for interactive content
+const ProgressElement = () => {
+  return (
+    <div class="progress-section">
+      <h3>Your Progress</h3>
+      <div class="progress-bar">
+        [Visual progress indicator]
+      </div>
+      <div class="progress-steps">
+        [Step-by-step breakdown]
+      </div>
+    </div>
+  );
+};
+```
+
+### Forms
+```html
+<!-- Form guidelines -->
+<form class="content-form">
+  <fieldset>
+    <legend>Clear Section Title</legend>
+    
+    <label for="field">
+      Clear Label
+      <span class="helper-text">Helpful explanation</span>
+    </label>
+    
+    <input
+      type="text"
+      id="field"
+      aria-describedby="field-help"
+    >
+    
+    <div id="field-help" class="help-text">
+      Additional guidance
+    </div>
+  </fieldset>
+</form>
+```
+
+## Content Review Process
+
+### Review Checklist
+```markdown
+1. Accuracy
+   - Facts verified
+   - Links checked
+   - Resources current
+
+2. Clarity
+   - Clear purpose
+   - Actionable steps
+   - Defined terms
+
+3. Accessibility
+   - Reading level
+   - Clear structure
+   - Alt text
+   - Transcripts
+
+4. Compliance
+   - Disclaimers
+   - Privacy
+   - Legal requirements
+
+5. Brand Alignment
+   - Voice/tone
+   - Value proposition
+   - Call to action
+```
+
+## Content Maintenance
+
+### Update Schedule
+```markdown
+Daily:
+- Blog posts
+- News updates
+- Success stories
+
+Weekly:
+- Resource links
+- Service details
+- FAQ updates
+
+Monthly:
+- Core content review
+- Case studies
+- Testimonials
+
+Quarterly:
+- Full site audit
+- Content strategy review
+- Analytics review
+```
+
+### Version Control
+```markdown
+Content Changes:
+1. Document changes
+2. Update timestamps
+3. Archive old versions
+4. Update related content
+5. Check cross-references
+```
+
+## Legal Requirements
+
+### Disclaimers
+```html
+<!-- Required on all pages -->
+<footer class="legal-disclaimer">
+  <p>
+    This content is for informational purposes only and does not 
+    constitute medical advice. Please consult with qualified healthcare 
+    providers for medical decisions.
+  </p>
+</footer>
+```
+
+### Privacy Notices
+```html
+<!-- Required on forms -->
+<div class="privacy-notice">
+  <p>
+    Your information is protected under our privacy policy and 
+    HIPAA guidelines. We never share personal information without 
+    explicit consent.
+  </p>
+</div>
+``` 

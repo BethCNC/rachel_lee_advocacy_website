@@ -1,0 +1,199 @@
+# WordPress Configuration Rules for Rachel Lee Advocacy Website
+
+## Theme Development
+- Base: Divi Theme
+- Implementation: Custom child theme
+- Mobile-first approach required
+- Accessibility integration mandatory
+
+### Child Theme Structure
+```
+divi-child/
+├── functions.php
+├── style.css
+├── templates/
+│   ├── conditions/
+│   ├── resources/
+│   └── services/
+├── blocks/
+│   └── interactive/
+└── assets/
+    ├── scss/
+    └── js/
+```
+
+### Required Plugins
+1. Essential:
+   - Advanced Custom Fields PRO
+   - Yoast SEO Premium
+   - WP Rocket
+   - Wordfence Security
+   - WP Mail SMTP Pro
+
+2. Custom Development:
+   - rachel-lee-tools (custom plugin)
+   - rachel-lee-blocks (custom blocks)
+
+## Custom Post Types
+
+### Conditions
+```php
+'conditions' => [
+    'public' => true,
+    'has_archive' => true,
+    'supports' => ['title', 'editor', 'thumbnail', 'excerpt', 'custom-fields'],
+    'show_in_rest' => true,
+    'menu_icon' => 'dashicons-heart',
+    'rewrite' => ['slug' => 'conditions']
+]
+```
+
+### Resources
+```php
+'resources' => [
+    'public' => true,
+    'has_archive' => true,
+    'supports' => ['title', 'editor', 'thumbnail', 'excerpt', 'custom-fields'],
+    'show_in_rest' => true,
+    'menu_icon' => 'dashicons-book-alt',
+    'rewrite' => ['slug' => 'resources']
+]
+```
+
+### Success Stories
+```php
+'success-stories' => [
+    'public' => true,
+    'has_archive' => true,
+    'supports' => ['title', 'editor', 'thumbnail', 'excerpt', 'custom-fields'],
+    'show_in_rest' => true,
+    'menu_icon' => 'dashicons-format-status',
+    'rewrite' => ['slug' => 'success-stories']
+]
+```
+
+### Services
+```php
+'services' => [
+    'public' => true,
+    'has_archive' => false,
+    'supports' => ['title', 'editor', 'thumbnail', 'excerpt', 'custom-fields'],
+    'show_in_rest' => true,
+    'menu_icon' => 'dashicons-clipboard',
+    'rewrite' => ['slug' => 'services']
+]
+```
+
+## Custom Taxonomies
+
+### Condition Categories
+```php
+'condition-categories' => [
+    'hierarchical' => true,
+    'show_admin_column' => true,
+    'show_in_rest' => true,
+    'rewrite' => ['slug' => 'condition-type']
+]
+```
+
+### Resource Types
+```php
+'resource-types' => [
+    'hierarchical' => true,
+    'show_admin_column' => true,
+    'show_in_rest' => true,
+    'rewrite' => ['slug' => 'resource-type']
+]
+```
+
+### Service Types
+```php
+'service-types' => [
+    'hierarchical' => true,
+    'show_admin_column' => true,
+    'show_in_rest' => true,
+    'rewrite' => ['slug' => 'service-type']
+]
+```
+
+## ACF Field Groups
+
+### Condition Fields
+- Condition Details
+- Related Resources
+- Support Tools
+- Audio Content
+- Interactive Elements
+
+### Resource Fields
+- Resource Type
+- Download Files
+- Related Conditions
+- Audio Guidance
+- Interactive Components
+
+### Service Fields
+- Service Details
+- Pricing Options
+- Booking Integration
+- Success Stories
+- Audio Description
+
+## Template Hierarchy
+1. Single Templates:
+   - single-conditions.php
+   - single-resources.php
+   - single-services.php
+   - single-success-stories.php
+
+2. Archive Templates:
+   - archive-conditions.php
+   - archive-resources.php
+   - archive-success-stories.php
+
+3. Taxonomy Templates:
+   - taxonomy-condition-categories.php
+   - taxonomy-resource-types.php
+   - taxonomy-service-types.php
+
+## Performance Optimizations
+- Enable object caching
+- Implement page caching
+- Optimize database queries
+- Lazy load images
+- Minify assets
+- Use WebP images
+- Implement CDN
+
+## Security Configurations
+- Limit login attempts
+- Enable 2FA for admin
+- Configure WAF
+- Regular backups
+- File permissions
+- SSL required
+- HIPAA compliance
+
+## Development Guidelines
+1. Use WordPress coding standards
+2. Document all functions
+3. Implement hooks and filters
+4. Use transients for caching
+5. Follow security best practices
+
+## Required Functions
+```php
+// Must be included in functions.php
+add_theme_support('editor-styles');
+add_theme_support('responsive-embeds');
+add_theme_support('align-wide');
+add_theme_support('custom-spacing');
+add_theme_support('custom-units');
+```
+
+## Plugin Development Rules
+1. Modular architecture
+2. WordPress coding standards
+3. Security best practices
+4. Performance optimization
+5. Accessibility compliance 

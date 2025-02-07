@@ -1,0 +1,284 @@
+# React Component Development Rules for Rachel Lee Advocacy Website
+
+## Component Architecture
+
+### Directory Structure
+```
+src/components/
+├── interactive/
+│   ├── ConditionPathfinder/
+│   ├── ResourceCompass/
+│   ├── CareJourneyMap/
+│   └── SystemNavigator/
+├── common/
+│   ├── AudioPlayer/
+│   ├── ProgressTracker/
+│   └── AccessibilityControls/
+├── layout/
+│   ├── Navigation/
+│   ├── Footer/
+│   └── Sidebar/
+└── forms/
+    ├── BookingSystem/
+    ├── ContactForms/
+    └── AssessmentTools/
+```
+
+### Component Guidelines
+
+#### Base Requirements
+```jsx
+// Every component must include:
+import React from 'react';
+import PropTypes from 'prop-types';
+import { useAccessibility } from '../hooks/useAccessibility';
+
+const ComponentName = ({ prop1, prop2 }) => {
+  // Accessibility hook integration
+  const { isHighContrast, fontSize, audioEnabled } = useAccessibility();
+  
+  // Component logic
+  
+  return (
+    <div 
+      className="component-name"
+      role="region"
+      aria-label="Component description"
+    >
+      {/* Component content */}
+    </div>
+  );
+};
+
+ComponentName.propTypes = {
+  prop1: PropTypes.string.isRequired,
+  prop2: PropTypes.func
+};
+
+export default ComponentName;
+```
+
+### State Management
+
+#### Global State
+```jsx
+// Use React Context for:
+- User preferences
+- Accessibility settings
+- Navigation state
+- Form progress
+```
+
+#### Local State
+```jsx
+// Use useState for:
+- UI interactions
+- Form data
+- Component-specific state
+```
+
+#### Side Effects
+```jsx
+// Use useEffect for:
+- Data fetching
+- WordPress API integration
+- Audio handling
+- Progress tracking
+```
+
+## Interactive Components
+
+### Condition Pathfinder
+```jsx
+// Required features:
+- Step-by-step navigation
+- Progress tracking
+- Audio guidance
+- Visual decision tree
+- Accessibility controls
+```
+
+### Resource Compass
+```jsx
+// Required features:
+- Dynamic filtering
+- Resource categorization
+- Search functionality
+- Favorites system
+- Share options
+```
+
+### Care Journey Map
+```jsx
+// Required features:
+- Timeline visualization
+- Milestone tracking
+- Progress indicators
+- Export functionality
+- Print optimization
+```
+
+## Accessibility Integration
+
+### Required Hooks
+```jsx
+// useAccessibility.js
+export const useAccessibility = () => {
+  const [fontSize, setFontSize] = useState('medium');
+  const [contrast, setContrast] = useState('normal');
+  const [audioEnabled, setAudioEnabled] = useState(true);
+  
+  // Implementation
+};
+```
+
+### Component Wrappers
+```jsx
+// AccessibilityWrapper.jsx
+const AccessibilityWrapper = ({ children }) => {
+  const { theme, fontSize, contrast } = useAccessibility();
+  
+  return (
+    <div className={`a11y-wrapper ${theme} ${fontSize} ${contrast}`}>
+      {children}
+    </div>
+  );
+};
+```
+
+## Performance Optimization
+
+### Code Splitting
+```jsx
+// Lazy load components
+const ConditionPathfinder = React.lazy(() => import('./ConditionPathfinder'));
+```
+
+### Memoization
+```jsx
+// Use memo for expensive renders
+const MemoizedComponent = React.memo(Component);
+
+// Use useMemo for expensive calculations
+const expensiveValue = useMemo(() => compute(a, b), [a, b]);
+```
+
+### Event Handling
+```jsx
+// Use useCallback for event handlers
+const handleClick = useCallback(() => {
+  // Handler logic
+}, [dependencies]);
+```
+
+## WordPress Integration
+
+### Data Fetching
+```jsx
+// Use WordPress REST API
+const { data, error, loading } = useWPQuery('endpoint');
+```
+
+### Block Integration
+```jsx
+// Register as WordPress block
+registerBlockType('rachel-lee/component-name', {
+  // Block configuration
+});
+```
+
+## Testing Requirements
+
+### Unit Tests
+```jsx
+// Required test coverage:
+- Component rendering
+- State management
+- Event handling
+- Accessibility features
+```
+
+### Integration Tests
+```jsx
+// Required scenarios:
+- User flows
+- WordPress integration
+- API interactions
+- Form submissions
+```
+
+## Documentation
+
+### Component Documentation
+```jsx
+/**
+ * @component ComponentName
+ * @description Component purpose and functionality
+ * @param {string} prop1 - Description
+ * @param {function} prop2 - Description
+ * @returns {JSX.Element} Component JSX
+ */
+```
+
+### Usage Examples
+```jsx
+// Include for each component:
+- Basic usage
+- With accessibility features
+- With different props
+- Error handling
+```
+
+## Error Handling
+
+### Error Boundaries
+```jsx
+class ComponentErrorBoundary extends React.Component {
+  // Implementation
+}
+```
+
+### Loading States
+```jsx
+// Required for async operations:
+- Loading indicators
+- Error messages
+- Retry mechanisms
+```
+
+## Styling Guidelines
+
+### CSS Modules
+```scss
+// Use CSS Modules for component styles
+.componentName {
+  // Styles
+}
+```
+
+### Theme Integration
+```jsx
+// Support theme variables
+const styles = {
+  color: 'var(--primary-color)',
+  background: 'var(--background-color)'
+};
+```
+
+## Development Process
+
+### Component Creation
+1. Create component directory
+2. Implement base component
+3. Add accessibility features
+4. Add documentation
+5. Write tests
+6. Optimize performance
+
+### Code Review Checklist
+- Accessibility compliance
+- Performance metrics
+- Test coverage
+- Documentation
+- Error handling
+- WordPress integration 
