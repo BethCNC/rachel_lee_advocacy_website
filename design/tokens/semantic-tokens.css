@@ -27,12 +27,12 @@
   --color-interactive-disabled: var(--color-stone-300);
 
   /* Feedback Colors */
-  --color-success-default: var(--color-green-600);
-  --color-success-subtle: var(--color-green-100);
-  --color-warning-default: var(--color-amber-500);
-  --color-warning-subtle: var(--color-amber-100);
-  --color-error-default: var(--color-red-600);
-  --color-error-subtle: var(--color-red-100);
+  --color-feedback-success: var(--color-green-600);
+  --color-feedback-success-subtle: var(--color-green-100);
+  --color-feedback-warning: var(--color-amber-500);
+  --color-feedback-warning-subtle: var(--color-amber-100);
+  --color-feedback-error: var(--color-red-600);
+  --color-feedback-error-subtle: var(--color-red-100);
 
   /* Border Colors */
   --color-border-default: var(--color-stone-200);
@@ -66,7 +66,8 @@
 
   /* Spacing Scale */
   --spacing-px: 1px;
-  --spacing-0.5: 0.125rem;  /* 2px */
+  --spacing-0: 0;
+  --spacing-0-5: 0.125rem;  /* 2px */
   --spacing-1: 0.25rem;     /* 4px */
   --spacing-2: 0.5rem;      /* 8px */
   --spacing-3: 0.75rem;     /* 12px */
@@ -89,7 +90,7 @@
   --transition-fast: 150ms;
   --transition-normal: 250ms;
   --transition-slow: 350ms;
-  --transition-breathing: 6s;
+  --transition-breathing: 12s;
 
   /* Z-index Scale */
   --z-index-dropdown: 1000;
