@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rachel Lee Advocacy - Site Structure v2</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+        
+        body {
+            padding: 2rem;
+            background: #f5f5f5;
+            color: #333;
+        }
+        
+        .sitemap {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .sitemap h1 {
+            text-align: center;
+            color: #1B365D;
+            margin-bottom: 2rem;
+        }
+        
+        .site-structure {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .section {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .section h2 {
+            color: #1B365D;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #D4AF37;
+        }
+        
+        .section h3 {
+            color: #45818E;
+            margin: 1rem 0 0.5rem;
+            font-size: 1rem;
+        }
+        
+        .section ul {
+            list-style: none;
+        }
+        
+        .section li {
+            margin: 0.5rem 0;
+            padding: 0.5rem;
+            background: #f8f9fa;
+            border-radius: 4px;
+        }
+        
+        .section li:hover {
+            background: #e9ecef;
+        }
+        
+        .subsection {
+            margin-left: 1rem;
+            border-left: 2px solid #45818E;
+            padding-left: 1rem;
+            margin-top: 0.5rem;
+        }
+        
+        .component {
+            font-size: 0.9rem;
+            color: #666;
+            margin-top: 0.25rem;
+        }
+        
+        .interactive {
+            color: #D4AF37;
+            font-weight: 500;
+        }
+        
+        .audio {
+            color: #45818E;
+            font-style: italic;
+        }
+        
+        .existing {
+            border-left: 3px solid #45818E;
+            padding-left: 0.5rem;
+        }
+        
+        .new {
+            border-left: 3px solid #D4AF37;
+            padding-left: 0.5rem;
+        }
+        
+        .note {
+            font-size: 0.9rem;
+            color: #666;
+            font-style: italic;
+            margin-top: 2rem;
+            padding: 1rem;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .legend {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            margin-bottom: 2rem;
+            font-size: 0.9rem;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .legend-color {
+            width: 1rem;
+            height: 1rem;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <div class="sitemap">
+        <h1>Rachel Lee Advocacy - Site Structure v2</h1>
+        
+        <div class="legend">
+            <div class="legend-item">
+                <div class="legend-color" style="background: #45818E;"></div>
+                <span>Existing Content</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background: #D4AF37;"></div>
+                <span>New Content</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background: #1B365D;"></div>
+                <span>Interactive Elements</span>
+            </div>
+        </div>
+        
+        <div class="site-structure">
+            <!-- Home Section -->
+            <div class="section">
+                <h2>Home</h2>
+                <h3>Hero Section</h3>
+                <ul>
+                    <li class="existing">Professional Photo/Video
+                        <div class="component">- Dynamic header image</div>
+                        <div class="audio">- Welcome message</div>
+                    </li>
+                    <li class="new">Value Proposition
+                        <div class="component">- Clear advocacy focus</div>
+                        <div class="component">- Primary CTA</div>
+                    </li>
+                </ul>
+                
+                <h3>Services Overview</h3>
+                <ul>
+                    <li class="existing">Healthcare Navigation
+                        <div class="subsection">
+                            <ul>
+                                <li>System guidance</li>
+                                <li>Provider communication</li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="existing">Advocacy Services
+                        <div class="subsection">
+                            <ul>
+                                <li>Individual support</li>
+                                <li>Family advocacy</li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+                
+                <h3>Featured Content</h3>
+                <ul>
+                    <li class="existing">Success Stories
+                        <div class="component">- Client testimonials</div>
+                        <div class="audio">- Story narration</div>
+                    </li>
+                    <li class="new" class="interactive">Quick Start Guide
+                        <div class="component">- Step-by-step process</div>
+                        <div class="component">- Action items</div>
+                    </li>
+                </ul>
+            </div>
+            
+            <!-- Services Section -->
+            <div class="section">
+                <h2>Services</h2>
+                <h3>Healthcare Navigation</h3>
+                <ul>
+                    <li class="existing">System Guidance
+                        <div class="subsection">
+                            <ul>
+                                <li>Provider coordination</li>
+                                <li>Appointment management</li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="new" class="interactive">Navigation Tools
+                        <div class="component">- Process flowcharts</div>
+                        <div class="component">- Checklists</div>
+                    </li>
+                </ul>
+                
+                <h3>Advocacy Support</h3>
+                <ul>
+                    <li class="existing">Individual Advocacy
+                        <div class="subsection">
+                            <ul>
+                                <li>Personal support</li>
+                                <li>System navigation</li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="existing">Family Support
+                        <div class="component">- Group sessions</div>
+                        <div class="component">- Resource access</div>
+                    </li>
+                </ul>
+                
+                <h3>Educational Programs</h3>
+                <ul>
+                    <li class="existing">Workshops
+                        <div class="subsection">
+                            <ul>
+                                <li>System literacy</li>
+                                <li>Rights education</li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="new">Online Resources
+                        <div class="component">- Video library</div>
+                        <div class="audio">- Guided tutorials</div>
+                    </li>
+                </ul>
+            </div>
+            
+            <!-- Conditions Section -->
+            <div class="section">
+                <h2>Conditions</h2>
+                <h3>Interactive Navigator</h3>
+                <ul>
+                    <li class="new" class="interactive">Condition Pathfinder
+                        <div class="component">- Interactive condition explorer</div>
+                        <div class="component">- Visual decision tree</div>
+                        <div class="audio">- Guided navigation</div>
+                        <div class="subsection">
+                            <ul>
+                                <li>Personalized recommendations</li>
+                                <li>Resource matching</li>
+                                <li>Progress tracking</li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="new" class="interactive">Care Journey Map
+                        <div class="component">- Visual timeline creator</div>
+                        <div class="component">- Milestone tracking</div>
+                        <div class="audio">- Journey guidance</div>
+                    </li>
+                </ul>
+
+                <h3>Condition Categories</h3>
+                <ul>
+                    <li class="existing">Chronic Conditions
+                        <div class="subsection">
+                            <ul>
+                                <li>Autoimmune Support</li>
+                                <li>Pain Management Resources</li>
+                                <li>Long-term Care Planning</li>
+                            </ul>
+                        </div>
+                        <div class="component">- Interactive resource filters</div>
+                        <div class="audio">- Condition-specific guidance</div>
+                    </li>
+                    <li class="existing">Complex Cases
+                        <div class="subsection">
+                            <ul>
+                                <li>Multi-condition Management</li>
+                                <li>Rare Disease Resources</li>
+                                <li>Specialized Care Networks</li>
+                            </ul>
+                        </div>
+                        <div class="component">- Care coordination tools</div>
+                        <div class="audio">- Expert navigation tips</div>
+                    </li>
+                </ul>
+
+                <h3>Support Tools</h3>
+                <ul>
+                    <li class="new" class="interactive">Resource Compass
+                        <div class="component">- Dynamic resource finder</div>
+                        <div class="component">- Provider network maps</div>
+                        <div class="audio">- Resource explanations</div>
+                        <div class="subsection">
+                            <ul>
+                                <li>Local support groups</li>
+                                <li>Specialist directories</li>
+                                <li>Community resources</li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="existing">Care Management Hub
+                        <div class="component">- Document organizer</div>
+                        <div class="component">- Appointment tracker</div>
+                        <div class="subsection">
+                            <ul>
+                                <li>Treatment logs</li>
+                                <li>Progress notes</li>
+                                <li>Care team contacts</li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+
+                <h3>Learning Center</h3>
+                <ul>
+                    <li class="new" class="interactive">Knowledge Navigator
+                        <div class="component">- Interactive learning modules</div>
+                        <div class="component">- Progress tracking</div>
+                        <div class="audio">- Audio explanations</div>
+                    </li>
+                    <li class="existing">Success Stories
+                        <div class="component">- Video testimonials</div>
+                        <div class="component">- Written experiences</div>
+                        <div class="audio">- Narrative journeys</div>
+                    </li>
+                </ul>
+            </div>
+            
+            <!-- Resources Section -->
+            <div class="section">
+                <h2>Resources</h2>
+                <h3>Healthcare Tools</h3>
+                <ul>
+                    <li class="existing">Document Templates
+                        <div class="component">- Forms library</div>
+                        <div class="component">- Letter templates</div>
+                    </li>
+                    <li class="new" class="interactive">System Navigator
+                        <div class="component">- Interactive guide</div>
+                        <div class="audio">- Process explanations</div>
+                    </li>
+                </ul>
+                
+                <h3>Educational Materials</h3>
+                <ul>
+                    <li class="existing">Guides & Tutorials
+                        <div class="subsection">
+                            <ul>
+                                <li>Basic rights</li>
+                                <li>System navigation</li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="new">Knowledge Base
+                        <div class="component">- Searchable resources</div>
+                        <div class="component">- FAQ system</div>
+                    </li>
+                </ul>
+            </div>
+            
+            <!-- Community Section -->
+            <div class="section">
+                <h2>Community</h2>
+                <h3>Support Network</h3>
+                <ul>
+                    <li class="existing">Facebook Group
+                        <div class="component">- Community discussions</div>
+                        <div class="component">- Resource sharing</div>
+                    </li>
+                    <li class="existing">Support Meetings
+                        <div class="component">- Monthly sessions</div>
+                        <div class="component">- Topic discussions</div>
+                    </li>
+                </ul>
+                
+                <h3>Success Stories</h3>
+                <ul>
+                    <li class="existing">Client Testimonials
+                        <div class="component">- Written stories</div>
+                        <div class="audio">- Audio testimonials</div>
+                    </li>
+                    <li class="new">Journey Maps
+                        <div class="component">- Visual timelines</div>
+                        <div class="component">- Progress markers</div>
+                    </li>
+                </ul>
+            </div>
+            
+            <!-- About Section -->
+            <div class="section">
+                <h2>About</h2>
+                <h3>Rachel's Story</h3>
+                <ul>
+                    <li class="existing">Background
+                        <div class="component">- Professional journey</div>
+                        <div class="audio">- Personal narrative</div>
+                    </li>
+                    <li class="existing">Mission & Values
+                        <div class="component">- Core principles</div>
+                        <div class="component">- Advocacy approach</div>
+                    </li>
+                </ul>
+                
+                <h3>Expertise</h3>
+                <ul>
+                    <li class="existing">Credentials
+                        <div class="subsection">
+                            <ul>
+                                <li>Certifications</li>
+                                <li>Training</li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="existing">Speaking & Media
+                        <div class="component">- Presentations</div>
+                        <div class="component">- Publications</div>
+                    </li>
+                </ul>
+            </div>
+            
+            <!-- Contact Section -->
+            <div class="section">
+                <h2>Contact</h2>
+                <h3>Get Started</h3>
+                <ul>
+                    <li class="existing">Consultation Booking
+                        <div class="component">- Calendar system</div>
+                        <div class="component">- Service selection</div>
+                    </li>
+                    <li class="new" class="interactive">Quick Assessment
+                        <div class="component">- Needs evaluation</div>
+                        <div class="component">- Service matching</div>
+                    </li>
+                </ul>
+                
+                <h3>Support</h3>
+                <ul>
+                    <li class="existing">Contact Methods
+                        <div class="subsection">
+                            <ul>
+                                <li>Email</li>
+                                <li>Phone</li>
+                                <li>Form</li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="new">Emergency Resources
+                        <div class="component">- Quick contacts</div>
+                        <div class="component">- Resource links</div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        
+        <p class="note">* This sitemap reflects both existing content (blue border) and planned new content (gold border) for the Rachel Lee Advocacy website. Interactive elements are highlighted, and audio integration points are marked in teal. All content maintains clear separation from medical advice and focuses on advocacy and support services.</p>
+    </div>
+</body>
+</html> 
