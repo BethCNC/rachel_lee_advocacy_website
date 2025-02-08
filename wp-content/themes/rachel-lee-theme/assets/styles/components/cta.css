@@ -1,0 +1,106 @@
+.cta-section {
+    padding: var(--spacing-16) 0;
+    background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
+    color: var(--color-text-inverse);
+    position: relative;
+    overflow: hidden;
+}
+
+.cta-container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 var(--spacing-4);
+    position: relative;
+    z-index: 1;
+}
+
+.cta-content {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.cta-title {
+    font-family: var(--font-family-new-spirit);
+    font-size: 3rem;
+    margin-bottom: var(--spacing-6);
+}
+
+.cta-description {
+    font-size: 1.25rem;
+    margin-bottom: var(--spacing-8);
+    opacity: 0.9;
+}
+
+.cta-buttons {
+    display: flex;
+    gap: var(--spacing-4);
+    justify-content: center;
+}
+
+.cta-button-primary {
+    background: var(--color-text-inverse);
+    color: var(--color-primary);
+    padding: 1rem 2rem;
+    border-radius: var(--radius-base);
+    text-decoration: none;
+    font-weight: 600;
+    transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.cta-button-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.cta-button-secondary {
+    background: transparent;
+    color: var(--color-text-inverse);
+    padding: 1rem 2rem;
+    border-radius: var(--radius-base);
+    text-decoration: none;
+    font-weight: 600;
+    border: 2px solid var(--color-text-inverse);
+    transition: background var(--transition-fast);
+}
+
+.cta-button-secondary:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* Background Elements */
+.cta-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0.1;
+    background-image: radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+                      radial-gradient(circle at 80% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .cta-section {
+        padding: var(--spacing-12) 0;
+    }
+
+    .cta-title {
+        font-size: 2rem;
+    }
+
+    .cta-description {
+        font-size: 1.125rem;
+    }
+
+    .cta-buttons {
+        flex-direction: column;
+    }
+
+    .cta-button-primary,
+    .cta-button-secondary {
+        width: 100%;
+        text-align: center;
+    }
+} 

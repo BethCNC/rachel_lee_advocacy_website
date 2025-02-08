@@ -1,17 +1,97 @@
 /*
 Theme Name: Rachel Lee Patient Advocacy
-Theme URI: https://github.com/BethCNC/rachel_lee_patient_advocacy_website
-Description: A custom child theme for Rachel Lee's Patient Advocacy website, built on Divi
+Theme URI: https://rachel-lee.com
+Description: Custom theme for Rachel Lee Patient Advocacy
 Author: Beth Cartrette
-Author URI: https://github.com/BethCNC
+Version: 1.0
 Template: Divi
-Version: 1.0.0
-License: Private
-Text Domain: rachel-lee-theme
 */
 
-/* Import parent theme styles */
+/* Import base styles */
 @import url("../Divi/style.css");
+
+/* CSS Variables */
+:root {
+    /* Colors */
+    --color-primary: #2D1F3F;
+    --color-primary-light: #4A3566;
+    --color-primary-dark: #1A1226;
+    
+    --color-background: #FFFFFF;
+    --color-background-alt: #F8F9FA;
+    
+    --color-text-primary: #2C3E50;
+    --color-text-secondary: #6C7A89;
+    --color-text-inverse: #FFFFFF;
+    
+    /* Typography */
+    --font-family-new-spirit: "New Spirit", serif;
+    --font-family-satoshi: "Satoshi-Variable", sans-serif;
+    
+    /* Spacing */
+    --spacing-1: 0.25rem;
+    --spacing-2: 0.5rem;
+    --spacing-4: 1rem;
+    --spacing-6: 1.5rem;
+    --spacing-8: 2rem;
+    --spacing-10: 2.5rem;
+    --spacing-12: 3rem;
+    --spacing-16: 4rem;
+    
+    /* Layout */
+    --max-width: 1200px;
+    --radius-base: 8px;
+    --radius-lg: 12px;
+    
+    /* Transitions */
+    --transition-fast: 0.2s ease;
+    --transition-base: 0.3s ease;
+}
+
+/* Import component styles */
+@import url("assets/styles/components/navigation.css");
+@import url("assets/styles/components/hero-animation.css");
+@import url("assets/styles/components/services-grid.css");
+@import url("assets/styles/components/testimonials.css");
+@import url("assets/styles/components/cta.css");
+
+/* Base styles */
+body {
+    font-family: var(--font-family-satoshi);
+    color: var(--color-text-primary);
+    line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-family-new-spirit);
+    color: var(--color-text-primary);
+    line-height: 1.2;
+}
+
+a {
+    color: var(--color-primary);
+    text-decoration: none;
+    transition: color var(--transition-fast);
+}
+
+a:hover {
+    color: var(--color-primary-dark);
+}
+
+/* Utility classes */
+.container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 var(--spacing-4);
+}
+
+.text-center {
+    text-align: center;
+}
+
+.hidden {
+    display: none !important;
+}
 
 /* Import design tokens */
 @import url("assets/styles/tokens/design-tokens.css");

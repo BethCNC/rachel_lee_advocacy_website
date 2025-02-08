@@ -1,0 +1,121 @@
+.testimonials-section {
+    padding: var(--spacing-12) 0;
+    background: var(--color-background);
+}
+
+.testimonials-container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 var(--spacing-4);
+}
+
+.testimonials-header {
+    text-align: center;
+    margin-bottom: var(--spacing-10);
+}
+
+.testimonials-title {
+    font-family: var(--font-family-new-spirit);
+    font-size: 2.5rem;
+    color: var(--color-text-primary);
+    margin-bottom: var(--spacing-4);
+}
+
+.testimonials-subtitle {
+    font-size: 1.125rem;
+    color: var(--color-text-secondary);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-6);
+}
+
+.testimonial-card {
+    background: var(--color-background-alt);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-6);
+    position: relative;
+}
+
+.testimonial-quote {
+    font-size: 1.125rem;
+    color: var(--color-text-primary);
+    margin-bottom: var(--spacing-4);
+    line-height: 1.6;
+    font-style: italic;
+}
+
+.testimonial-quote::before {
+    content: '"';
+    font-size: 4rem;
+    color: var(--color-primary);
+    opacity: 0.2;
+    position: absolute;
+    top: var(--spacing-4);
+    left: var(--spacing-4);
+    line-height: 1;
+}
+
+.testimonial-author {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-4);
+}
+
+.testimonial-avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.testimonial-info {
+    flex: 1;
+}
+
+.testimonial-name {
+    font-weight: 600;
+    color: var(--color-text-primary);
+    margin-bottom: var(--spacing-1);
+}
+
+.testimonial-role {
+    font-size: 0.875rem;
+    color: var(--color-text-secondary);
+}
+
+/* Testimonial Navigation */
+.testimonial-nav {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-4);
+    margin-top: var(--spacing-8);
+}
+
+.testimonial-nav-button {
+    background: none;
+    border: none;
+    color: var(--color-text-secondary);
+    cursor: pointer;
+    padding: var(--spacing-2);
+    transition: color var(--transition-fast);
+}
+
+.testimonial-nav-button:hover {
+    color: var(--color-primary);
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .testimonials-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .testimonials-title {
+        font-size: 2rem;
+    }
+} 
