@@ -130,26 +130,9 @@ p {
     position: relative;
     width: 100vw;
     height: 100vh;
-    min-height: 800px;
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background: var(--background);
-}
-
-.hero .container {
-    position: relative;
-    height: 100%;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
-    align-items: center;
-    z-index: 2;
-}
-
-.hero-content {
-    max-width: 640px;
-    padding: 0 2rem;
 }
 
 .hero-background {
@@ -161,7 +144,56 @@ p {
     z-index: 1;
 }
 
-.hero-background video {
+.hero-image {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.hero .container {
+    position: relative;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    z-index: 2;
+}
+
+.hero-content {
+    max-width: 100%;
+    width: 100%;
+}
+
+.hero-title {
+    font-family: "new-spirit-condensed", serif;
+    font-weight: 600;
+    font-style: normal;
+    font-size: clamp(4rem, 10vw, 8rem);
+    line-height: 0.9;
+    color: rgba(var(--Color-Neutral-100));
+    opacity: 0.9;
+    text-shadow: 2px 2px 4px rgba(var(--Color-Neutral-900), 0.2);
+    letter-spacing: -0.02em;
+}
+
+/* Scrolling Content Section */
+.scrolling-content {
+    position: relative;
+    background: transparent;
+}
+
+.video-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.video-background video {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -173,8 +205,36 @@ p {
     object-fit: cover;
 }
 
+.text-block {
+    position: relative;
+    z-index: 2;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 4rem 0;
+}
+
+.text-block .container {
+    color: rgba(var(--Color-Neutral-100));
+    text-shadow: 2px 2px 4px rgba(var(--Color-Neutral-900), 0.2);
+}
+
+.text-block h2 {
+    font-family: "new-spirit-condensed", serif;
+    font-size: clamp(3rem, 8vw, 6rem);
+    font-weight: 600;
+    line-height: 1;
+    margin-bottom: 1rem;
+}
+
+.text-block p {
+    font-size: clamp(1.25rem, 2vw, 1.5rem);
+    max-width: 600px;
+    opacity: 0.9;
+}
+
 /* Optional overlay for better text readability */
-.hero-background::after {
+.video-background::after {
     content: '';
     position: absolute;
     top: 0;
@@ -183,24 +243,6 @@ p {
     height: 100%;
     background: rgba(var(--Color-Neutral-900), 0.2);
     z-index: 1;
-}
-
-.hero-image {
-    position: relative;
-    z-index: 2;
-}
-
-.hero-image img {
-    width: 100%;
-    height: auto;
-    border-radius: 20px;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-}
-
-.cta-group {
-    display: flex;
-    gap: 1rem;
-    margin-top: 2rem;
 }
 
 /* Services Section */
