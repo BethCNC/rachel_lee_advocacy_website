@@ -1,0 +1,10 @@
+/* Base styles */
+@import url('/public/fonts/font_satoshi/css/satoshi.css');
+@import url('../base/semantic-tokens.css');
+
+/* Component styles */
+@import url('../components/services-grid.css');
+@import url('../components/hero-animation.css');
+@import url('../components/navigation.css');
+@import url('../components/cta.css');
+@import url('../components/testimonials.css');

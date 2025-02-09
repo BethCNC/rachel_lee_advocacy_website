@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rachel Lee Patient Advocacy - Your Healthcare Navigator</title>
+    <!-- Adobe Fonts -->
+    <link rel="stylesheet" href="https://use.typekit.net/nek5vij.css">
+    <!-- Local Satoshi Font -->
+    <link rel="stylesheet" href="/public/fonts/font_satoshi/css/satoshi.css">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Animation Libraries -->
+    <script src="https://unpkg.com/@barba/core"></script>
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.27/bundled/lenis.min.js"></script> 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <!-- Main Styles -->
+    <link rel="stylesheet" href="/src/styles/base/main.css">
+</head>
+<body data-barba="wrapper">
+    <div data-barba="container" data-barba-namespace="home">
+        <!-- Navigation -->
+        <nav class="main-nav reveal">
+            <div class="container">
+                <div class="logo">Rachel Lee Patient Advocacy</div>
+                <!-- Desktop Navigation -->
+                <div class="nav-links">
+                    <a href="services.html">Services</a>
+                    <a href="conditions.html">Conditions</a>
+                    <a href="about.html">About</a>
+                    <a href="resources.html">Resources</a>
+                    <a href="contact.html" class="cta-button">Get Started</a>
+                </div>
+                <!-- Mobile Menu Toggle -->
+                <button class="menu-toggle">
+                    <i class="mobile-nav-icon" data-lucide="menu"></i>
+                </button>
+                <!-- Mobile Navigation -->
+                <div class="mobile-nav">
+                    <a href="services.html" class="mobile-nav-link">
+                        <i class="mobile-nav-icon" data-lucide="layout-grid"></i>
+                        Services
+                    </a>
+                    <a href="conditions.html" class="mobile-nav-link">
+                        <i class="mobile-nav-icon" data-lucide="stethoscope"></i>
+                        Conditions
+                    </a>
+                    <a href="about.html" class="mobile-nav-link">
+                        <i class="mobile-nav-icon" data-lucide="user"></i>
+                        About
+                    </a>
+                    <a href="resources.html" class="mobile-nav-link">
+                        <i class="mobile-nav-icon" data-lucide="book-open"></i>
+                        Resources
+                    </a>
+                    <a href="contact.html" class="mobile-nav-link">
+                        <i class="mobile-nav-icon" data-lucide="arrow-right"></i>
+                        Get Started
+                    </a>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-background">
+                <!-- We'll need a still image here - temporarily using a placeholder -->
+                <div class="hero-image">
+                    <!-- Image will be added once selected -->
+                </div>
+            </div>
+            <div class="container">
+                <div class="hero-content">
+                    <h1 class="hero-title">
+                        <span class="hero-title-top">Rachel Lee</span>
+                        <span class="hero-title-bottom">Patient Advocacy</span>
+                    </h1>
+                </div>
+            </div>
+        </section>
+
+        <!-- Scrolling Content with Video Background -->
+        <section class="scrolling-content">
+            <div class="video-background">
+                <video 
+                    id="background-video"
+                    autoplay 
+                    loop="loop"
+                    muted="muted"
+                    playsinline 
+                    preload="auto"
+                    defaultMuted>
+                    <source src="/public/videos/hero-background.webm" type="video/webm">
+                    <source src="/public/videos/hero-background.mp4" type="video/mp4">
+                </video>
+            </div>
+            
+            <!-- Text Block 1 -->
+            <div class="text-block">
+                <div class="container">
+                    <h2>Take a Deep Breath</h2>
+                    <p>You've found a safe harbor in your healthcare journey. You're not alone anymore.</p>
+                </div>
+            </div>
+
+            <!-- Text Block 2 -->
+            <div class="text-block">
+                <div class="container">
+                    <h2>Your Story Matters Here</h2>
+                    <p>We understand the struggle of being unheard and misunderstood. Your experiences are valid, and your health journey deserves expert guidance.</p>
+                </div>
+            </div>
+
+            <!-- Text Block 3 -->
+            <div class="text-block">
+                <div class="container">
+                    <h2>Let's Navigate Together</h2>
+                    <p>From complex diagnoses to finding the right care team, you now have an experienced advocate by your side every step of the way.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Core Values Section -->
+        <section class="core-values">
+            <div class="container">
+                <div class="values-grid">
+                    <div class="value-card reveal">
+                        <div class="value-icon">
+                            <i data-lucide="heart-handshake"></i>
+                        </div>
+                        <h3>Personalized Advocacy</h3>
+                        <p>Every healthcare journey is unique. We create tailored advocacy plans for your specific needs.</p>
+                    </div>
+                    <div class="value-card reveal reveal-delay-1">
+                        <div class="value-icon">
+                            <i data-lucide="map"></i>
+                        </div>
+                        <h3>Expert Navigation</h3>
+                        <p>Navigate complex healthcare systems with confidence using our years of experience.</p>
+                    </div>
+                    <div class="value-card reveal reveal-delay-2">
+                        <div class="value-icon">
+                            <i data-lucide="shield-check"></i>
+                        </div>
+                        <h3>Unwavering Support</h3>
+                        <p>We stand by our commitment to your care with dedicated, present support.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Grid -->
+        <section class="services-grid-section">
+            <div class="container">
+                <h2 class="section-title hero-split-text">We're Here For You</h2>
+                <div class="services-expertise-grid">
+                    <div class="expertise-item reveal">
+                        <i data-lucide="brain"></i>
+                        <span>Rare Conditions</span>
+                    </div>
+                    <div class="expertise-item reveal">
+                        <i data-lucide="heart-pulse"></i>
+                        <span>Chronic Illness</span>
+                    </div>
+                    <div class="expertise-item reveal">
+                        <i data-lucide="file-search"></i>
+                        <span>Diagnosis Support</span>
+                    </div>
+                    <div class="expertise-item reveal">
+                        <i data-lucide="clipboard-list"></i>
+                        <span>Care Coordination</span>
+                    </div>
+                    <div class="expertise-item reveal">
+                        <i data-lucide="building-2"></i>
+                        <span>Hospital Navigation</span>
+                    </div>
+                    <div class="expertise-item reveal">
+                        <i data-lucide="scroll-text"></i>
+                        <span>Insurance Appeals</span>
+                    </div>
+                    <div class="expertise-item reveal">
+                        <i data-lucide="users"></i>
+                        <span>Family Support</span>
+                    </div>
+                    <div class="expertise-item reveal">
+                        <i data-lucide="calendar-check"></i>
+                        <span>Appointment Management</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Enhanced Testimonials -->
+        <section class="testimonials enhanced">
+            <div class="container">
+                <h2 class="section-title hero-split-text">Client Stories</h2>
+                <div class="testimonials-enhanced-grid">
+                    <div class="testimonial-card reveal">
+                        <div class="testimonial-rating">
+                            <i data-lucide="star"></i>
+                            <i data-lucide="star"></i>
+                            <i data-lucide="star"></i>
+                            <i data-lucide="star"></i>
+                            <i data-lucide="star"></i>
+                        </div>
+                        <p>"Rachel's guidance was invaluable during my cancer treatment journey. She helped me understand my options and made sure I received the best possible care."</p>
+                        <div class="testimonial-author">
+                            <cite>Sarah M.</cite>
+                            <span>Cancer Treatment Journey</span>
+                        </div>
+                    </div>
+                    <div class="testimonial-card reveal reveal-delay-1">
+                        <div class="testimonial-rating">
+                            <i data-lucide="star"></i>
+                            <i data-lucide="star"></i>
+                            <i data-lucide="star"></i>
+                            <i data-lucide="star"></i>
+                            <i data-lucide="star"></i>
+                        </div>
+                        <p>"Having Rachel as our advocate while navigating elderly care for my mother made all the difference. She knows the system inside and out."</p>
+                        <div class="testimonial-author">
+                            <cite>Michael R.</cite>
+                            <span>Elder Care Support</span>
+                        </div>
+                    </div>
+                    <div class="testimonial-card reveal reveal-delay-2">
+                        <div class="testimonial-rating">
+                            <i data-lucide="star"></i>
+                            <i data-lucide="star"></i>
+                            <i data-lucide="star"></i>
+                            <i data-lucide="star"></i>
+                            <i data-lucide="star"></i>
+                        </div>
+                        <p>"When doctors couldn't figure out what was wrong, Rachel helped us find the right specialists and get the answers we needed. She was our light in the darkness."</p>
+                        <div class="testimonial-author">
+                            <cite>Emily K.</cite>
+                            <span>Diagnosis Journey</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action -->
+        <section class="cta-section">
+            <div class="container">
+                <h2 class="hero-split-text">Ready to Take Control of Your Healthcare Journey?</h2>
+                <p class="reveal">Schedule a consultation to discuss how we can help you navigate your healthcare needs.</p>
+                <a href="consultation.html" class="primary-button hover-scale reveal reveal-delay-1">Schedule Your Consultation</a>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+
+        // Initialize Lenis for smooth scrolling
+        const lenis = new Lenis({
+            duration: 1.2,
+            easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+            direction: 'vertical',
+            smooth: true,
+            smoothTouch: false,
+            touchMultiplier: 2
+        });
+
+        function raf(time) {
+            lenis.raf(time);
+            requestAnimationFrame(raf);
+        }
+        requestAnimationFrame(raf);
+
+        // Initialize GSAP ScrollTrigger
+        gsap.registerPlugin(ScrollTrigger);
+
+        // Initialize Barba.js for page transitions
+        barba.init({
+            transitions: [{
+                name: 'opacity-transition',
+                leave(data) {
+                    return gsap.to(data.current.container, {
+                        opacity: 0,
+                        duration: 0.5
+                    });
+                },
+                enter(data) {
+                    return gsap.from(data.next.container, {
+                        opacity: 0,
+                        duration: 0.5
+                    });
+                }
+            }]
+        });
+
+        // Setup animations
+        function setupAnimations() {
+            // Reveal elements on scroll
+            const reveals = document.querySelectorAll('.reveal');
+            reveals.forEach((el) => {
+                gsap.from(el, {
+                    scrollTrigger: {
+                        trigger: el,
+                        start: "top bottom-=100",
+                        end: "bottom top",
+                        toggleClass: "active",
+                        once: true
+                    }
+                });
+            });
+
+            // Split text animations
+            const splitTexts = document.querySelectorAll('.hero-split-text');
+            splitTexts.forEach((text) => {
+                const content = text.innerHTML;
+                text.innerHTML = `<span>${content}</span>`;
+                
+                gsap.to(text, {
+                    scrollTrigger: {
+                        trigger: text,
+                        start: "top bottom-=100",
+                        end: "bottom top",
+                        toggleClass: "active",
+                        once: true
+                    }
+                });
+            });
+        }
+
+        // Setup animations on page load and after Barba transitions
+        document.addEventListener('DOMContentLoaded', setupAnimations);
+        barba.hooks.after(() => {
+            setupAnimations();
+        });
+
+        // Update ScrollTrigger on Lenis scroll
+        lenis.on('scroll', ScrollTrigger.update);
+
+        // Update smooth scroll on window resize
+        window.addEventListener('resize', () => {
+            lenis.resize();
+        });
+
+        // Mobile menu functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuToggle = document.querySelector('.menu-toggle');
+            const mobileNav = document.querySelector('.mobile-nav');
+            const menuIcon = menuToggle.querySelector('.mobile-nav-icon');
+
+            menuToggle.addEventListener('click', function() {
+                mobileNav.classList.toggle('active');
+                const isOpen = mobileNav.classList.contains('active');
+                menuIcon.setAttribute('data-lucide', isOpen ? 'x' : 'menu');
+                lucide.createIcons();
+            });
+        });
+    </script>
+</body>
+</html> 

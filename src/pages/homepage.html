@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Wireframe for Rachel Lee Patient Advocacy Homepage">
+    <title>Rachel Lee Patient Advocacy - Homepage Wireframe</title>
+    <!-- Adobe Fonts -->
+    <link rel="stylesheet" href="https://use.typekit.net/nek5vij.css">
+    <!-- Local Satoshi Font -->
+    <link rel="stylesheet" href="/font/font_satoshi/css/satoshi.css">
+    <style>
+        /* Base styles */
+        :root {
+            /* Colors */
+            --primary-color: #2D1F3F;
+            --primary-light: #4A3566;
+            --primary-dark: #1A1226;
+            --text-light: #ffffff;
+            
+            /* Spacing */
+            --spacing-4: 1rem;
+            --spacing-8: 2rem;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Satoshi-Variable", sans-serif;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-4);
+        }
+
+        .wireframe-label {
+            background: #f0f0f0;
+            padding: var(--spacing-4);
+            margin: var(--spacing-4) 0;
+            border: 1px dashed #666;
+            border-radius: 4px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--spacing-4);
+        }
+
+        /* Component styles */
+        header {
+            background: var(--primary-color);
+            color: var(--text-light);
+            padding: var(--spacing-4);
+        }
+
+        .hero {
+            background: var(--primary-light);
+            padding: var(--spacing-8);
+            color: var(--text-light);
+        }
+
+        .section {
+            padding: var(--spacing-8) 0;
+        }
+
+        .cta {
+            background: var(--primary-dark);
+            color: var(--text-light);
+            padding: var(--spacing-8);
+            text-align: center;
+        }
+
+        footer {
+            background: var(--primary-color);
+            color: var(--text-light);
+            padding: var(--spacing-8);
+            margin-top: var(--spacing-8);
+        }
+    </style>
+</head>
+<body>
+    <!-- Accessibility Controls -->
+    <div class="accessibility-controls">
+        <div class="wireframe-label">Accessibility Controls (High Contrast, Text Size, Screen Reader)</div>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="wireframe-label">Logo & Main Navigation</div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="wireframe-label">Breathing Animation Hero</div>
+            <div class="grid">
+                <div class="wireframe-label">Animated Circle</div>
+                <div class="wireframe-label">
+                    Animation States:
+                    - "Breathe In" (4s)
+                    - "Hold" (2s)
+                    - "Breathe Out" (4s)
+                    - "Rest" (2s)
+                </div>
+            </div>
+            <div class="wireframe-label">Hero Content</div>
+            <div class="grid">
+                <div class="wireframe-label">H1: You Don't Have to Navigate Healthcare Alone</div>
+                <div class="wireframe-label">Subtext: Let us be your guide and advocate</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="container">
+        <!-- Services Overview -->
+        <section class="section">
+            <div class="wireframe-label">Services Overview</div>
+            <div class="grid">
+                <div class="wireframe-label">Service 1</div>
+                <div class="wireframe-label">Service 2</div>
+                <div class="wireframe-label">Service 3</div>
+            </div>
+        </section>
+
+        <!-- Interactive Navigator -->
+        <section class="section">
+            <div class="wireframe-label">Interactive Healthcare System Navigator</div>
+            <div class="wireframe-label">Step-by-Step Guide Interface</div>
+        </section>
+
+        <!-- Success Stories -->
+        <section class="section">
+            <div class="wireframe-label">Success Stories Carousel</div>
+            <div class="grid">
+                <div class="wireframe-label">Story 1</div>
+                <div class="wireframe-label">Story 2</div>
+                <div class="wireframe-label">Story 3</div>
+            </div>
+        </section>
+
+        <!-- Call to Action -->
+        <section class="cta">
+            <div class="wireframe-label">Primary Call to Action</div>
+            <div class="wireframe-label">Contact/Consultation Button</div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="grid">
+                <div class="wireframe-label">Contact Info</div>
+                <div class="wireframe-label">Quick Links</div>
+                <div class="wireframe-label">Social Media</div>
+                <div class="wireframe-label">Newsletter Signup</div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html> 
