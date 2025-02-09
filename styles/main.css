@@ -169,12 +169,32 @@ p {
     font-family: "new-spirit-condensed", serif;
     font-weight: 600;
     font-style: normal;
-    font-size: clamp(4rem, 10vw, 8rem);
     line-height: 0.9;
-    color: rgba(var(--Color-Neutral-100));
-    opacity: 0.9;
-    text-shadow: 2px 2px 4px rgba(var(--Color-Neutral-900), 0.2);
+    color: rgba(110, 30, 59, 0.85);
+    mix-blend-mode: overlay;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.15),
+                 0 4px 16px rgba(0, 0, 0, 0.1);
     letter-spacing: -0.02em;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    backdrop-filter: blur(1px);
+    -webkit-backdrop-filter: blur(1px);
+}
+
+.hero-title-top,
+.hero-title-bottom {
+    display: block;
+    font-size: clamp(4rem, 10vw, 8rem);
+    background: rgba(110, 30, 59, 0.95);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    filter: brightness(1.1);
+}
+
+.hero-title-bottom {
+    font-size: clamp(4rem, 10vw, 8rem);
 }
 
 /* Scrolling Content Section */
@@ -268,6 +288,20 @@ p {
     width: 64px;
     height: 64px;
     margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.service-icon i {
+    width: 100%;
+    height: 100%;
+    color: rgba(var(--Color-Main-Mulberry-500));
+    stroke-width: 1.5;
+}
+
+.service-card:hover .service-icon i {
+    color: rgba(var(--Color-Main-Mulberry-600));
 }
 
 /* About Preview Section */
@@ -331,7 +365,50 @@ p {
     max-width: 800px;
 }
 
-/* Responsive Design */
+/* Mobile Navigation */
+.mobile-nav-icon {
+    width: 24px;
+    height: 24px;
+    color: rgba(var(--Color-Main-Mulberry-500));
+    margin-right: 0.5rem;
+}
+
+.mobile-nav-link {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    border-bottom: 1px solid rgba(var(--Color-Neutral-200));
+}
+
+.mobile-nav-link:last-child {
+    border-bottom: none;
+}
+
+.mobile-nav {
+    display: none;
+    position: fixed;
+    top: 80px;
+    left: 0;
+    width: 100%;
+    background: rgba(var(--Surface-page), 0.98);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+}
+
+.menu-toggle .mobile-nav-icon {
+    color: rgba(var(--Color-Main-Mulberry-500));
+}
+
 @media (max-width: 768px) {
     h1 {
         font-size: 2.5rem;
@@ -348,7 +425,7 @@ p {
     .hero .container {
         grid-template-columns: 1fr;
         text-align: center;
-        padding-top: 100px; /* Account for fixed header */
+        padding-top: 100px;
     }
 
     .hero-content {
@@ -367,6 +444,14 @@ p {
     }
 
     .nav-links {
-        display: none; /* We'll need to implement a mobile menu */
+        display: none;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .mobile-nav.active {
+        display: block;
     }
 } 

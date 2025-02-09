@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="https://use.typekit.net/nek5vij.css">
     <!-- Local Satoshi Font -->
     <link rel="stylesheet" href="/font/font_satoshi/css/satoshi.css">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
     <!-- Animation Libraries -->
     <script src="https://unpkg.com/@barba/core"></script>
     <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.27/bundled/lenis.min.js"></script> 
@@ -82,11 +84,40 @@
         <nav class="main-nav reveal">
             <div class="container">
                 <div class="logo">Rachel Lee Patient Advocacy</div>
+                <!-- Desktop Navigation -->
                 <div class="nav-links">
                     <a href="/services">Services</a>
+                    <a href="/conditions">Conditions</a>
                     <a href="/about">About</a>
                     <a href="/resources">Resources</a>
                     <a href="/contact" class="cta-button">Get Started</a>
+                </div>
+                <!-- Mobile Menu Toggle -->
+                <button class="menu-toggle">
+                    <i class="mobile-nav-icon" data-lucide="menu"></i>
+                </button>
+                <!-- Mobile Navigation -->
+                <div class="mobile-nav">
+                    <a href="/services" class="mobile-nav-link">
+                        <i class="mobile-nav-icon" data-lucide="layout-grid"></i>
+                        Services
+                    </a>
+                    <a href="/conditions" class="mobile-nav-link">
+                        <i class="mobile-nav-icon" data-lucide="stethoscope"></i>
+                        Conditions
+                    </a>
+                    <a href="/about" class="mobile-nav-link">
+                        <i class="mobile-nav-icon" data-lucide="user"></i>
+                        About
+                    </a>
+                    <a href="/resources" class="mobile-nav-link">
+                        <i class="mobile-nav-icon" data-lucide="book-open"></i>
+                        Resources
+                    </a>
+                    <a href="/contact" class="mobile-nav-link">
+                        <i class="mobile-nav-icon" data-lucide="arrow-right"></i>
+                        Get Started
+                    </a>
                 </div>
             </div>
         </nav>
@@ -101,7 +132,10 @@
             </div>
             <div class="container">
                 <div class="hero-content">
-                    <h1 class="hero-title">The Pain Free Era</h1>
+                    <h1 class="hero-title">
+                        <span class="hero-title-top">Rachel Lee</span>
+                        <span class="hero-title-bottom">Patient Advocacy</span>
+                    </h1>
                 </div>
             </div>
         </section>
@@ -125,24 +159,24 @@
             <!-- Text Block 1 -->
             <div class="text-block">
                 <div class="container">
-                    <h2>Just Breathe</h2>
-                    <p>Your journey to better healthcare starts here</p>
+                    <h2>Take a Deep Breath</h2>
+                    <p>You've found a safe harbor in your healthcare journey. You're not alone anymore.</p>
                 </div>
             </div>
 
             <!-- Text Block 2 -->
             <div class="text-block">
                 <div class="container">
-                    <h2>You are here now</h2>
-                    <p>Taking the first step towards advocacy</p>
+                    <h2>Your Story Matters Here</h2>
+                    <p>We understand the struggle of being unheard and misunderstood. Your experiences are valid, and your health journey deserves expert guidance.</p>
                 </div>
             </div>
 
             <!-- Text Block 3 -->
             <div class="text-block">
                 <div class="container">
-                    <h2>I am here to help</h2>
-                    <p>Professional guidance through your healthcare journey</p>
+                    <h2>Let's Navigate Together</h2>
+                    <p>From complex diagnoses to finding the right care team, you now have an experienced advocate by your side every step of the way.</p>
                 </div>
             </div>
         </section>
@@ -154,21 +188,21 @@
                 <div class="services-grid">
                     <div class="service-card reveal">
                         <div class="service-icon hover-scale">
-                            <img src="/assets/icons/navigation.svg" alt="Navigation icon">
+                            <i data-lucide="compass"></i>
                         </div>
                         <h3>Healthcare Navigation</h3>
                         <p>Expert guidance through complex medical systems and decisions</p>
                     </div>
                     <div class="service-card reveal reveal-delay-1">
                         <div class="service-icon hover-scale">
-                            <img src="/assets/icons/advocacy.svg" alt="Advocacy icon">
+                            <i data-lucide="shield"></i>
                         </div>
                         <h3>Patient Advocacy</h3>
                         <p>Strong representation for your healthcare rights and needs</p>
                     </div>
                     <div class="service-card reveal reveal-delay-2">
                         <div class="service-icon hover-scale">
-                            <img src="/assets/icons/coordination.svg" alt="Coordination icon">
+                            <i data-lucide="network"></i>
                         </div>
                         <h3>Care Coordination</h3>
                         <p>Seamless coordination between healthcare providers and services</p>
@@ -219,6 +253,9 @@
     </div>
 
     <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+
         // Initialize Lenis for smooth scrolling
         const lenis = new Lenis({
             duration: 1.2,
@@ -333,6 +370,20 @@
             // Ensure looping works
             video.addEventListener('ended', function() {
                 video.play();
+            });
+        });
+
+        // Mobile menu functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuToggle = document.querySelector('.menu-toggle');
+            const mobileNav = document.querySelector('.mobile-nav');
+            const menuIcon = menuToggle.querySelector('.mobile-nav-icon');
+
+            menuToggle.addEventListener('click', function() {
+                mobileNav.classList.toggle('active');
+                const isOpen = mobileNav.classList.contains('active');
+                menuIcon.setAttribute('data-lucide', isOpen ? 'x' : 'menu');
+                lucide.createIcons();
             });
         });
     </script>
