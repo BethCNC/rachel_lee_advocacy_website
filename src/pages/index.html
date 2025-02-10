@@ -6,8 +6,10 @@
     <title>Rachel Lee Patient Advocacy - Your Healthcare Navigator</title>
     <!-- Adobe Fonts -->
     <link rel="stylesheet" href="https://use.typekit.net/nek5vij.css">
-    <!-- Local Satoshi Font -->
-    <link rel="stylesheet" href="/public/fonts/font_satoshi/css/satoshi.css">
+    <!-- Main Styles -->
+    <link rel="stylesheet" href="../styles/base/semantic-tokens.css">
+    <link rel="stylesheet" href="../styles/base/main.css">
+    <link rel="stylesheet" href="../styles/components/page-transitions.css">
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
     <!-- Animation Libraries -->
@@ -15,8 +17,6 @@
     <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.27/bundled/lenis.min.js"></script> 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-    <!-- Main Styles -->
-    <link rel="stylesheet" href="/src/styles/base/main.css">
 </head>
 <body data-barba="wrapper">
     <!-- Page Transition Overlay -->
@@ -68,9 +68,15 @@
         <!-- Hero Section -->
         <section class="hero">
             <div class="hero-background">
-                <!-- We'll need a still image here - temporarily using a placeholder -->
-                <div class="hero-image">
-                    <!-- Image will be added once selected -->
+                <div class="video-background">
+                    <video 
+                        autoplay 
+                        loop 
+                        muted 
+                        playsinline>
+                        <source src="../../../assets/videos/hero-background.webm" type="video/webm">
+                        <source src="../../../assets/videos/hero-background.mp4" type="video/mp4">
+                    </video>
                 </div>
             </div>
             <div class="container">
@@ -83,174 +89,31 @@
             </div>
         </section>
 
-        <!-- Scrolling Content with Video Background -->
+        <!-- Scrolling Content Section -->
         <section class="scrolling-content">
-            <div class="video-background">
-                <video 
-                    id="background-video"
-                    autoplay 
-                    loop="loop"
-                    muted="muted"
-                    playsinline 
-                    preload="auto"
-                    defaultMuted>
-                    <source src="/public/videos/hero-background.webm" type="video/webm">
-                    <source src="/public/videos/hero-background.mp4" type="video/mp4">
-                </video>
-            </div>
-            
             <!-- Text Block 1 -->
-            <div class="text-block">
+            <div class="text-block reveal">
                 <div class="container">
-                    <h2>Take a Deep Breath</h2>
-                    <p>You've found a safe harbor in your healthcare journey. You're not alone anymore.</p>
+                    <h2 class="hero-split-text">Begin Your Journey</h2>
+                    <p>In the maze of medical complexities, finding your way can feel overwhelming. But today, you've taken the first step toward clarity and confidence in your healthcare journey.</p>
                 </div>
             </div>
 
             <!-- Text Block 2 -->
-            <div class="text-block">
+            <div class="text-block reveal reveal-delay-1">
                 <div class="container">
-                    <h2>Your Story Matters Here</h2>
-                    <p>We understand the struggle of being unheard and misunderstood. Your experiences are valid, and your health journey deserves expert guidance.</p>
+                    <h2 class="hero-split-text">Your Voice Matters</h2>
+                    <p>Every symptom you've noticed, every concern you've had, every intuition about your health – they all deserve to be heard. Together, we'll transform your experiences into actionable insights for your medical team.</p>
                 </div>
             </div>
 
             <!-- Text Block 3 -->
-            <div class="text-block">
+            <div class="text-block reveal reveal-delay-2">
                 <div class="container">
-                    <h2>Let's Navigate Together</h2>
-                    <p>From complex diagnoses to finding the right care team, you now have an experienced advocate by your side every step of the way.</p>
+                    <h2 class="hero-split-text">Expert Navigation Ahead</h2>
+                    <p>From decoding complex medical terminology to coordinating with specialists, you now have a dedicated advocate who understands both the medical landscape and the human experience of navigating it.</p>
+                    <a href="contact.html" class="cta-button mt-4">Start Your Journey</a>
                 </div>
-            </div>
-        </section>
-
-        <!-- Core Values Section -->
-        <section class="core-values">
-            <div class="container">
-                <div class="values-grid">
-                    <div class="value-card reveal">
-                        <div class="value-icon">
-                            <i data-lucide="heart-handshake"></i>
-                        </div>
-                        <h3>Personalized Advocacy</h3>
-                        <p>Every healthcare journey is unique. We create tailored advocacy plans for your specific needs.</p>
-                    </div>
-                    <div class="value-card reveal reveal-delay-1">
-                        <div class="value-icon">
-                            <i data-lucide="map"></i>
-                        </div>
-                        <h3>Expert Navigation</h3>
-                        <p>Navigate complex healthcare systems with confidence using our years of experience.</p>
-                    </div>
-                    <div class="value-card reveal reveal-delay-2">
-                        <div class="value-icon">
-                            <i data-lucide="shield-check"></i>
-                        </div>
-                        <h3>Unwavering Support</h3>
-                        <p>We stand by our commitment to your care with dedicated, present support.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Services Grid -->
-        <section class="services-grid-section">
-            <div class="container">
-                <h2 class="section-title hero-split-text">We're Here For You</h2>
-                <div class="services-expertise-grid">
-                    <div class="expertise-item reveal">
-                        <i data-lucide="brain"></i>
-                        <span>Rare Conditions</span>
-                    </div>
-                    <div class="expertise-item reveal">
-                        <i data-lucide="heart-pulse"></i>
-                        <span>Chronic Illness</span>
-                    </div>
-                    <div class="expertise-item reveal">
-                        <i data-lucide="file-search"></i>
-                        <span>Diagnosis Support</span>
-                    </div>
-                    <div class="expertise-item reveal">
-                        <i data-lucide="clipboard-list"></i>
-                        <span>Care Coordination</span>
-                    </div>
-                    <div class="expertise-item reveal">
-                        <i data-lucide="building-2"></i>
-                        <span>Hospital Navigation</span>
-                    </div>
-                    <div class="expertise-item reveal">
-                        <i data-lucide="scroll-text"></i>
-                        <span>Insurance Appeals</span>
-                    </div>
-                    <div class="expertise-item reveal">
-                        <i data-lucide="users"></i>
-                        <span>Family Support</span>
-                    </div>
-                    <div class="expertise-item reveal">
-                        <i data-lucide="calendar-check"></i>
-                        <span>Appointment Management</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Enhanced Testimonials -->
-        <section class="testimonials enhanced">
-            <div class="container">
-                <h2 class="section-title hero-split-text">Client Stories</h2>
-                <div class="testimonials-enhanced-grid">
-                    <div class="testimonial-card reveal">
-                        <div class="testimonial-rating">
-                            <i data-lucide="star"></i>
-                            <i data-lucide="star"></i>
-                            <i data-lucide="star"></i>
-                            <i data-lucide="star"></i>
-                            <i data-lucide="star"></i>
-                        </div>
-                        <p>"Rachel's guidance was invaluable during my cancer treatment journey. She helped me understand my options and made sure I received the best possible care."</p>
-                        <div class="testimonial-author">
-                            <cite>Sarah M.</cite>
-                            <span>Cancer Treatment Journey</span>
-                        </div>
-                    </div>
-                    <div class="testimonial-card reveal reveal-delay-1">
-                        <div class="testimonial-rating">
-                            <i data-lucide="star"></i>
-                            <i data-lucide="star"></i>
-                            <i data-lucide="star"></i>
-                            <i data-lucide="star"></i>
-                            <i data-lucide="star"></i>
-                        </div>
-                        <p>"Having Rachel as our advocate while navigating elderly care for my mother made all the difference. She knows the system inside and out."</p>
-                        <div class="testimonial-author">
-                            <cite>Michael R.</cite>
-                            <span>Elder Care Support</span>
-                        </div>
-                    </div>
-                    <div class="testimonial-card reveal reveal-delay-2">
-                        <div class="testimonial-rating">
-                            <i data-lucide="star"></i>
-                            <i data-lucide="star"></i>
-                            <i data-lucide="star"></i>
-                            <i data-lucide="star"></i>
-                            <i data-lucide="star"></i>
-                        </div>
-                        <p>"When doctors couldn't figure out what was wrong, Rachel helped us find the right specialists and get the answers we needed. She was our light in the darkness."</p>
-                        <div class="testimonial-author">
-                            <cite>Emily K.</cite>
-                            <span>Diagnosis Journey</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Call to Action -->
-        <section class="cta-section">
-            <div class="container">
-                <h2 class="hero-split-text">Ready to Take Control of Your Healthcare Journey?</h2>
-                <p class="reveal">Schedule a consultation to discuss how we can help you navigate your healthcare needs.</p>
-                <a href="consultation.html" class="primary-button hover-scale reveal reveal-delay-1">Schedule Your Consultation</a>
             </div>
         </section>
     </div>
@@ -330,11 +193,24 @@
                 });
             }
 
-            // Initialize other components as needed
+            // Reveal animations
+            document.querySelectorAll('.reveal').forEach((el) => {
+                ScrollTrigger.create({
+                    trigger: el,
+                    start: 'top bottom-=100',
+                    end: 'bottom top',
+                    toggleClass: 'active',
+                    once: true
+                });
+            });
         }
 
         // Initialize components on first load
         initializeComponents();
     </script>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="../js/scroll-animations.js"></script>
 </body>
 </html> 
