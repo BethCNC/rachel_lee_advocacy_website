@@ -44,6 +44,7 @@ body {
 @import url('../components/services-grid.css');
 @import url('../components/testimonials.css');
 @import url('../components/cta.css');
+@import url('../components/page-transitions.css');
 
 /* Animation Classes */
 .reveal {

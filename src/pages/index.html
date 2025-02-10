@@ -19,18 +19,21 @@
     <link rel="stylesheet" href="/src/styles/base/main.css">
 </head>
 <body data-barba="wrapper">
+    <!-- Page Transition Overlay -->
+    <div class="page-transition-overlay"></div>
+
     <div data-barba="container" data-barba-namespace="home">
         <!-- Navigation -->
         <nav class="main-nav reveal">
             <div class="container">
-                <div class="logo">Rachel Lee Patient Advocacy</div>
+                <a href="/" class="logo" data-barba-prevent="self">Rachel Lee Patient Advocacy</a>
                 <!-- Desktop Navigation -->
                 <div class="nav-links">
-                    <a href="services.html">Services</a>
-                    <a href="conditions.html">Conditions</a>
-                    <a href="about.html">About</a>
-                    <a href="resources.html">Resources</a>
-                    <a href="contact.html" class="cta-button">Get Started</a>
+                    <a href="services.html" data-barba-prevent="self">Services</a>
+                    <a href="conditions.html" data-barba-prevent="self">Conditions</a>
+                    <a href="about.html" data-barba-prevent="self">About</a>
+                    <a href="resources.html" data-barba-prevent="self">Resources</a>
+                    <a href="contact.html" class="cta-button" data-barba-prevent="self">Get Started</a>
                 </div>
                 <!-- Mobile Menu Toggle -->
                 <button class="menu-toggle">
@@ -277,84 +280,61 @@
 
         // Initialize Barba.js for page transitions
         barba.init({
+            preventRunning: true,
             transitions: [{
-                name: 'opacity-transition',
-                leave(data) {
-                    return gsap.to(data.current.container, {
-                        opacity: 0,
-                        duration: 0.5
+                name: 'curtain-transition',
+                async leave(data) {
+                    const done = this.async();
+                    
+                    // Add transition classes
+                    document.body.classList.add('page-leave-active');
+                    
+                    // Wait for animation to complete
+                    await gsap.delayedCall(1.2, () => {
+                        document.body.classList.remove('page-leave-active');
+                        done();
                     });
                 },
-                enter(data) {
-                    return gsap.from(data.next.container, {
-                        opacity: 0,
-                        duration: 0.5
+                async enter(data) {
+                    // Add transition classes
+                    document.body.classList.add('page-enter-active');
+                    
+                    // Reset scroll position
+                    window.scrollTo(0, 0);
+                    
+                    // Wait for animation to complete
+                    await gsap.delayedCall(1.2, () => {
+                        document.body.classList.remove('page-enter-active');
                     });
+                    
+                    // Reinitialize components
+                    lucide.createIcons();
+                    initializeComponents();
                 }
             }]
         });
 
-        // Setup animations
-        function setupAnimations() {
-            // Reveal elements on scroll
-            const reveals = document.querySelectorAll('.reveal');
-            reveals.forEach((el) => {
-                gsap.from(el, {
-                    scrollTrigger: {
-                        trigger: el,
-                        start: "top bottom-=100",
-                        end: "bottom top",
-                        toggleClass: "active",
-                        once: true
-                    }
-                });
-            });
-
-            // Split text animations
-            const splitTexts = document.querySelectorAll('.hero-split-text');
-            splitTexts.forEach((text) => {
-                const content = text.innerHTML;
-                text.innerHTML = `<span>${content}</span>`;
-                
-                gsap.to(text, {
-                    scrollTrigger: {
-                        trigger: text,
-                        start: "top bottom-=100",
-                        end: "bottom top",
-                        toggleClass: "active",
-                        once: true
-                    }
-                });
-            });
-        }
-
-        // Setup animations on page load and after Barba transitions
-        document.addEventListener('DOMContentLoaded', setupAnimations);
-        barba.hooks.after(() => {
-            setupAnimations();
-        });
-
-        // Update ScrollTrigger on Lenis scroll
-        lenis.on('scroll', ScrollTrigger.update);
-
-        // Update smooth scroll on window resize
-        window.addEventListener('resize', () => {
-            lenis.resize();
-        });
-
-        // Mobile menu functionality
-        document.addEventListener('DOMContentLoaded', function() {
+        // Function to initialize/reinitialize components
+        function initializeComponents() {
+            // Mobile menu functionality
             const menuToggle = document.querySelector('.menu-toggle');
             const mobileNav = document.querySelector('.mobile-nav');
             const menuIcon = menuToggle.querySelector('.mobile-nav-icon');
 
-            menuToggle.addEventListener('click', function() {
-                mobileNav.classList.toggle('active');
-                const isOpen = mobileNav.classList.contains('active');
-                menuIcon.setAttribute('data-lucide', isOpen ? 'x' : 'menu');
-                lucide.createIcons();
-            });
-        });
+            if (menuToggle && mobileNav && menuIcon) {
+                menuToggle.addEventListener('click', function() {
+                    mobileNav.classList.toggle('active');
+                    const isOpen = mobileNav.classList.contains('active');
+                    menuIcon.setAttribute('data-lucide', isOpen ? 'x' : 'menu');
+                    lucide.createIcons();
+                });
+            }
+
+            // Initialize other components as needed
+        }
+
+        // Initialize components on first load
+        initializeComponents();
     </script>
 </body>
 </html> 

@@ -19,18 +19,21 @@
     <link rel="stylesheet" href="../src/styles/base/main.css">
 </head>
 <body data-barba="wrapper">
+    <!-- Page Transition Overlay -->
+    <div class="page-transition-overlay"></div>
+
     <div data-barba="container" data-barba-namespace="about">
         <!-- Navigation -->
         <nav class="main-nav reveal">
             <div class="container">
-                <div class="logo">Rachel Lee Patient Advocacy</div>
+                <a href="/" class="logo" data-barba-prevent="self">Rachel Lee Patient Advocacy</a>
                 <!-- Desktop Navigation -->
                 <div class="nav-links">
-                    <a href="./services.html">Services</a>
-                    <a href="./conditions.html">Conditions</a>
-                    <a href="./about.html">About</a>
-                    <a href="./resources.html">Resources</a>
-                    <a href="./contact.html" class="cta-button">Get Started</a>
+                    <a href="./services.html" data-barba-prevent="self">Services</a>
+                    <a href="./conditions.html" data-barba-prevent="self">Conditions</a>
+                    <a href="./about.html" data-barba-prevent="self">About</a>
+                    <a href="./resources.html" data-barba-prevent="self">Resources</a>
+                    <a href="./contact.html" class="cta-button" data-barba-prevent="self">Get Started</a>
                 </div>
                 <!-- Mobile Menu Toggle -->
                 <button class="menu-toggle">
