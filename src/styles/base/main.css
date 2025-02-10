@@ -444,14 +444,19 @@ p {
 
 /* User Journey Quick Links */
 .user-journey-links {
-    padding: 2rem 0;
-    background: var(--color-background-alt);
+    padding: 4rem 0;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--color-periwinkle-100);
+    position: relative;
+    z-index: 1;
 }
 
 .journey-options {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
     padding: 1rem 0;
 }
 
@@ -460,36 +465,40 @@ p {
     flex-direction: column;
     align-items: center;
     text-align: center;
-    padding: 2rem;
-    background: var(--color-background);
-    border-radius: 12px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    padding: 2.5rem;
+    background: var(--color-mulberry-500);
+    border-radius: var(--radius-lg);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
     transition: all 0.3s ease;
     text-decoration: none;
-    color: var(--color-text);
+    color: white;
+    border: 1px solid var(--color-mulberry-400);
 }
 
 .journey-option:hover {
     transform: translateY(-4px);
-    box-shadow: 0 8px 12px rgba(0,0,0,0.1);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    background: var(--color-mulberry-600);
+    border-color: var(--color-mulberry-500);
 }
 
 .journey-option i {
-    font-size: 2rem;
-    margin-bottom: 1rem;
-    color: var(--color-primary);
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    color: white;
 }
 
 .journey-option h3 {
-    margin-bottom: 0.5rem;
-    font-size: 1.25rem;
-    font-weight: 600;
+    margin-bottom: 0.75rem;
+    font-size: var(--font-size-xl);
+    color: white;
 }
 
 .journey-option p {
-    font-size: 0.875rem;
-    color: var(--color-text-muted);
+    font-size: var(--font-size-base);
+    color: rgba(255, 255, 255, 0.9);
     margin: 0;
+    line-height: 1.5;
 }
 
 /* Animations */
@@ -555,15 +564,21 @@ p {
     }
 
     .user-journey-links {
-        padding: 1rem;
+        padding: 2rem 1rem;
     }
     
     .journey-options {
         grid-template-columns: 1fr;
+        gap: 1rem;
     }
     
     .journey-option {
-        padding: 1.5rem;
+        padding: 2rem;
+    }
+    
+    .journey-option i {
+        font-size: 2rem;
+        margin-bottom: 1rem;
     }
     
     .mobile-nav-section {
