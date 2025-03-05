@@ -1,0 +1,364 @@
+---
+description: Testing rules
+globs: 
+alwaysApply: false
+---
+# Testing Standards for Rachel Lee Advocacy Website
+
+## Test Environment Setup
+
+### Local Development
+```bash
+# Required environment
+- WordPress 6.4+
+- PHP 8.1+
+- MySQL 8.0+
+- Node.js 18+
+- Chrome, Firefox, Safari, Edge latest versions
+
+# Test database setup
+wp db create test_db
+wp core install --url=test.local --title="Test Site" --admin_user=test_admin
+```
+
+### Testing Tools
+```json
+{
+  "devDependencies": {
+    "jest": "^29.0.0",
+    "cypress": "^13.0.0",
+    "@testing-library/react": "^14.0.0",
+    "axe-core": "^4.7.0",
+    "lighthouse": "^11.0.0"
+  }
+}
+```
+
+## Unit Testing
+
+### React Components
+```javascript
+// Component test template
+import { render, screen, fireEvent } from '@testing-library/react';
+import Component from './Component';
+
+describe('Component', () => {
+  test('renders correctly', () => {
+    render(<Component />);
+    expect(screen.getByRole('button')).toBeInTheDocument();
+  });
+
+  test('handles user interaction', () => {
+    render(<Component />);
+    fireEvent.click(screen.getByRole('button'));
+    expect(screen.getByText('Result')).toBeInTheDocument();
+  });
+
+  test('manages state correctly', () => {
+    render(<Component />);
+    // State management tests
+  });
+});
+```
+
+### WordPress Functions
+```php
+// WordPress function test template
+class TestClassName extends WP_UnitTestCase {
+    public function setUp(): void {
+        parent::setUp();
+        // Setup test environment
+    }
+
+    public function test_function_name() {
+        // Arrange
+        $input = 'test input';
+        
+        // Act
+        $result = function_name($input);
+        
+        // Assert
+        $this->assertEquals('expected output', $result);
+    }
+
+    public function tearDown(): void {
+        parent::tearDown();
+        // Clean up test environment
+    }
+}
+```
+
+## Integration Testing
+
+### API Integration
+```javascript
+// API test template
+describe('API Integration', () => {
+  test('fetches data correctly', async () => {
+    const response = await fetch('/api/endpoint');
+    const data = await response.json();
+    expect(data).toMatchSnapshot();
+  });
+
+  test('handles errors appropriately', async () => {
+    // Error handling tests
+  });
+});
+```
+
+### WordPress Integration
+```php
+// WordPress integration test template
+class TestIntegration extends WP_UnitTestCase {
+    public function test_post_creation() {
+        // Test post creation and retrieval
+    }
+
+    public function test_taxonomy_integration() {
+        // Test taxonomy functionality
+    }
+
+    public function test_custom_post_types() {
+        // Test CPT functionality
+    }
+}
+```
+
+## Accessibility Testing
+
+### Automated Tests
+```javascript
+// Accessibility test template
+describe('Accessibility', () => {
+  test('meets WCAG 2.1 AA standards', async () => {
+    const results = await axe.run();
+    expect(results.violations).toHaveLength(0);
+  });
+
+  test('supports keyboard navigation', () => {
+    // Keyboard navigation tests
+  });
+
+  test('works with screen readers', () => {
+    // Screen reader compatibility tests
+  });
+});
+```
+
+### Manual Testing Checklist
+```markdown
+1. Screen Reader Testing
+   - NVDA
+   - VoiceOver
+   - JAWS
+
+2. Keyboard Navigation
+   - Tab order
+   - Focus indicators
+   - Keyboard shortcuts
+
+3. Visual Checks
+   - Color contrast
+   - Text scaling
+   - Zoom functionality
+```
+
+## Performance Testing
+
+### Load Testing
+```javascript
+// Load test template
+describe('Performance', () => {
+  test('loads within 3 seconds', async () => {
+    const startTime = performance.now();
+    await page.goto(url);
+    const endTime = performance.now();
+    expect(endTime - startTime).toBeLessThan(3000);
+  });
+
+  test('handles multiple concurrent users', async () => {
+    // Concurrent user tests
+  });
+});
+```
+
+### Lighthouse Tests
+```javascript
+// Lighthouse test configuration
+module.exports = {
+  ci: {
+    collect: {
+      startServerCommand: 'npm run start',
+      url: ['http://localhost:3000'],
+      numberOfRuns: 3,
+    },
+    assert: {
+      assertions: {
+        'categories:performance': ['error', {minScore: 0.9}],
+        'categories:accessibility': ['error', {minScore: 0.9}],
+        'categories:best-practices': ['error', {minScore: 0.9}],
+        'categories:seo': ['error', {minScore: 0.9}]
+      }
+    },
+    upload: {
+      target: 'temporary-public-storage',
+    },
+  },
+};
+```
+
+## Security Testing
+
+### WordPress Security
+```php
+// Security test template
+class SecurityTests extends WP_UnitTestCase {
+    public function test_input_sanitization() {
+        // Test input sanitization
+    }
+
+    public function test_capability_checks() {
+        // Test user capabilities
+    }
+
+    public function test_nonce_verification() {
+        // Test nonce implementation
+    }
+}
+```
+
+### Form Testing
+```javascript
+// Form security test template
+describe('Form Security', () => {
+  test('validates input properly', () => {
+    // Input validation tests
+  });
+
+  test('prevents XSS attacks', () => {
+    // XSS prevention tests
+  });
+
+  test('handles CSRF protection', () => {
+    // CSRF protection tests
+  });
+});
+```
+
+## End-to-End Testing
+
+### User Flows
+```javascript
+// Cypress test template
+describe('User Journey', () => {
+  it('completes consultation booking', () => {
+    cy.visit('/');
+    cy.get('[data-cy="book-consultation"]').click();
+    cy.get('[data-cy="service-select"]').select('advocacy');
+    cy.get('[data-cy="date-picker"]').click();
+    // Complete booking flow
+  });
+
+  it('finds and accesses resources', () => {
+    // Resource access flow
+  });
+});
+```
+
+### Critical Path Testing
+```javascript
+// Critical path test template
+describe('Critical Paths', () => {
+  test('homepage to consultation', () => {
+    // Test main conversion path
+  });
+
+  test('condition search to resources', () => {
+    // Test resource discovery path
+  });
+});
+```
+
+## Test Documentation
+
+### Test Reports
+```markdown
+# Test Report Template
+
+## Test Summary
+- Total Tests: [number]
+- Passed: [number]
+- Failed: [number]
+- Skipped: [number]
+
+## Test Details
+1. Component Tests
+   - Results
+   - Issues
+   - Fixes
+
+2. Integration Tests
+   - Results
+   - Issues
+   - Fixes
+
+3. Accessibility Tests
+   - Results
+   - Issues
+   - Fixes
+```
+
+### Bug Reports
+```markdown
+# Bug Report Template
+
+## Issue Description
+[Clear description of the issue]
+
+## Steps to Reproduce
+1. [Step 1]
+2. [Step 2]
+3. [Step 3]
+
+## Expected Behavior
+[What should happen]
+
+## Actual Behavior
+[What actually happens]
+
+## Environment
+- Browser:
+- OS:
+- Device:
+```
+
+## Continuous Integration
+
+### GitHub Actions
+```yaml
+name: Test Suite
+on: [push, pull_request]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Install dependencies
+        run: npm install
+      - name: Run tests
+        run: npm test
+      - name: Run accessibility tests
+        run: npm run test:a11y
+      - name: Run performance tests
+        run: npm run test:performance
+```
+
+### Pre-deployment Checks
+```bash
+# Required checks before deployment
+npm run lint
+npm run test
+npm run test:a11y
+npm run test:performance
+npm run build
+``` 

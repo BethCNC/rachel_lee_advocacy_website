@@ -1,0 +1,184 @@
+---
+description: Project overview
+globs: 
+alwaysApply: true
+---
+# Rachel Lee Patient Advocacy Website - Project Summary
+
+## Overview
+The Rachel Lee Patient Advocacy website is a comprehensive platform designed to provide healthcare navigation and support services. The website serves as a central hub for Rachel Lee's patient advocacy services, offering resources, tools, and support for individuals navigating the complex healthcare system.
+
+## UX Research
+
+### User Personas
+1. **New Patient Seeking Advocacy**
+   - Recently diagnosed individuals struggling with healthcare system
+   - Goals: Find support, understand options, get help navigating healthcare
+   - Pain points: Overwhelmed, confused by healthcare system
+
+2. **Caregiver/Family Member**
+   - Supporting a loved one with healthcare needs
+   - Goals: Learn advocacy skills, find resources, connect with support
+   - Pain points: Time-stressed, needs practical tools and guidance
+
+3. **Existing Client**
+   - Current client using advocacy services
+   - Goals: Access resources, schedule follow-ups, stay informed
+   - Pain points: Needs ongoing support and easy access to tools
+
+### User Journeys
+The website is designed to support multiple user journeys:
+
+1. **New Patient Journey**
+   - Awareness Stage: Discovery through search, social media, or referrals
+   - Research Stage: Exploring services, blog posts, and free resources
+   - Consideration Stage: Reviewing detailed service information and pricing
+   - Decision Stage: Booking consultation or contacting for services
+
+2. **Caregiver Journey**
+   - Awareness Stage: Finding support through referrals or communities
+   - Education Stage: Accessing resources and connecting with community
+   - Implementation Stage: Building skills and accessing support
+
+3. **Existing Client Journey**
+   - Ongoing Support: Regular touchpoints through client portal
+   - Growth & Learning: Access to advanced workshops and resources
+
+## Design in Figma
+
+### Visual Design Strategy
+
+#### Color Palette
+- Primary: Professional Navy (#1B365D)
+- Secondary: Warm Gold (#D4AF37)
+- Accent: Soft Teal (#45818E)
+- Background: Clean White (#FFFFFF)
+- Text: Deep Gray (#333333)
+
+#### Typography
+- Headings: Playfair Display (Professional serif)
+- Body: Open Sans (Clean, readable sans-serif)
+- Accents: Montserrat (Modern, bold sans-serif)
+
+#### UI Elements
+- Rounded corners on cards (8px radius)
+- Subtle shadows for depth
+- Clear hierarchy with whitespace
+- Professional photo treatment
+- Minimal animations
+
+### Wireframes
+The design includes detailed wireframes for:
+- Landing page with hero section, services preview, testimonials, blog preview
+- Services page with advocacy, consulting, speaking, and community sections
+- Interactive elements including testimonials carousel, service cards, and blog grid
+
+### Responsive Design
+- Desktop: 1200px+
+- Tablet: 768px - 1199px
+- Mobile: < 768px
+- Mobile considerations include collapsible navigation, stacked layouts, and touch-friendly elements
+
+## Prototyping
+The project includes interactive prototypes for:
+1. Testimonials Carousel
+2. Service Cards with booking functionality
+3. Blog Grid with filtering options
+
+## Tech Stack
+
+### Core Technologies
+- WordPress CMS (6.4+)
+- Divi Theme Builder
+- TypeScript/React for Interactive Components
+- PHP 8.1+
+- MySQL 8.0+
+- Node.js 18+
+- Tailwind CSS for styling
+
+### Development Tools
+- Local WordPress Environment
+- Version control for theme files
+- Database version control
+- Staging environment
+
+### Frontend Libraries
+- Tailwind CSS for styling
+- Custom fonts: DIN 2014, New Spirit, Space Mono
+
+## Development Approach
+
+### WordPress Implementation
+- Custom child theme development
+- Integration of design tokens as CSS variables
+- Custom Divi modules for specialized functionality
+- Enhanced forms with custom validation
+- Progress tracking functionality
+
+### Interactive Features
+- Interactive Healthcare System Navigator
+- Condition Pathfinder Tool
+- Resource Compass
+- Care Journey Mapping
+- Audio Integration
+
+### Accessibility Features
+- WCAG 2.1 AA Compliance
+- High contrast mode toggle
+- Adjustable font sizes
+- Clear focus states
+- Screen reader optimization
+- Keyboard navigation
+- ADHD/Autism-Friendly Design
+
+## Brand Identity
+
+### Brand Voice
+The brand's voice is characterized by:
+- Warm and welcoming, yet grounded in experience
+- Emotionally intelligent and understanding
+- Fully present and attentive
+- Connected and accessible
+- Supportive and solution-focused
+
+### Voice Principles
+1. **Lead with Empathy**
+   - Acknowledge emotional experiences
+   - Validate struggles and challenges
+   - Create safe spaces through language
+
+2. **Stay Present and Connected**
+   - Focus on the here and now
+   - Demonstrate active listening
+   - Maintain genuine human connection
+
+3. **Empower Through Partnership**
+   - Guide rather than direct
+   - Explain complex concepts simply
+   - Focus on collaborative solutions
+
+## Project Goals
+
+1. Create an accessible, user-friendly platform for healthcare navigation
+2. Provide valuable resources and tools for patients and caregivers
+3. Establish Rachel Lee as a trusted authority in patient advocacy
+4. Build a supportive community for individuals navigating healthcare challenges
+5. Deliver personalized support through interactive tools and resources
+
+## Key Features
+- Interactive Healthcare System Navigator
+- Condition Pathfinder Tool
+- Resource Compass
+- Care Journey Mapping
+- Audio Integration
+- ADHD/Autism-Friendly Design
+- WCAG 2.1 AA Compliance
+
+## Development Timeline
+1. **Setup Phase** (Weeks 1-2): WordPress installation, theme setup, plugin configuration
+2. **Design Integration** (Weeks 3-4): Implementation of design tokens, component creation
+3. **Development** (Weeks 5-8): Page templates, custom functionality, interactive features
+4. **Testing & Training** (Weeks 9-10): Quality assurance, client training, documentation
+
+## Conclusion
+The Rachel Lee Patient Advocacy website is designed to be a comprehensive platform that combines professional design with powerful functionality to support individuals navigating the healthcare system. With a focus on accessibility, user experience, and valuable resources, the website aims to establish Rachel Lee as a trusted authority in patient advocacy while providing meaningful support to those in need.
