@@ -1,9 +1,0 @@
-/* Base styles */
-@import '../base/semantic-tokens.css';
-
-/* Component styles */
-@import '../components/services-grid.css';
-@import '../components/hero-animation.css';
-@import '../components/navigation.css';
-@import '../components/cta.css';
-@import '../components/testimonials.css';

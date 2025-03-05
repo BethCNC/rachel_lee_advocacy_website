@@ -1,0 +1,29 @@
+@import url('https://use.typekit.net/nek5vij.css');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: din-2014, sans-serif;
+  }
+  
+  h1, h2, h3, h4, h5 {
+    font-family: new-spirit, serif;
+  }
+  
+  code, pre {
+    font-family: space-mono, monospace;
+  }
+}
+
+/* Custom component classes can be added here using @layer components */
+@layer components {
+  /* Add your custom component styles here */
+}
+
+/* Custom utility classes can be added here using @layer utilities */
+@layer utilities {
+  /* Add your custom utility styles here */
+} 
