@@ -26,3 +26,42 @@ build/
 # Debug logs
 logs/
 *.log
+
+# Large media files
+*.mov
+*.mp4
+*.webm
+*.avi
+*.wmv
+*.flv
+*.mkv
+# Keep data but exclude large video files
+assets/videos/zen_sand_raking_1080k.mov
+assets/videos/hero-background.mp4
+assets/videos/hero-background.webm
+
+# Large visualization files - keep these if needed for analysis
+# docs/analysis/visualizations/*.html
+# docs/analysis/visualizations/*.png
+
+# Temporary files
+tmp/
+temp/
+
+# Cache files
+.cache/
+.sass-cache/
+.eslintcache
+.stylelintcache
+.parcel-cache/
+
+# Coverage reports
+coverage/
+
+# Backup files
+*.bak
+*.backup
+*~
+
+# Git related
+# Don't ignore Git objects as they're needed for repository functionality
