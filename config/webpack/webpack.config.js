@@ -1,55 +1,76 @@
 const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = (env, argv) => {
   const isProduction = argv.mode === 'production';
-
+  
   return {
-    entry: {
-      'interactive-components': './src/components/interactive/index.ts',
-      'accessibility-features': './src/components/accessibility/index.ts',
-      'common-components': './src/components/common/index.ts'
-    },
+    entry: './src/index.js',
     output: {
-      path: path.resolve(__dirname, 'wp-content/themes/rachel-lee-theme/assets/js'),
-      filename: '[name].bundle.js',
-      clean: true
+      path: path.resolve(__dirname, '../../dist'),
+      filename: 'bundle.js',
+      clean: true,
+      publicPath: '/'
     },
     module: {
       rules: [
         {
-          test: /\.(ts|tsx)$/,
-          use: 'ts-loader',
-          exclude: /node_modules/
+          test: /\.(js|jsx)$/,
+          exclude: /node_modules/,
+          use: {
+            loader: 'babel-loader',
+            options: {
+              presets: ['@babel/preset-env', '@babel/preset-react']
+            }
+          }
         },
         {
-          test: /\.(scss|css)$/,
-          use: [
-            'style-loader',
-            'css-loader',
-            {
-              loader: 'sass-loader',
-              options: {
-                sourceMap: !isProduction
-              }
-            }
-          ]
+          test: /\.(ts|tsx)$/,
+          exclude: /node_modules/,
+          use: 'ts-loader'
+        },
+        {
+          test: /\.css$/,
+          use: ['style-loader', 'css-loader']
+        },
+        {
+          test: /\.(png|jpg|jpeg|gif|svg)$/,
+          type: 'asset/resource',
+          generator: {
+            filename: 'images/[name][ext]'
+          }
+        },
+        {
+          test: /\.(mov|mp4)$/,
+          type: 'asset/resource',
+          generator: {
+            filename: 'videos/[name][ext]'
+          }
         }
       ]
     },
     resolve: {
-      extensions: ['.ts', '.tsx', '.js', '.jsx'],
+      extensions: ['.js', '.jsx', '.ts', '.tsx'],
       alias: {
-        '@components': path.resolve(__dirname, 'src/components'),
-        '@styles': path.resolve(__dirname, 'src/styles'),
-        '@utils': path.resolve(__dirname, 'src/scripts')
+        '@components': path.resolve(__dirname, '../../src/components'),
+        '@styles': path.resolve(__dirname, '../../src/styles')
       }
     },
     devtool: isProduction ? 'source-map' : 'inline-source-map',
-    optimization: {
-      splitChunks: {
-        chunks: 'all',
-        name: 'vendors'
-      }
-    }
+    devServer: {
+      static: {
+        directory: path.join(__dirname, '../../public')
+      },
+      port: 3000,
+      hot: true,
+      open: true,
+      historyApiFallback: true
+    },
+    plugins: [
+      new HtmlWebpackPlugin({
+        template: './public/index.html',
+        filename: 'index.html'
+      })
+    ]
   };
 }; 

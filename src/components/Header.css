@@ -1,0 +1,202 @@
+/* Header Component Styles */
+.header {
+  position: relative;
+  width: 100%;
+  height: var(--content-height); /* Fixed height from Figma (748px) */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-xxxl); /* 80px gap from Figma */
+  color: var(--foreground-on-dark);
+  overflow: hidden;
+}
+
+/* Video Background */
+.video-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  overflow: hidden;
+}
+
+.video-background video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: none; /* Remove the saturation and contrast filters */
+}
+
+.video-background .overlay {
+  display: none; /* Hide the overlay completely */
+  /* Remove all the previous overlay styles */
+}
+
+/* Navbar styling */
+.navbar {
+  width: 100%;
+  height: 72px; /* From Figma specs - absoluteBoundingBox.height */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 24px; /* From Figma specs - paddingLeft and paddingRight */
+  backdrop-filter: blur(8px); /* Increasing blur to match Figma */
+  
+  /* Glass effect - from Figma linear gradient */
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0.04) 100%);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.29); /* From Figma strokes - solid color with opacity */
+  position: relative;
+  z-index: var(--z-navbar);
+}
+
+/* Adding multiple gradients for enhanced glass effect - from Figma radial gradients */
+.navbar::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%),
+    radial-gradient(circle at top right, rgba(53, 48, 46, 1) 0%, rgba(227, 205, 75, 0) 100%),
+    radial-gradient(circle at bottom left, rgba(255, 255, 255, 1) 0%, rgba(21, 21, 21, 0) 100%);
+  opacity: 0.15;
+  z-index: -1;
+}
+
+/* Add subtle shadow */
+.navbar::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  box-shadow: var(--drop--shadow---x-s);
+  z-index: -2;
+}
+
+/* Container for logo and navigation */
+.container {
+  width: 100%;
+  max-width: 1536px; /* From Figma - absoluteBoundingBox.width */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  height: 30px; /* From Figma - based on logo container height */
+  width: auto;
+}
+
+.nav-links {
+  display: flex;
+  gap: 32px; /* From Figma - itemSpacing in Column frame */
+  align-items: center;
+}
+
+.nav-links a {
+  color: hsla(224, 83%, 7%, 1); /* Converted from hsba in Figma */
+  text-decoration: none;
+  padding: 0; /* Remove padding to match Figma */
+  position: relative;
+}
+
+.nav-links a:hover {
+  opacity: 0.8; /* Simple hover effect */
+}
+
+.btn-contact {
+  padding: 8px 16px;
+  background-color: var(--background-accent);
+  color: var(--foreground-on-accent);
+  border-radius: var(--radius-sm);
+  font-weight: var(--font-weight-medium);
+}
+
+/* Main content section */
+.content {
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--spacing-48) var(--spacing-96); /* From Figma specs */
+  max-width: var(--container-max);
+  margin: 0 auto;
+  gap: var(--spacing-xxxl);
+}
+
+.column-one, .column-two {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.column-one {
+  max-width: 650px;
+  margin-right: var(--spacing-xl);
+}
+
+.column-two {
+  align-items: center;
+  justify-content: center;
+}
+
+.logo-large {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 400px;
+  margin-left: auto;
+}
+
+.logo-large img {
+  width: 100%;
+  height: auto;
+  filter: drop-shadow(0px 8px 24px rgba(0, 0, 0, 0.15));
+}
+
+.feature-element {
+  position: relative;
+  margin-top: var(--spacing-xl);
+  width: 100%;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+  .content {
+    padding: var(--spacing-xl) var(--spacing-lg);
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    height: auto;
+    min-height: 100vh;
+  }
+  
+  .navbar {
+    height: 60px;
+  }
+  
+  .content {
+    flex-direction: column;
+    padding: var(--spacing-lg);
+  }
+  
+  .column-two {
+    margin-top: var(--spacing-xl);
+  }
+} 

@@ -1,0 +1,215 @@
+/**
+ * Typography Styles
+ * Directly matches Figma text styles for consistent design
+ */
+
+/* Heading Styles - Halyard Display */
+.heading-heading-7xl {
+  font-size: 96px;
+  font-family: 'halyard-display', sans-serif;
+  font-weight: 500;
+  letter-spacing: 0em;
+  line-height: 114px;
+}
+.heading-heading-6xl {
+  font-size: 72px;
+  font-family: 'halyard-display', sans-serif;
+  font-weight: 500;
+  letter-spacing: 0em;
+  line-height: 86px;
+}
+.heading-heading-5xl {
+  font-size: 60px;
+  font-family: 'halyard-display', sans-serif;
+  font-weight: 500;
+  letter-spacing: 0em;
+  line-height: 72px;
+}
+.heading-heading-4xl {
+  font-size: 48px;
+  font-family: 'halyard-display', sans-serif;
+  font-weight: 500;
+  letter-spacing: 0em;
+  line-height: 56px;
+}
+.heading-heading-3xl {
+  font-size: 36px;
+  font-family: 'halyard-display', sans-serif;
+  font-weight: 400;
+  letter-spacing: 0em;
+  line-height: 44px;
+}
+.heading-heading-2xl {
+  font-size: 30px;
+  font-family: 'halyard-display', sans-serif;
+  font-weight: 500;
+  letter-spacing: 0em;
+  line-height: 42px;
+}
+.heading-heading-xl {
+  font-size: 24px;
+  font-family: 'halyard-display', sans-serif;
+  font-weight: 500;
+  letter-spacing: 0em;
+  line-height: 32px;
+}
+.heading-heading-lg {
+  font-size: 20px;
+  font-family: 'halyard-display', sans-serif;
+  font-weight: 500;
+  letter-spacing: 0em;
+  line-height: 28px;
+}
+.heading-heading-base {
+  font-size: 16px;
+  font-family: 'halyard-display', sans-serif;
+  font-weight: 500;
+  letter-spacing: 0em;
+  line-height: 24px;
+}
+.heading-heading-sm {
+  font-size: 14px;
+  font-family: 'halyard-display', sans-serif;
+  font-weight: 500;
+  letter-spacing: 0em;
+  line-height: 18px;
+}
+.heading-heading-xs {
+  font-size: 12px;
+  font-family: 'halyard-display', sans-serif;
+  font-weight: 500;
+  letter-spacing: 0em;
+  line-height: 16px;
+}
+
+/* Hero Styles - FreightDisp Pro */
+.hero-hero-3xl {
+  font-size: 72px;
+  font-family: 'freight-display-pro', serif;
+  font-weight: 500;
+  letter-spacing: 0em;
+  line-height: 86px;
+}
+.hero-hero-2xl {
+  font-size: 60px;
+  font-family: 'freight-display-pro', serif;
+  font-weight: 500;
+  letter-spacing: 0em;
+  line-height: 80px;
+}
+.hero-hero-xl {
+  font-size: 48px;
+  font-family: 'freight-display-pro', serif;
+  font-weight: 500;
+  letter-spacing: 0em;
+  line-height: 56px;
+}
+.hero-hero-lg {
+  font-size: 36px;
+  font-family: 'freight-display-pro', serif;
+  font-weight: 500;
+  letter-spacing: 0em;
+  line-height: 56px;
+}
+.hero-hero-base {
+  font-size: 30px;
+  font-family: 'freight-display-pro', serif;
+  font-weight: 500;
+  letter-spacing: 0em;
+  line-height: 44px;
+}
+.hero-hero-sm {
+  font-size: 24px;
+  font-family: 'freight-display-pro', serif;
+  font-weight: 500;
+  letter-spacing: 0em;
+  line-height: 42px;
+}
+
+/* Body Styles - FreightText Pro */
+.body-body-3xl {
+  font-size: 36px;
+  font-family: 'freight-text-pro', serif;
+  font-weight: 600;
+  letter-spacing: 0em;
+  line-height: 42px;
+}
+.body-body-2xl {
+  font-size: 24px;
+  font-family: 'freight-text-pro', serif;
+  font-weight: 600;
+  letter-spacing: 0em;
+  line-height: 32px;
+}
+.body-body-xl {
+  font-size: 20px;
+  font-family: 'freight-text-pro', serif;
+  font-weight: 600;
+  letter-spacing: 0em;
+  line-height: 32px;
+}
+.body-body-lg {
+  font-size: 18px;
+  font-family: 'freight-text-pro', serif;
+  font-weight: 500;
+  letter-spacing: 0em;
+  line-height: 24px;
+}
+.body-body-base {
+  font-size: 16px;
+  font-family: 'freight-text-pro', serif;
+  font-weight: 500;
+  letter-spacing: 0em;
+  line-height: 22px;
+}
+.body-body-sm {
+  font-size: 14px;
+  font-family: 'freight-text-pro', serif;
+  font-weight: 400;
+  letter-spacing: 0em;
+  line-height: 18px;
+}
+.body-body-xs {
+  font-size: 12px;
+  font-family: 'freight-text-pro', serif;
+  font-weight: 400;
+  letter-spacing: 0em;
+  line-height: 16px;
+}
+
+/* Label Styles - Halyard Text */
+.label-label-lg-normal {
+  font-size: 18px;
+  font-family: 'halyard-text', sans-serif;
+  font-weight: 400;
+  letter-spacing: 0em;
+  line-height: 24px;
+}
+.label-label-lg {
+  font-size: 18px;
+  font-family: 'halyard-text', sans-serif;
+  font-weight: 400;
+  letter-spacing: 0em;
+  line-height: 24px;
+}
+.label-label-base {
+  font-size: 16px;
+  font-family: 'halyard-text', sans-serif;
+  font-weight: 400;
+  letter-spacing: 0em;
+  line-height: 22px;
+}
+.label-label-sm {
+  font-size: 14px;
+  font-family: 'halyard-text', sans-serif;
+  font-weight: 400;
+  letter-spacing: 0em;
+  line-height: 18px;
+}
+.label-label-xs {
+  font-size: 12px;
+  font-family: 'halyard-text', sans-serif;
+  font-weight: 400;
+  letter-spacing: 0em;
+  line-height: 16px;
+} 
