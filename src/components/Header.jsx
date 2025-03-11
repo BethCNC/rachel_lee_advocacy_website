@@ -32,7 +32,8 @@ const Header = () => {
           <div className={`nav-links ${mobileMenuOpen ? 'nav-open' : ''}`} role="navigation">
             <Link to="/about" className="label-label-lg">About</Link>
             <Link to="/services" className="label-label-lg">Services</Link>
-            <Link to="/testimonials" className="label-label-lg">Testimonials</Link>
+            <Link to="/resources" className="label-label-lg">Resources</Link>
+            <Link to="/success-stories" className="label-label-lg">Success Stories</Link>
             <Link to="/blog" className="label-label-lg">Blog</Link>
             <Link to="/contact" className="label-label-lg">Contact</Link>
           </div>
@@ -56,6 +57,10 @@ const Header = () => {
         <div className="column-one">
           <h1 className="heading-heading-7xl">Your Health. Your Voice. Your Advocate.</h1>
           <p className="body-body-lg">Navigating healthcare shouldn't be a solo journey. I provide personalized advocacy, education, and support to help you make informed decisions about your care.</p>
+          <div className="header-links">
+            <Link to="/services" className="label-label-lg primary-link">Explore Services</Link>
+            <Link to="/contact" className="label-label-lg">Schedule Consultation</Link>
+          </div>
         </div>
         <div className="column-two">
           <div className="logo-large" aria-hidden="true">

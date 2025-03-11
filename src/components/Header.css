@@ -318,4 +318,115 @@
   .mobile-menu-button[aria-expanded="true"] .bar:nth-child(3) {
     transform: rotate(-45deg) translate(7px, -7px);
   }
+}
+
+/* CTA Buttons */
+.cta-buttons {
+  display: flex;
+  gap: var(--spacing-md);
+  margin-top: var(--spacing-xl);
+}
+
+.btn-primary, .btn-secondary {
+  display: inline-block;
+  font-family: var(--font-family-primary);
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--font-size-md);
+  line-height: 1;
+  padding: var(--spacing-sm) var(--spacing-lg);
+  border-radius: 4px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+.btn-primary {
+  background-color: var(--color-brand-cobalt-800);
+  color: var(--color-base-white);
+  border: 2px solid var(--color-brand-cobalt-800);
+}
+
+.btn-primary:hover, .btn-primary:focus {
+  background-color: var(--color-brand-cobalt-900);
+  border-color: var(--color-brand-cobalt-900);
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: var(--color-base-white);
+  border: 2px solid var(--color-base-white);
+}
+
+.btn-secondary:hover, .btn-secondary:focus {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Responsive Adjustments for CTA buttons */
+@media (max-width: 768px) {
+  .cta-buttons {
+    flex-direction: column;
+    width: 100%;
+    max-width: 300px;
+    margin: var(--spacing-lg) auto 0;
+  }
+  
+  .btn-primary, .btn-secondary {
+    width: 100%;
+    padding: var(--spacing-md) var(--spacing-lg);
+  }
+}
+
+/* Header Links */
+.header-links {
+  display: flex;
+  gap: var(--spacing-md);
+  margin-top: var(--spacing-lg);
+}
+
+.header-links a {
+  text-decoration: none;
+  transition: all 0.3s ease;
+  padding: var(--spacing-xs) var(--spacing-sm);
+  border-radius: 4px;
+}
+
+.header-links a.primary-link {
+  color: var(--color-brand-cobalt-900);
+  font-weight: 600;
+  position: relative;
+}
+
+.header-links a.primary-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: var(--spacing-sm);
+  right: var(--spacing-sm);
+  height: 2px;
+  background-color: var(--color-brand-gold-500);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.header-links a.primary-link:hover::after,
+.header-links a.primary-link:focus::after {
+  transform: scaleX(1);
+}
+
+.header-links a:hover,
+.header-links a:focus {
+  color: var(--color-brand-gold-600);
+  outline: none;
+}
+
+@media (max-width: 768px) {
+  .header-links {
+    flex-direction: column;
+    align-items: center;
+    margin-top: var(--spacing-md);
+  }
+  
+  .header-links a {
+    padding: var(--spacing-xs) var(--spacing-md);
+  }
 } 
