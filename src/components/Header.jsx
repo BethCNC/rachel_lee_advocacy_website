@@ -1,11 +1,18 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Header.css';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  const toggleMobileMenu = () => {
+    setMobileMenuOpen(!mobileMenuOpen);
+  };
+
   return (
-    <header className="header">
+    <header className="header" role="banner">
       {/* Video Background */}
-      <div className="video-background">
+      <div className="video-background" aria-hidden="true">
         <video autoPlay muted loop playsInline>
           <source src="/assets/videos/zen_sand_raking_1080k.mov" type="video/mp4" />
           Your browser does not support the video tag.
@@ -14,22 +21,33 @@ const Header = () => {
       </div>
       
       {/* Navbar with glass effect - exactly as per Figma design */}
-      <nav className="navbar">
+      <nav className="navbar" aria-label="Main Navigation">
         <div className="container">
           {/* Logo */}
-          <div className="logo">
-            <a href="/">
-              <img src="/assets/logo/logo-longHorizontal-light.svg" alt="Rachel Lee Patient Advocacy" />
-            </a>
+          <Link to="/" className="logo" aria-label="Rachel Lee Patient Advocacy home">
+            <img src="/assets/logo/logo-longHorizontal-light.svg" alt="Rachel Lee Patient Advocacy" />
+          </Link>
+          
+          {/* Navigation Links */}
+          <div className={`nav-links ${mobileMenuOpen ? 'nav-open' : ''}`} role="navigation">
+            <Link to="/about" className="label-label-lg">About</Link>
+            <Link to="/services" className="label-label-lg">Services</Link>
+            <Link to="/testimonials" className="label-label-lg">Testimonials</Link>
+            <Link to="/blog" className="label-label-lg">Blog</Link>
+            <Link to="/contact" className="label-label-lg">Contact</Link>
           </div>
-          {/* Navigation Links - Using exact text from Figma */}
-          <div className="nav-links">
-            <a href="#link-one" className="label-label-lg">Link One</a>
-            <a href="#link-two" className="label-label-lg">Link Two</a>
-            <a href="#link-three" className="label-label-lg">Link Three</a>
-            <a href="#link-four" className="label-label-lg">Link Four</a>
-            <a href="#link-five" className="label-label-lg">Link Five</a>
-          </div>
+
+          {/* Mobile Menu Button */}
+          <button 
+            className="mobile-menu-button"
+            onClick={toggleMobileMenu}
+            aria-label="Mobile menu"
+            aria-expanded={mobileMenuOpen}
+          >
+            <span className="bar"></span>
+            <span className="bar"></span>
+            <span className="bar"></span>
+          </button>
         </div>
       </nav>
       
@@ -40,8 +58,8 @@ const Header = () => {
           <p className="body-body-lg">Navigating healthcare shouldn't be a solo journey. I provide personalized advocacy, education, and support to help you make informed decisions about your care.</p>
         </div>
         <div className="column-two">
-          <div className="logo-large">
-            <img src="/assets/logo/logo-stackedWordmark--light.svg" alt="Rachel Lee Patient Advocacy" />
+          <div className="logo-large" aria-hidden="true">
+            <img src="/assets/logo/logo-stackedWordmark--light.svg" alt="" role="presentation" />
           </div>
         </div>
       </div>
