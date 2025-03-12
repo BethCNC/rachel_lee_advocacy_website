@@ -22,87 +22,116 @@ A comprehensive WordPress-based website for Rachel Lee's patient advocacy servic
 
 ## Project Structure
 ```
-rachel-lee-website/
-├── wp-content/
-│   ├── themes/
-│   │   ├── rachel-lee-theme/          # Custom child theme
-│   │   └── divi/                      # Parent theme
-│   ├── plugins/
-│   │   ├── rachel-lee-tools/          # Custom interactive features
-│   │   └── rachel-lee-blocks/         # Custom Gutenberg blocks
-│   └── uploads/                       # Media files
-├── src/
-│   ├── components/                    # React components
-│   │   ├── interactive/               # Interactive tools
-│   │   ├── accessibility/             # Accessibility features
-│   │   └── common/                    # Shared components
-│   ├── styles/                        # SCSS files
-│   │   ├── base/                      # Base styles
-│   │   ├── components/                # Component styles
-│   │   └── theme/                     # Theme variables
-│   └── scripts/                       # TypeScript utilities
-├── docs/
-│   ├── development/                   # Development docs
-│   ├── design/                        # Design assets
-│   ├── content/                       # Content guidelines
-│   └── research/                      # Analysis findings
-└── tests/                            # Test suites
+rachel-lee-patient-advocacy/
+├── public/                           # Static assets
+│   ├── assets/                       # Media files
+│   │   ├── images/                   # Image assets
+│   │   ├── logo/                     # Logo files
+│   │   └── videos/                   # Video assets
+│   └── index.html                    # Main HTML file
+├── src/                              # Source code
+│   ├── components/                   # React components
+│   │   ├── Header.jsx                # Header component
+│   │   ├── Header.css                # Header styles
+│   │   ├── NavBar.jsx                # Navigation component
+│   │   └── NavBar.css                # Navigation styles
+│   ├── styles/                       # CSS files
+│   │   ├── tokens/                   # Design tokens
+│   │   ├── variables.css             # CSS variables
+│   │   └── typography.css            # Typography styles
+│   ├── App.jsx                       # Main App component
+│   ├── App.css                       # App styles
+│   └── index.js                      # Entry point
+├── config/                           # Configuration files
+│   ├── webpack/                      # Webpack configuration
+│   ├── tsconfig.json                 # TypeScript config
+│   ├── tailwind.config.ts            # Tailwind config
+│   └── sd.config.js                  # Style Dictionary config
+├── tokens/                           # Design token files
+│   ├── all-tokens.json               # Combined tokens
+│   ├── color-tokens.json             # Color tokens
+│   └── fixed-tokens.json             # Fixed tokens
+├── tools/                            # External tools
+│   ├── figma-token-project/          # Figma token engine
+│   └── Figma-Context-MCP/            # Figma context tool
+├── scripts/                          # Utility scripts
+│   ├── extract_website_structure.py  # Website structure script
+│   └── analyze_nextact.py            # Analysis script
+├── docs/                             # Documentation
+│   ├── development/                  # Development docs
+│   ├── design/                       # Design assets
+│   ├── content/                      # Content guidelines
+│   └── research/                     # Analysis findings
+├── data/                             # Data files
+│   ├── scraping/                     # Scraped data
+│   └── analysis/                     # Analysis data
+├── package.json                      # NPM package file
+└── README.md                         # Project documentation
 ```
 
-## Development Setup
+## Getting Started
 
 ### Prerequisites
-1. Local WordPress Environment:
-   - Local by Flywheel or similar
-   - PHP 8.1+
-   - MySQL 8.0+
-
-2. Development Tools:
-   - Node.js 18+
-   - npm or yarn
-   - Composer
-   - Git
+- Node.js 18+
+- Python 3.8+ (for data scripts)
 
 ### Installation
-1. Clone the repository:
+
+1. Clone the repository
 ```bash
-git clone https://github.com/BethCNC/rachel-lee-website.git
-cd rachel-lee-website
+git clone https://github.com/yourusername/rachel-lee-patient-advocacy.git
+cd rachel-lee-patient-advocacy
 ```
 
-2. Install dependencies:
+2. Install dependencies
 ```bash
-composer install
 npm install
 ```
 
-3. Configure WordPress:
+3. Start the development server
 ```bash
-# Copy environment configuration
-cp .env.example .env
-# Update with local settings
+npm start
 ```
 
-4. Build assets:
+## Development Workflow
+
+### Design Tokens
+Design tokens are stored in the `tokens/` directory and are processed using Style Dictionary. To update tokens:
+
+1. Edit the token JSON files in the `tokens/` directory
+2. Run the token processing script:
 ```bash
-npm run build
+npm run tokens
 ```
 
-### Development Workflow
-1. Start development environment:
-```bash
-npm run dev
-```
+### Component Development
+Components are built using React and styled with CSS. Follow these guidelines:
 
-2. Follow branching strategy:
-```bash
-git checkout -b feature/your-feature-name
-```
+1. Create new components in the `src/components/` directory
+2. Use design tokens for consistent styling
+3. Ensure accessibility compliance (WCAG 2.1 AA)
+4. Test on multiple devices and screen sizes
 
-3. Run tests:
-```bash
-npm run test
-```
+## Accessibility Standards
+This project adheres to WCAG 2.1 AA standards. Key requirements include:
+
+- Semantic HTML structure
+- Keyboard navigation
+- Screen reader compatibility
+- Color contrast compliance
+- Multiple content formats
+- ADHD/Autism-friendly design patterns
+
+## Documentation
+Comprehensive documentation is available in the `docs/` directory:
+
+- `docs/development/` - Development guidelines
+- `docs/design/` - Design assets and guidelines
+- `docs/content/` - Content strategy and guidelines
+- `docs/research/` - User research and analysis
+
+## License
+This project is proprietary and confidential. All rights reserved.
 
 ## Key Components
 
