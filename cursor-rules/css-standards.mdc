@@ -1,0 +1,78 @@
+---
+description: CSS-rules
+globs: 
+alwaysApply: true
+---
+# CSS Standards for Rachel Lee Advocacy Website
+
+## Established CSS Values - DO NOT CHANGE
+
+### Typography System
+The typography system has been established in `typography.css` with classes that match the Figma design specifications. These values are now locked and should be used consistently across the application.
+
+```css
+/* Use typography classes from typography.css */
+.heading-heading-7xl {...}
+.heading-heading-6xl {...}
+/* and so on */
+
+/* DO NOT create new typography styles or modify existing ones */
+```
+
+### Design Tokens
+The design tokens are established in `variables.css` and include:
+
+1. **Colors**
+   - Brand colors
+   - Semantic colors
+   - System colors
+
+2. **Spacing**
+   - Consistent spacing scales
+
+3. **Shadows**
+   - Defined elevation levels
+
+```css
+/* Always use CSS variables for design values */
+color: var(--color-brand-primary);
+margin: var(--spacing-md);
+box-shadow: var(--shadow-sm);
+
+/* DO NOT use hardcoded values */
+```
+
+### CSS Architecture
+The CSS is organized as follows:
+- `variables.css` - Global design tokens
+- `typography.css` - Typography classes
+- `App.css` - Global styles and utilities
+- Component-specific CSS files - For component styling
+
+## CSS Coding Standards
+
+1. **Use established classes and variables**
+   - For typography, use the typography classes
+   - For colors, spacing, and other design tokens, use CSS variables
+
+2. **Component styling**
+   - Each component should have its own CSS file
+   - Use BEM naming convention
+   - Avoid deep nesting
+
+3. **Responsive design**
+   - Use mobile-first approach
+   - Utilize the defined breakpoints in variables.css
+
+4. **Accessibility**
+   - Ensure sufficient color contrast
+   - Provide focus states
+   - Support reduced motion preferences
+
+## Making Changes
+If you believe a change to the established CSS system is necessary:
+1. Document the proposed change and rationale
+2. Get approval from the design team
+3. Update both the CSS and this documentation
+
+DO NOT modify the core CSS variables or typography classes without this process. 
