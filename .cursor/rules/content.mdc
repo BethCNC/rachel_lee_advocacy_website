@@ -1,7 +1,7 @@
 ---
 description: Content Rules
 globs: 
-alwaysApply: true
+alwaysApply: false
 ---
 # Content Guidelines for Rachel Lee Advocacy Website
 

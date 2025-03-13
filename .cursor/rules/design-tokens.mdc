@@ -1,0 +1,247 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+# Design Token Standards for Rachel Lee Patient Advocacy Website
+
+## Overview
+This document outlines the design token standards for the Rachel Lee Patient Advocacy website. All styling decisions MUST use these design tokens as the single source of truth. Do not create new CSS values or use hardcoded values.
+
+## Design System Integration
+
+### Token Implementation
+Design tokens are defined in multiple layers:
+1. CSS Variables in `src/styles/variables.css`
+2. Typography styles in `src/styles/typography.css`
+3. Mapped to Tailwind via `tailwind.config.js`
+
+### Accessing Tokens
+The preferred method is to use Tailwind utility classes that reference these tokens:
+
+```jsx
+// PREFERRED: Using Tailwind utilities that reference design tokens
+<div className="bg-background-primary text-foreground-primary p-4 rounded-lg shadow-md">
+  <h2 className="text-heading-xl mb-2">Heading</h2>
+  <p className="text-body-base">Content</p>
+</div>
+```
+
+For custom CSS when needed, use the CSS variables:
+
+```css
+.custom-element {
+  background-color: var(--background-primary);
+  color: var(--foreground-primary);
+  padding: var(--spacing-md);
+}
+```
+
+## Typography
+
+### Font Families
+```css
+/* Available as Tailwind classes font-heading, font-hero, etc. */
+--font-heading: 'halyard-display', sans-serif;  /* For UI headings */
+--font-hero: 'freight-display-pro', serif;     /* For hero/display text */
+--font-body: 'freight-text-pro', serif;        /* For body text */
+--font-label: 'halyard-text', sans-serif;      /* For UI labels/buttons */
+```
+
+### Font Weights
+```css
+/* Available as Tailwind classes font-extralight, font-bold, etc. */
+--font-weight-extralight: 100;
+--font-weight-light: 200;
+--font-weight-book: 300;
+--font-weight-regular: 400;
+--font-weight-medium: 500;
+--font-weight-semibold: 600;
+--font-weight-bold: 700;
+--font-weight-black: 800;
+```
+
+### Typography Styles
+Typography styles combine font family, size, weight, and line height. Use the Tailwind classes:
+
+```jsx
+// Heading styles
+<h1 className="text-heading-4xl">Heading</h1>
+
+// Hero styles
+<div className="text-hero-xl">Hero Text</div>
+
+// Body styles
+<p className="text-body-base">Body text</p>
+
+// Label styles
+<label className="text-label-sm">Label</label>
+```
+
+See the Typography Usage rule for complete details on available typography classes.
+
+## Colors
+
+### Brand Colors
+The brand colors are organized into palettes with varying shades (50-950).
+Available as Tailwind classes like `bg-brand-evergreen-500`, `text-brand-cobalt-600`, etc.
+
+Primary color palettes include:
+- Evergreen (`--color-brand-evergreen-[shade]`)
+- Cobalt (`--color-brand-cobalt-[shade]`)
+- Mulberry (`--color-brand-mulberry-[shade]`)
+- Petal (`--color-brand-petal-[shade]`)
+- Lilac (`--color-brand-lilac-[shade]`)
+- Citron (`--color-brand-citron-[shade]`)
+- Amber (`--color-brand-amber-[shade]`)
+- Saffron (`--color-brand-saffron-[shade]`)
+
+### Semantic Colors
+Semantic colors define the meaning and purpose of colors in the interface.
+Available as Tailwind classes like `bg-background-primary`, `text-foreground-accent`, etc.
+
+```css
+/* Background colors */
+--background-primary: var(--color-brand-neutral-50);
+--background-secondary: var(--color-brand-mulberry-500);
+--background-tertiary: var(--color-brand-lilac-500);
+--background-accent: var(--color-brand-petal-100);
+--background-alternate: var(--color-brand-cobalt-500);
+--background-error: var(--color-system-red-100);
+--background-warning: var(--color-system-amber-100);
+--background-success: var(--color-system-emerald-100);
+--background-information: var(--color-system-sky-100);
+
+/* Foreground colors */
+--foreground-primary: var(--color-brand-neutral-950);
+--foreground-on-dark: var(--color-brand-neutral-50);
+--foreground-on-secondary: var(--color-brand-neutral-50);
+--foreground-on-tertiary: var(--color-brand-neutral-950);
+--foreground-on-accent: var(--color-brand-mulberry-600);
+--foreground-on-alternate: var(--color-brand-cobalt-50);
+--foreground-error: var(--color-system-red-700);
+--foreground-warning: var(--color-system-amber-700);
+--foreground-success: var(--color-system-emerald-700);
+--foreground-information: var(--color-system-sky-700);
+
+/* Border colors */
+--border-primary: var(--color-brand-neutral-400);
+--border-secondary: var(--color-brand-mulberry-800);
+--border-tertiary: var(--color-brand-lilac-800);
+--border-accent: var(--color-brand-mulberry-600);
+--border-alternate: var(--color-brand-cobalt-600);
+```
+
+## Spacing
+
+Spacing values are available as Tailwind classes like `p-4`, `m-8`, `gap-3`, etc.
+
+```css
+/* Core spacing values */
+--spacing-0: 0px;
+--spacing-1: 1px;
+--spacing-2: 2px;
+--spacing-4: 4px;
+--spacing-8: 8px;
+--spacing-12: 12px;
+--spacing-16: 16px;
+--spacing-20: 20px;
+--spacing-24: 24px;
+--spacing-32: 32px;
+--spacing-40: 40px;
+--spacing-48: 48px;
+--spacing-64: 64px;
+--spacing-80: 80px;
+--spacing-96: 96px;
+--spacing-128: 128px;
+
+/* Semantic spacing */
+--spacing-xxs: var(--spacing-4);
+--spacing-xs: var(--spacing-8);
+--spacing-sm: var(--spacing-12);
+--spacing-md: var(--spacing-16);
+--spacing-lg: var(--spacing-24);
+--spacing-xl: var(--spacing-48);
+--spacing-xxl: var(--spacing-64);
+--spacing-xxxl: var(--spacing-80);
+```
+
+## Border Radius
+
+Border radius values are available as Tailwind classes like `rounded-sm`, `rounded-lg`, etc.
+
+```css
+--radius-none: 0px;
+--radius-xs: 2px;
+--radius-sm: 4px;
+--radius-md: 6px;
+--radius-lg: 8px;
+--radius-xl: 12px;
+--radius-2xl: 16px;
+--radius-3xl: 20px;
+--radius-full: 999px;
+```
+
+## Shadows
+
+Shadow values are available as Tailwind classes like `shadow-sm`, `shadow-lg`, etc.
+
+```css
+--shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+--shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+--shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+--shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+```
+
+## Implementation Examples
+
+### Component with Tailwind
+
+```jsx
+const Card = ({ title, content }) => (
+  <div className="bg-background-primary shadow-md rounded-lg p-4 mb-4">
+    <h3 className="text-heading-lg text-foreground-primary mb-2">{title}</h3>
+    <p className="text-body-base text-foreground-on-accent">{content}</p>
+    <button className="bg-background-accent text-foreground-on-accent px-4 py-2 mt-4 rounded-md hover:bg-opacity-80 transition-colors">
+      Learn More
+    </button>
+  </div>
+);
+```
+
+### Custom CSS (When Needed)
+
+```css
+.custom-component {
+  /* Use CSS variables for all values */
+  background-color: var(--background-primary);
+  color: var(--foreground-primary);
+  padding: var(--spacing-md);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+}
+
+/* NEVER use hardcoded values */
+```
+
+## Responsive Design
+
+Use Tailwind's responsive prefixes to apply tokens at different breakpoints:
+
+```jsx
+<div className="text-heading-lg md:text-heading-xl lg:text-heading-2xl">
+  Responsive Text
+</div>
+
+<div className="p-4 md:p-6 lg:p-8">
+  Responsive Padding
+</div>
+```
+
+## Accessibility
+
+Always ensure color combinations meet WCAG 2.1 AA contrast requirements. Use the semantic color tokens to maintain consistent and accessible design across the website.
+
+## Enforcement
+
+All pull requests will be reviewed to ensure compliance with these design token standards. Code that does not use the design tokens will be rejected. 

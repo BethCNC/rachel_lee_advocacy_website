@@ -1,0 +1,116 @@
+---
+description: CSS-rules
+globs: 
+alwaysApply: true
+---
+# CSS Standards for Rachel Lee Advocacy Website
+
+## Primary Styling Method: Tailwind CSS
+
+This project uses Tailwind CSS as the primary styling method. Whenever possible, use Tailwind utility classes rather than writing custom CSS.
+
+```jsx
+// PREFERRED: Using Tailwind utility classes
+<button className="bg-background-accent text-foreground-on-accent px-4 py-2 rounded-lg">
+  Click Me
+</button>
+
+// AVOID: Using custom CSS classes that require separate styling
+<button className="custom-button">
+  Click Me
+</button>
+```
+
+## Established CSS Values - DO NOT CHANGE
+
+### Typography System
+The typography system has been established in `typography.css` with classes that match the Figma design specifications. These are now mapped to Tailwind's fontSize utility through the tailwind.config.js file.
+
+```jsx
+// PREFERRED: Using Tailwind typography classes 
+<h1 className="text-heading-xl text-foreground-primary">Heading</h1>
+
+// AVOID: Direct CSS class usage when Tailwind is available
+<h1 className="heading-heading-xl">Heading</h1>
+```
+
+### Design Tokens
+The design tokens are established in `variables.css` and include:
+
+1. **Colors**
+   - Brand colors
+   - Semantic colors
+   - System colors
+
+2. **Spacing**
+   - Consistent spacing scales
+
+3. **Shadows**
+   - Defined elevation levels
+
+```css
+/* When writing CSS, always use CSS variables for design values */
+.custom-element {
+  color: var(--foreground-primary);
+  margin: var(--spacing-md);
+  box-shadow: var(--shadow-sm);
+}
+
+/* DO NOT use hardcoded values */
+```
+
+### CSS Architecture
+The CSS is organized as follows:
+- `variables.css` - Global design tokens
+- `typography.css` - Typography classes
+- `tailwind.config.js` - Tailwind configuration mapping to design tokens
+- Component styling - Primarily through Tailwind utility classes
+
+### Component Styling Approach
+
+```jsx
+// PREFERRED: Component styling with Tailwind
+const Button = ({ children }) => (
+  <button className="bg-background-accent text-foreground-on-accent px-4 py-2 rounded-lg hover:bg-opacity-80 transition-colors">
+    {children}
+  </button>
+);
+
+// AVOID: Component styling with custom CSS classes
+const Button = ({ children }) => (
+  <button className="custom-button">
+    {children}
+  </button>
+);
+```
+
+## CSS Coding Standards
+
+1. **Use Tailwind first**
+   - Start with available Tailwind utilities before writing custom CSS
+   - Combine multiple utilities to achieve the desired styling
+   - Use the `@apply` directive in CSS files only when absolutely necessary
+
+2. **When custom CSS is needed**
+   - Use the design tokens from variables.css
+   - Follow BEM naming convention for custom classes
+   - Place component-specific styles in component-specific CSS files
+
+3. **Responsive design**
+   - Use Tailwind's responsive prefixes: `sm:`, `md:`, `lg:`, etc.
+   - Follow mobile-first approach (default styles for mobile, then add breakpoint styles)
+   - Use the breakpoints defined in tailwind.config.js
+
+4. **Accessibility**
+   - Ensure sufficient color contrast
+   - Provide focus states
+   - Support reduced motion preferences
+   - Use appropriate semantic HTML elements
+
+## Making Changes
+If you believe a change to the established CSS system is necessary:
+1. Document the proposed change and rationale
+2. Get approval from the design team
+3. Update both the CSS and the tailwind.config.js file
+
+DO NOT modify the core CSS variables, typography classes, or Tailwind configuration without this process. 

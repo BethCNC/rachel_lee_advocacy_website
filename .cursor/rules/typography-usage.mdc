@@ -1,0 +1,117 @@
+---
+description: Typography Rules
+globs: 
+alwaysApply: true
+---
+# Typography Usage Guide
+
+## Overview
+This project uses a custom typography system that's integrated with Tailwind CSS. Typography styles are defined in:
+1. `src/styles/typography.css` (traditional CSS classes)
+2. `tailwind.config.js` (for use with Tailwind utility classes - PREFERRED)
+
+The typography styles in `typography.css` have been mapped to Tailwind utility classes in the `tailwind.config.js` file, allowing you to use them directly in your components.
+
+## Using Typography in Components
+
+### Option 1: Tailwind Utility Classes (PREFERRED)
+The typography styles are available as Tailwind font size utilities, which should be your primary approach:
+
+```jsx
+<h1 className="text-heading-4xl text-foreground-primary">Large Heading</h1>
+<p className="text-body-base">Regular paragraph text</p>
+```
+
+### Option 2: Direct CSS Classes (Only when necessary)
+When Tailwind utilities aren't suitable, you can directly apply typography classes from `typography.css`:
+
+```jsx
+<h1 className="heading-heading-4xl">Large Heading</h1>
+<p className="body-body-base">Regular paragraph text</p>
+```
+
+## Available Typography Styles
+
+### Heading Styles (Halyard Display)
+- `text-heading-7xl`: 96px, 500 weight, 114px line height
+- `text-heading-6xl`: 72px, 500 weight, 86px line height
+- `text-heading-5xl`: 60px, 500 weight, 72px line height
+- `text-heading-4xl`: 48px, 500 weight, 56px line height
+- `text-heading-3xl`: 36px, 400 weight, 44px line height
+- `text-heading-2xl`: 30px, 500 weight, 42px line height
+- `text-heading-xl`: 24px, 500 weight, 32px line height
+- `text-heading-lg`: 20px, 500 weight, 28px line height
+- `text-heading-base`: 16px, 500 weight, 24px line height
+- `text-heading-sm`: 14px, 500 weight, 18px line height
+- `text-heading-xs`: 12px, 500 weight, 16px line height
+
+### Hero Styles (Freight Display Pro)
+- `text-hero-3xl`: 72px, 500 weight, 86px line height
+- `text-hero-2xl`: 60px, 500 weight, 80px line height
+- `text-hero-xl`: 48px, 500 weight, 56px line height
+- `text-hero-lg`: 36px, 500 weight, 56px line height
+- `text-hero-base`: 30px, 500 weight, 44px line height
+- `text-hero-sm`: 24px, 500 weight, 42px line height
+
+### Body Styles (Freight Text Pro)
+- `text-body-3xl`: 36px, 600 weight, 42px line height
+- `text-body-2xl`: 24px, 600 weight, 32px line height
+- `text-body-xl`: 20px, 600 weight, 32px line height
+- `text-body-lg`: 18px, 500 weight, 24px line height
+- `text-body-base`: 16px, 500 weight, 22px line height
+- `text-body-sm`: 14px, 400 weight, 18px line height
+- `text-body-xs`: 12px, 400 weight, 16px line height
+
+### Label Styles (Halyard Text)
+- `text-label-lg`: 18px, 400 weight, 24px line height
+- `text-label-base`: 16px, 400 weight, 22px line height
+- `text-label-sm`: 14px, 400 weight, 18px line height
+- `text-label-xs`: 12px, 400 weight, 16px line height
+
+## Combining with Other Tailwind Classes
+
+Typography classes should be combined with other Tailwind utilities for complete styling:
+
+```jsx
+<h1 className="text-heading-xl text-foreground-primary font-bold mb-4">
+  Styled Heading
+</h1>
+
+<p className="text-body-base text-foreground-on-alternate leading-relaxed">
+  This paragraph uses the body-base size with additional styling.
+</p>
+```
+
+## Responsive Typography
+
+Use responsive variants for different screen sizes:
+
+```jsx
+<h1 className="text-heading-lg md:text-heading-xl lg:text-heading-2xl">
+  Responsive Heading
+</h1>
+
+<p className="text-body-sm sm:text-body-base md:text-body-lg">
+  This text changes size based on screen width
+</p>
+```
+
+## Best Practices
+
+1. **Consistency**: Always use the predefined typography styles rather than custom font sizes
+2. **Tailwind First**: Prefer the Tailwind utilities (`text-heading-xl`) over direct CSS classes 
+3. **Semantic Usage**: Use the appropriate typography style for the content:
+   - `heading-*` for section titles and headings
+   - `hero-*` for large display text and hero sections
+   - `body-*` for paragraph and content text
+   - `label-*` for form labels, buttons, and UI elements
+4. **Accessibility**: Ensure text has sufficient contrast against backgrounds
+5. **No Custom Styles**: Don't create custom font styles outside this system
+
+## Troubleshooting
+
+If typography doesn't render as expected:
+1. Ensure fonts are properly loaded (check for Typekit/Adobe Fonts integration)
+2. Check that you're using the exact class names as defined in the system
+3. Verify you aren't overriding styles with more specific CSS selectors
+4. Make sure the font families are available in the project 

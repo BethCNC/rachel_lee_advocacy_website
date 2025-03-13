@@ -1,9 +1,7 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client';
-import './styles/tokens/tokens.css';
-import './styles/variables.css';
-import './styles/typography.css';
-import './App.css';
+// Only importing the essential CSS file that imports all others
+import './styles/index.css';
 import App from './App';
 
 const container = document.getElementById('root');

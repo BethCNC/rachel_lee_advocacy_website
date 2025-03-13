@@ -243,4 +243,50 @@ Private repository - All rights reserved
 - Original content analysis from `web_scrape_umi` project
 - Design inspiration from healthcare advocacy best practices
 - Accessibility guidance from WCAG 2.1
-- WordPress community resources 
+- WordPress community resources
+
+## Design Tokens Management
+
+### Token Synchronization
+
+This project uses a custom token synchronization script to manage design tokens across multiple files. The script ensures that all token files are properly generated and that configurations are consistent.
+
+#### Running Token Synchronization
+
+```bash
+# Run the token synchronization script
+node sync-tokens.js
+```
+
+This script:
+1. Checks for required dependencies
+2. Generates token files using Style Dictionary
+3. Updates Tailwind configuration to use the correct token paths
+4. Updates CSS imports in the App component
+5. Cleans up redundant files
+
+#### File Structure
+
+The token system is organized as follows:
+
+- `/tokens/` - Source token files
+  - `all-tokens.json` - Complete token definitions
+  - `transformed-tokens.json` - Tokens transformed for Tailwind usage
+
+- `/src/styles/tokens/` - Generated token files
+  - `tokens.css` - CSS variables
+  - `tokens.scss` - SCSS variables
+  - `tokens.js` - JavaScript exports
+  - `tokens.ts` - TypeScript exports
+  - `tokens.json` - JSON format
+
+- `/src/styles/` - Style configuration
+  - `index.css` - Main CSS entry point
+  - `tailwind.config.js` - Tailwind configuration
+  - `variables.css` - Manual CSS variables
+
+#### Adding New Tokens
+
+1. Add tokens to the source file (`/tokens/all-tokens.json`)
+2. Run the token synchronization script
+3. The tokens will be available as CSS variables, in Tailwind, and in other formats 

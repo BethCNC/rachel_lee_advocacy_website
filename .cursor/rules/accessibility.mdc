@@ -1,7 +1,7 @@
 ---
 description: accessiblty-rules
 globs: 
-alwaysApply: true
+alwaysApply: false
 ---
 # Accessibility Standards for Rachel Lee Advocacy Website
 

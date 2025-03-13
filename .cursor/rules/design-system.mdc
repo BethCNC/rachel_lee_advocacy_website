@@ -1,0 +1,69 @@
+---
+description: Design system rules
+globs: 
+alwaysApply: true
+---
+# Design System Rules
+
+## Core Principles
+- ONLY use the established tailwind.config.js for styling
+- NEVER create new design tokens or values not found in the existing system
+- ALWAYS reference typography.css and variables.css as the single source of truth
+- NEVER create components that aren't explicitly requested by the user
+- NEVER invent new styles or values not already defined in the design system
+
+## Tailwind Configuration
+```js
+// Only use the root and src/styles tailwind.config.js files
+// Both configurations have been synchronized to include typography styles
+// All styling must use these configurations 
+```
+
+## Typography Usage
+- ALL text styling must come from the typography tokens defined in tailwind.config.js
+- These tokens are derived from src/styles/typography.css
+- Use the text-* Tailwind classes that map to the typography styles
+- Always prefer Tailwind utility classes over direct CSS classes:
+  ```jsx
+  // PREFERRED
+  <h1 className="text-heading-4xl">Title</h1>
+  
+  // INSTEAD OF
+  <h1 className="heading-heading-4xl">Title</h1>
+  ```
+- Available typography styles (font sizes, weights, line heights) include:
+  - Heading: text-heading-[size] (7xl, 6xl, 5xl, 4xl, 3xl, 2xl, xl, lg, base, sm, xs)
+  - Hero: text-hero-[size] (3xl, 2xl, xl, lg, base, sm)
+  - Body: text-body-[size] (3xl, 2xl, xl, lg, base, sm, xs)
+  - Label: text-label-[size] (lg, base, sm, xs)
+
+## CSS Variables
+- ALL colors, spacing, and other design tokens must use variables from variables.css
+- NEVER hardcode hex colors, pixel values, or other measurements
+- Use Tailwind utility classes that map to these variables when possible
+- When direct CSS is needed, use var(--token-name) syntax:
+  - Colors: var(--background-primary), var(--foreground-accent)
+  - Spacing: var(--spacing-md), var(--spacing-lg)
+  - Borders: var(--border-width-1), var(--radius-md)
+
+## Component Creation
+- ONLY create components explicitly requested by the user
+- Components must ONLY use existing design tokens via Tailwind classes
+- NEVER invent new styling approaches not defined in the design system
+- ALL components must be consistent with existing patterns
+- Avoid component-specific CSS files when possible - use Tailwind utilities
+
+## Responsive Design
+- Use only the breakpoints defined in the Tailwind config
+- Apply responsive variants using Tailwind's prefix syntax:
+  ```jsx
+  <div className="text-heading-lg md:text-heading-xl lg:text-heading-2xl">
+    Responsive Text
+  </div>
+  ```
+- Maintain consistent spacing and typography across breakpoints
+
+## When In Doubt
+- Ask the user for clarification rather than making assumptions
+- Reference the existing codebase for patterns before suggesting implementations
+- If a design token seems missing, ask the user rather than creating a new one 
