@@ -1,15 +1,24 @@
 import React from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
 import Header from './components/Header';
-import './App.css';
+import ButtonExample from './components/ButtonExample';
+import './styles/index.css';
 
 function App() {
   return (
     <Router>
       <div className="app">
         <Header />
-        <main className="main-content">
-          {/* Main content sections will be added here */}
+        <main className="main-content mt-20">
+          {/* Button Example for demonstration */}
+          <section id="button-example" className="section">
+            <div className="container mx-auto px-4 py-12">
+              <h2 className="text-heading-2xl mb-4">Button Component</h2>
+              <p className="text-body-xl mb-8">A demonstration of the Button component in various configurations</p>
+              <ButtonExample />
+            </div>
+          </section>
+          
           <section id="services" className="section">
             <div className="container">
               <h2 className="section-title">Our Services</h2>

@@ -1,0 +1,63 @@
+/* Main stylesheet for Rachel Lee Patient Advocacy */
+
+/* Import Tailwind directives */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Import typography and variables - these are the source of truth */
+@import './typography.css';
+@import './variables.css';
+
+/* Custom component classes built with Tailwind */
+@layer components {
+  /* Heading styles */
+  .heading-heading-7xl {
+    @apply text-[96px] font-halyard-display font-medium leading-[114px];
+  }
+  
+  .heading-heading-6xl {
+    @apply text-[72px] font-halyard-display font-medium leading-[86px];
+  }
+  
+  .heading-heading-5xl {
+    @apply text-[60px] font-halyard-display font-medium leading-[72px];
+  }
+  
+  /* Hero styles */
+  .hero-hero-3xl {
+    @apply text-[72px] font-freight-display-pro font-medium leading-[86px];
+  }
+  
+  /* Body styles */
+  .body-body-3xl {
+    @apply text-[36px] font-freight-text-pro font-semibold leading-[42px];
+  }
+}
+
+/* Global styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--foreground-primary);
+  background-color: var(--background-primary);
+}
+
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Container styles */
+.container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 var(--spacing-md);
+} 
