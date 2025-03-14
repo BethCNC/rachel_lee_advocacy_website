@@ -1,50 +1,69 @@
-# Project Structure Documentation
+# Project CSS Structure Documentation
 
 ## CSS Files
 - `src/styles/index.css` - Main CSS entry point with Tailwind directives
-- `src/styles/variables.css` - Source of truth for design tokens
-- `src/styles/typography.css` - Typography styles
-- `src/styles/tokens/tokens.css` - Generated design tokens from Style Dictionary
-- `src/components/Header.css` - Styles for the Header component
-- `src/components/NavBar.css` - Styles for the NavBar component
+- `src/styles/variables.css` - Additional CSS variables (shadows, focus effects, etc.)
+- `src/styles/typography.css` - Typography styles and variables
+- `src/styles/tokens.css` - Design tokens for colors, spacing, etc.
 
-## Token Files
-- `tokens/all-tokens.json` - Raw tokens from Figma
-- `tokens/transformed-tokens.json` - Processed tokens for use in Tailwind and components
-- `src/styles/tokens/tokens.css` - CSS variables from tokens
-- `src/styles/tokens/tokens.scss` - SCSS variables from tokens
-- `src/styles/tokens/tokens.js` - JavaScript exports for tokens
-- `src/styles/tokens/tokens.ts` - TypeScript types for tokens
-- `src/styles/tokens/tokens.json` - JSON representation of tokens for reference
-
-## Config Files
-- `tailwind.config.js` - Root Tailwind config (primary, used by build process)
-- `src/styles/tailwind.config.js` - Styles directory Tailwind config (should be in sync with root)
-- `config/tailwind.config.ts` - TypeScript Tailwind config (for IDE integration)
+## Configuration Files
+- `tailwind.config.js` - Main Tailwind configuration file
 - `postcss.config.js` - PostCSS configuration
-- `config/sd.config.js` - Style Dictionary configuration
-
-## Token Management Scripts
-- `sync-tokens.js` - Synchronizes tokens across the project
-- `sync-tailwind-configs.js` - Keeps tailwind configs in sync
-- `verify-tokens.js` - Verifies token values against source of truth
-- `cleanup-tokens.js` - Cleans up token files
 
 ## Import Structure
-- `App.jsx` imports `./styles/index.css`
 - `index.css` imports:
   - Tailwind directives
-  - `./tokens/tokens.css`
+  - `./tokens.css`
   - `./typography.css`
   - `./variables.css`
-- Component files import their own CSS files directly
+- Component files should import `index.css` or use the Tailwind classes directly
 
-## Build Process
-- The build process uses the root `tailwind.config.js`
-- Token synchronization ensures all token files are in sync
+## Design Token System
 
-## Managing Styles
-1. Edit design tokens in Figma
-2. Use `npm run tokens:sync` to synchronize tokens
-3. Use `npm run tailwind:sync` to keep Tailwind configs in sync
-4. Use `npm run tokens:verify` to check token consistency
+### Token Organization
+1. **Primitive Tokens** - Base values (colors, spacing, etc.)
+2. **Semantic Tokens** - Purpose-based tokens (background, foreground, etc.)
+3. **Component Tokens** - Component-specific tokens
+
+### Using Tokens in Components
+Always use the semantic or component tokens rather than primitive tokens:
+
+```jsx
+// GOOD: Using semantic tokens
+<div className="bg-background-primary text-foreground-primary">
+  Content
+</div>
+
+// AVOID: Using primitive tokens directly
+<div className="bg-brand-pebble-100 text-brand-pebble-900">
+  Content
+</div>
+```
+
+## Typography System
+The typography system provides consistent text styles through Tailwind classes:
+
+```jsx
+// Using typography classes
+<h1 className="text-display-2xl">Large Heading</h1>
+<p className="text-body-base">Regular paragraph text</p>
+```
+
+## Adding New Design Tokens
+
+1. Add CSS variables to the appropriate file:
+   - Color tokens → `tokens.css`
+   - Typography tokens → `typography.css`
+   - Other tokens (shadows, effects) → `variables.css`
+
+2. Add the corresponding Tailwind mapping in `tailwind.config.js`
+
+3. Use the new tokens in your components via Tailwind classes
+
+## Best Practices
+
+1. **Use Tailwind First** - Prefer Tailwind utility classes over custom CSS
+2. **Follow the Token System** - Use semantic tokens rather than hard-coded values
+3. **Maintain Consistency** - Follow established patterns for new components
+4. **Mobile-First** - Design for mobile first, then add responsive variants
+5. **Accessibility** - Ensure sufficient color contrast and proper focus states
