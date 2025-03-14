@@ -1,6 +1,9 @@
 /**
  * Typography Styles
- * This file will contain the new typography tokens from Figma
+ * This file is kept for backward compatibility.
+ * All typography tokens have been moved to tokens.css
  */
+
+/* This file is kept empty intentionally. All typography tokens are now in tokens.css */
 
 /* Typography classes will be defined here */ 

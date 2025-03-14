@@ -1,7 +1,10 @@
 /**
  * Global CSS Variables
- * This file will contain the new design tokens from Figma
+ * This file is kept for backward compatibility.
+ * All design tokens have been moved to tokens.css
  */
+
+/* This file is kept empty intentionally. All design tokens are now in tokens.css */
 
 :root {
   /* Typography */
