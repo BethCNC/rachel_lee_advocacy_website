@@ -1,0 +1,339 @@
+---
+description: tailwind-rules-figma-to-code
+globs: 
+alwaysApply: true
+---
+# From Figma to Code: Complete Workflow with Design Tokens and Cursor AI
+
+## Overview
+
+This document outlines the complete workflow for converting a Figma design into a fully functional web application using Cursor AI, shadcn/ui components, and a structured design token system. This approach ensures consistency between design and implementation while maximizing development efficiency.
+
+## Workflow Steps
+
+### 1. Figma Design and Component Organization
+
+- **Create a comprehensive component library** in Figma with all variants
+- **Set up a design token system** using Figma Variables
+- **Document components** with their properties, variants, and states
+- **Organize your Figma file** with clear pages and frames
+
+#### Tips for Figma Organization:
+- Group related components together
+- Use Auto Layout for all components
+- Create variants for different states (default, hover, focus, active, disabled)
+- Apply variables consistently across the design
+
+### 2. Export Design Tokens from Figma
+
+- Use a Figma plugin to export design tokens
+- Export tokens in a format that can be converted to CSS variables
+- Include all token categories:
+  - Colors (primitive and semantic)
+  - Typography
+  - Spacing
+  - Border radius
+  - Shadows
+  - Component-specific tokens
+
+#### Example Token Structure:
+```
+Primitives
+├── Colors
+│   ├── Brand
+│   ├── System
+│   └── Opacity
+├── Spacing
+├── Typography
+└── Border Radius
+
+Semantics
+├── Light Theme
+│   ├── Background
+│   ├── Foreground
+│   └── Border
+└── Dark Theme
+    ├── Background
+    ├── Foreground
+    └── Border
+
+Components
+├── Button
+├── Card
+└── Other Components
+```
+
+### 3. Set Up Your Development Environment
+
+- Install core dependencies:
+  ```bash
+  npm install -D tailwindcss postcss autoprefixer
+  npm install -g shadcn-ui
+  npm install lucide-react
+  ```
+
+- Initialize Tailwind CSS:
+  ```bash
+  npx tailwindcss init -p
+  ```
+
+- Initialize shadcn/ui:
+  ```bash
+  npx shadcn-ui@latest init
+  ```
+
+- Set up project structure:
+  ```
+  src/
+  ├── styles/
+  │   ├── tokens.css             # Your CSS variables
+  │   └── index.css              # Main CSS file
+  ├── components/
+  │   └── ui/                    # shadcn components
+  ├── lib/
+  │   └── utils.ts               # Utility functions
+  └── app/                       # Your app code
+  ```
+
+### 4. Implement Design Tokens as CSS Variables
+
+Create a `tokens.css` file with all your design tokens as CSS variables:
+
+```css
+:root {
+  /* Primitive colors */
+  --color-brand-pebble-50: rgba(228, 229, 230, 1);
+  --color-brand-pebble-100: rgba(210, 211, 213, 1);
+  /* ...other primitive colors */
+  
+  /* Spacing */
+  --spacing-0: 0px;
+  --spacing-1: 1px;
+  /* ...other spacing values */
+  
+  /* Light Theme Semantic Colors */
+  --background-primary: var(--color-brand-cloud-300);
+  --foreground-primary: var(--color-brand-pebble-950);
+  /* ...other semantic values */
+  
+  /* Component-Specific Tokens */
+  --button-background-primary: var(--color-brand-cloud-500);
+  --button-foreground-primary: var(--foreground-subtle);
+  /* ...other component tokens */
+}
+
+/* Dark Theme */
+.dark {
+  --background-primary: var(--color-brand-pebble-950);
+  --foreground-primary: var(--color-brand-pebble-50);
+  /* ...other dark theme overrides */
+}
+```
+
+### 5. Configure Tailwind to Use Your Design Tokens
+
+Update your `tailwind.config.js` to reference your CSS variables:
+
+```javascript
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  darkMode: 'class',
+  content: [
+    './src/**/*.{js,jsx,ts,tsx}',
+  ],
+  theme: {
+    extend: {
+      colors: {
+        'background-primary': 'var(--background-primary)',
+        'foreground-primary': 'var(--foreground-primary)',
+        /* ...other semantic colors */
+        
+        'button-bg': {
+          'primary': 'var(--button-background-primary)',
+          'primary-hover': 'var(--button-background-primary-hover)',
+          /* ...other button colors */
+        },
+      },
+      borderRadius: {
+        'lg': 'var(--radius-lg-8)',
+        'xl': 'var(--radius-12)',
+        /* ...other radius values */
+      },
+      /* Other theme extensions */
+    },
+  },
+  plugins: [],
+}
+```
+
+### 6. Install and Customize shadcn/ui Components
+
+Install individual shadcn/ui components:
+
+```bash
+npx shadcn-ui@latest add button
+npx shadcn-ui@latest add card
+# ...other components
+```
+
+Customize the components to use your design tokens:
+
+```tsx
+// src/components/ui/button.tsx (example)
+const buttonVariants = cva(
+  "inline-flex items-center justify-center whitespace-nowrap rounded-md...",
+  {
+    variants: {
+      variant: {
+        default: "bg-button-bg-primary text-button-fg-primary hover:bg-button-bg-primary-hover",
+        secondary: "bg-button-bg-secondary text-button-fg-secondary hover:bg-button-bg-secondary-hover",
+        /* ...other variants */
+      },
+      size: {
+        default: "h-10 px-4 py-2",
+        sm: "h-9 px-3 py-2",
+        lg: "h-11 px-8 py-4",
+      },
+    },
+    defaultVariants: {
+      variant: "default",
+      size: "default",
+    },
+  }
+)
+```
+
+### 7. Document Components for Development
+
+Create comprehensive documentation for each component:
+
+- **Visual reference** showing all variants and states
+- **API documentation** detailing props and usage
+- **Accessibility notes** for proper implementation
+- **Code examples** showing common use cases
+
+### 8. Set Up MCP Server for Figma Integration with Cursor AI
+
+1. **Get a Figma API key** from your account settings
+2. **Install and run the MCP server**:
+   ```bash
+   npx figma-developer-mcp --figma-api-key=your_key_here
+   ```
+3. **Connect Cursor to the MCP server** in settings
+
+### 9. Implement Components with Cursor AI
+
+1. **Get the Figma link** to your component:
+   - Right-click component → Copy Link
+   
+2. **Craft a detailed prompt for Cursor AI**:
+   ```
+   I want to implement this Button component from my Figma design:
+   [FIGMA_LINK]
+   
+   Use these design tokens:
+   - Background: var(--button-background-primary)
+   - Text: var(--button-foreground-primary)
+   - Border radius: var(--radius-lg)
+   
+   It should extend the shadcn/ui Button component and include these variants:
+   - primary, secondary, outline, ghost, link, error, warning, success
+   - sizes: small, default, large
+   - states: default, hover, focus, disabled
+   
+   Use Tailwind CSS for styling and maintain accessibility.
+   ```
+
+3. **Review and refine** the generated code
+
+### 10. Testing and Validation
+
+- **Test all component variants** in both light and dark themes
+- **Verify accessibility** using automated tools and manual testing
+- **Check responsive behavior** across device sizes
+- **Ensure proper keyboard navigation** and focus states
+
+## Sample Component Implementation
+
+Here's a complete example of a Button component implementation using this workflow:
+
+```tsx
+// src/components/ui/button.tsx
+import * as React from "react"
+import { Slot } from "@radix-ui/react-slot"
+import { cva, type VariantProps } from "class-variance-authority"
+
+import { cn } from "@/lib/utils"
+
+const buttonVariants = cva(
+  "inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50",
+  {
+    variants: {
+      variant: {
+        default: "bg-button-bg-primary text-button-fg-primary border border-button-border-primary hover:bg-button-bg-primary-hover",
+        secondary: "bg-button-bg-secondary text-button-fg-secondary border border-button-border-secondary hover:bg-button-bg-secondary-hover",
+        outline: "border border-input bg-transparent hover:bg-background-subtle text-foreground-primary",
+        ghost: "bg-transparent hover:bg-background-subtle text-foreground-primary",
+        link: "text-foreground-primary bg-transparent underline-offset-4 hover:underline",
+        error: "bg-button-bg-error text-button-fg-error border border-button-border-error hover:bg-button-bg-error-hover",
+        warning: "bg-button-bg-warning text-button-fg-warning border border-button-border-warning hover:bg-button-bg-warning-hover",
+        success: "bg-button-bg-success text-button-fg-success border border-button-border-success hover:bg-button-bg-success-hover",
+      },
+      size: {
+        default: "h-10 px-h-padding py-v-padding rounded-radius",
+        sm: "h-9 px-3 py-2 rounded-lg text-sm",
+        lg: "h-11 px-8 py-4 rounded-2xl text-lg",
+        icon: "h-10 w-10 rounded-full p-2",
+      },
+    },
+    defaultVariants: {
+      variant: "default",
+      size: "default",
+    },
+  }
+)
+
+export interface ButtonProps
+  extends React.ButtonHTMLAttributes<HTMLButtonElement>,
+    VariantProps<typeof buttonVariants> {
+  asChild?: boolean
+}
+
+const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
+  ({ className, variant, size, asChild = false, ...props }, ref) => {
+    const Comp = asChild ? Slot : "button"
+    return (
+      <Comp
+        className={cn(buttonVariants({ variant, size, className }))}
+        ref={ref}
+        {...props}
+      />
+    )
+  }
+)
+Button.displayName = "Button"
+
+export { Button, buttonVariants }
+```
+
+## Benefits of This Workflow
+
+1. **Design Consistency** - Ensures the implementation matches the design exactly
+2. **Developer Efficiency** - Cursor AI speeds up the implementation process
+3. **Maintainability** - Clean structure makes updates easier
+4. **Accessibility** - shadcn/ui provides accessible components as a foundation
+5. **Scalability** - Process works for simple to complex components
+
+## Common Challenges and Solutions
+
+| Challenge | Solution |
+|-----------|----------|
+| Figma plugin exports in wrong format | Convert tokens to CSS variables manually or use tools like Style Dictionary |
+| shadcn/ui components don't match design | Customize components directly in your codebase |
+| Dark mode inconsistencies | Test both themes during development and maintain semantic token mapping |
+| Responsive behavior differences | Use Tailwind's responsive utilities and test on multiple screen sizes |
+| Component variants missing in shadcn/ui | Extend components with additional variants as needed |
+
+## Conclusion
+
+This workflow bridges the gap between design and development by leveraging modern tools like Figma, Cursor AI, shadcn/ui, and Tailwind CSS. By establishing a strong design token system and using AI to accelerate development, you can create high-quality, accessible, and visually consistent web applications that perfectly match your design vision.

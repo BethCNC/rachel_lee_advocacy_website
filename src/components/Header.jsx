@@ -26,10 +26,10 @@ const Header = () => {
       <NavBar />
       
       {/* Main content section */}
-      <div className="w-full max-w-[var(--container-max,1536px)] h-screen flex relative p-12 md:p-16">
+      <div className="w-full max-w-7xl h-screen flex relative p-12 md:p-16">
         {/* Left column with heading */}
         <div className="absolute top-[30%] left-4 md:left-16 w-full md:w-1/2 flex flex-col justify-start self-start">
-          <h1 className="font-[var(--font-family-primary)] font-semibold text-4xl md:text-6xl text-[var(--foreground-primary)] flex flex-col m-0 leading-tight">
+          <h1 className="font-sans font-semibold text-4xl md:text-6xl text-black flex flex-col m-0 leading-tight">
             <span className="block">Your Health.</span>
             <span className="block">Your Voice.</span>
             <span className="block">Your Advocate.</span>
