@@ -23,7 +23,19 @@
   /* Spacing values will be defined here */
   
   /* Shadows */
-  /* Shadow values will be defined here */
+  --shadow-xxl: 0px 32px 64px rgba(0, 0, 0, 0.14);
+  --shadow-lg: 0px 8px 8px rgba(0, 0, 0, 0.1), 0px 20px 24px rgba(0, 0, 0, 0.17);
+  --shadow-md: 0px 4px 6px rgba(0, 0, 0, 0.11), 0px 12px 16px rgba(0, 0, 0, 0.12);
+  --shadow-sm: 0px 2px 4px rgba(0, 0, 0, 0.06), 0px 4px 8px rgba(0, 0, 0, 0.1);
+  --shadow-xs: 0px 1px 3px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.06);
+  --shadow-xxs: 0px 1px 2px rgba(0, 0, 0, 0.05);
+  
+  /* Focus Shadows */
+  --focus-shadow-light: 4px 4px 0px #3d3e40;
+  --focus-shadow-dark: 4px 4px 0px #18191a;
+  --focus-shadow-error: 4px 4px 0px #dc2626;
+  --focus-shadow-success: 4px 4px 0px #059669;
+  --focus-shadow-warning: 4px 4px 0px #ea580c;
   
   /* Border Radius */
   /* Border radius values will be defined here */

@@ -422,6 +422,44 @@ module.exports = {
         '90': '0.9',
         '95': '0.95',
       },
+      
+      // Add backgroundImage configuration
+      backgroundImage: {
+        // Duotone gradients
+        'duotone-light': 'var(--gradient-duotone-light)',
+        'duotone-dark': 'var(--gradient-duotone-dark)',
+        'duotone-light2': 'var(--gradient-duotone-light2)',
+        'duotone-light3': 'var(--gradient-duotone-light3)',
+        'duotone-blues': 'var(--gradient-duotone-blues)',
+        
+        // Monotone gradients
+        'monotone-citron': 'var(--gradient-monotone-citron)',
+        'monotone-bloom': 'var(--gradient-monotone-bloom)',
+        'monotone-sea': 'var(--gradient-monotone-sea)',
+        'monotone-ocean': 'var(--gradient-monotone-ocean)',
+        'monotone-berry': 'var(--gradient-monotone-berry)',
+        
+        // Special effects
+        'half-split': 'var(--half-split-gradient)',
+        'glass-fill': 'var(--glass-fill)',
+        'watercolor': 'var(--watercolor-background)',
+      },
+      
+      // Add boxShadow configuration
+      boxShadow: {
+        'xxl': 'var(--shadow-xxl)',
+        'focus-light': 'var(--focus-shadow-light)',
+        'focus-dark': 'var(--focus-shadow-dark)',
+        'focus-error': 'var(--focus-shadow-error)',
+        'focus-success': 'var(--focus-shadow-success)',
+        'focus-warning': 'var(--focus-shadow-warning)',
+      },
+      
+      // Add backdropBlur configuration
+      backdropBlur: {
+        'glass': '10px',
+        'glass-heavy': '25px',
+      },
     },
   },
   plugins: [
