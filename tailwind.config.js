@@ -282,132 +282,22 @@ module.exports = {
         '8': 'var(--border-width-8)',
       },
       fontFamily: {
-        'display': 'var(--font-family-display)',
-        'title': 'var(--font-family-title)',
-        'body': 'var(--font-family-body)',
+        display: ['var(--font-family-display)'],
+        title: ['var(--font-family-title)'],
+        body: ['var(--font-family-body)'],
       },
-      fontSize: {
-        // Display Typography
-        'display-7xl': ['var(--display-7xl-font-size)', {
-          lineHeight: 'var(--display-7xl-line-height)',
-          fontWeight: 'var(--display-7xl-font-weight)',
-        }],
-        'display-6xl': ['var(--display-6xl-font-size)', {
-          lineHeight: 'var(--display-6xl-line-height)',
-          fontWeight: 'var(--display-6xl-font-weight)',
-        }],
-        'display-5xl': ['var(--display-5xl-font-size)', {
-          lineHeight: 'var(--display-5xl-line-height)',
-          fontWeight: 'var(--display-5xl-font-weight)',
-        }],
-        'display-4xl': ['var(--display-4xl-font-size)', {
-          lineHeight: 'var(--display-4xl-line-height)',
-          fontWeight: 'var(--display-4xl-font-weight)',
-        }],
-        'display-3xl': ['var(--display-3xl-font-size)', {
-          lineHeight: 'var(--display-3xl-line-height)',
-          fontWeight: 'var(--display-3xl-font-weight)',
-        }],
-        'display-2xl': ['var(--display-2xl-font-size)', {
-          lineHeight: 'var(--display-2xl-line-height)',
-          fontWeight: 'var(--display-2xl-font-weight)',
-        }],
-        'display-xl': ['var(--display-xl-font-size)', {
-          lineHeight: 'var(--display-xl-line-height)',
-          fontWeight: 'var(--display-xl-font-weight)',
-        }],
-        'display-lg': ['var(--display-lg-font-size)', {
-          lineHeight: 'var(--display-lg-line-height)',
-          fontWeight: 'var(--display-lg-font-weight)',
-        }],
-        'display-base': ['var(--display-base-font-size)', {
-          lineHeight: 'var(--display-base-line-height)',
-          fontWeight: 'var(--display-base-font-weight)',
-        }],
-        'display-sm': ['var(--display-sm-font-size)', {
-          lineHeight: 'var(--display-sm-line-height)',
-          fontWeight: 'var(--display-sm-font-weight)',
-        }],
-        'display-xs': ['var(--display-xs-font-size)', {
-          lineHeight: 'var(--display-xs-line-height)',
-          fontWeight: 'var(--display-xs-font-weight)',
-        }],
-        
-        // Title Typography
-        'title-3xl': ['var(--title-3xl-font-size)', {
-          lineHeight: 'var(--title-3xl-line-height)',
-          fontWeight: 'var(--title-3xl-font-weight)',
-        }],
-        'title-2xl': ['var(--title-2xl-font-size)', {
-          lineHeight: 'var(--title-2xl-line-height)',
-          fontWeight: 'var(--title-2xl-font-weight)',
-        }],
-        'title-xl': ['var(--title-xl-font-size)', {
-          lineHeight: 'var(--title-xl-line-height)',
-          fontWeight: 'var(--title-xl-font-weight)',
-        }],
-        'title-lg': ['var(--title-lg-font-size)', {
-          lineHeight: 'var(--title-lg-line-height)',
-          fontWeight: 'var(--title-lg-font-weight)',
-        }],
-        'title-base': ['var(--title-base-font-size)', {
-          lineHeight: 'var(--title-base-line-height)',
-          fontWeight: 'var(--title-base-font-weight)',
-        }],
-        'title-sm': ['var(--title-sm-font-size)', {
-          lineHeight: 'var(--title-sm-line-height)',
-          fontWeight: 'var(--title-sm-font-weight)',
-          letterSpacing: 'var(--title-sm-letter-spacing)',
-        }],
-        'title-xs': ['var(--title-xs-font-size)', {
-          lineHeight: 'var(--title-xs-line-height)',
-          fontWeight: 'var(--title-xs-font-weight)',
-        }],
-        'title-2xs': ['var(--title-2xs-font-size)', {
-          lineHeight: 'var(--title-2xs-line-height)',
-          fontWeight: 'var(--title-2xs-font-weight)',
-        }],
-        
-        // Body Typography
-        'body-3xl': ['var(--body-3xl-font-size)', {
-          lineHeight: 'var(--body-3xl-line-height)',
-          fontWeight: 'var(--body-3xl-font-weight)',
-        }],
-        'body-2xl': ['var(--body-2xl-font-size)', {
-          lineHeight: 'var(--body-2xl-line-height)',
-          fontWeight: 'var(--body-2xl-font-weight)',
-        }],
-        'body-xl': ['var(--body-xl-font-size)', {
-          lineHeight: 'var(--body-xl-line-height)',
-          fontWeight: 'var(--body-xl-font-weight)',
-        }],
-        'body-lg': ['var(--body-lg-font-size)', {
-          lineHeight: 'var(--body-lg-line-height)',
-          fontWeight: 'var(--body-lg-font-weight)',
-        }],
-        'body-base': ['var(--body-base-font-size)', {
-          lineHeight: 'var(--body-base-line-height)',
-          fontWeight: 'var(--body-base-font-weight)',
-        }],
-        'body-sm': ['var(--body-sm-font-size)', {
-          lineHeight: 'var(--body-sm-line-height)',
-          fontWeight: 'var(--body-sm-font-weight)',
-        }],
-        'body-xs': ['var(--body-xs-font-size)', {
-          lineHeight: 'var(--body-xs-line-height)',
-          fontWeight: 'var(--body-xs-font-weight)',
-        }],
-      },
+      fontSize: {},
       fontWeight: {
-        'regular': 'var(--font-weight-regular)',
-        'medium': 'var(--font-weight-medium)',
-        'bold': 'var(--font-weight-bold)',
+        regular: 'var(--font-weight-regular)',   /* 400 - body text */
+        medium: 'var(--font-weight-medium)',     /* 500 - small titles & display */
+        bold: 'var(--font-weight-bold)',         /* 700 - large titles */
       },
       lineHeight: {
-        'tight': 'var(--line-height-tight)',
-        'snug': 'var(--line-height-snug)',
-        'normal': 'var(--line-height-normal)',
-        'relaxed': 'var(--line-height-relaxed)',
+        tight: 'var(--line-height-tight)',
+        snug: 'var(--line-height-snug)',
+        normal: 'var(--line-height-normal)',
+        relaxed: 'var(--line-height-relaxed)',
+        loose: 'var(--line-height-loose)',
       },
       opacity: {
         '5': '0.05',
